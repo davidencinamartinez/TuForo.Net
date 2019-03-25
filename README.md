@@ -13,6 +13,6 @@
     * Vinculada la BBDD a Laravel (**.env**)  
     * Establecido el huso horario a **Europe/Madrid**  
     * Creación del conjunto **test** para investigación y desarrollo de pruebas  
-    * **Controlador**: TestController  
-    * **View**: test.blade  
-    * **Ruta**: /test  
+      * **Controlador**: TestController  
+      * **View**: test.blade  
+      * **Ruta**: /test  
