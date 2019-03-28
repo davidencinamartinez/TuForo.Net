@@ -16,3 +16,8 @@
       * **Controlador**: TestController  
       * **View**: test.blade  
       * **Ruta**: /test  
+*  **Sesión 4: 28 de Marzo de 2019**  
+    * Creación de la carpeta de recursos de imágenes  
+      * **/storage/app/public/src**  
+    * Creación de la **View** y el **CSS** del **header**  
+    * Cambios en el controlador **TestController**  

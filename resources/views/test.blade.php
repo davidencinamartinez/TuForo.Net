@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-	<title>Testing Blade</title>
+	<meta charset="utf-8">
+	<title>TuForo.net - Internet Somos Todos</title>
+	<link rel="shortcut icon" type="image/png" href="storage/src/logos/favicon.png">
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/min.css') }}">
 </head>
 <body>
-	<h1>Primeros pasos</h1>
+	@extends('header')
 </body>
 </html>

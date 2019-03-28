@@ -1,0 +1,114 @@
+/* HTML */
+
+	html {	background-color: #8E8E8E;
+			font-family: 'Lato', sans-serif;
+			font-size: 14px;
+			color: white;
+			cursor: url('../storage/src/cursors/cursor32.png'), default;
+	}
+
+/* BODY */
+
+	body {	margin: 0;
+			padding: 0;
+	}
+
+/* IMG BANNER */
+
+	img[id="Banner"] {	width: 20%;
+						margin: 3px;
+	}
+
+/* HEADER */
+
+	.header {	background-color: #4F4F4F;
+				height: 30%;
+				border-top: 2px solid black;
+	}
+
+	/* USER DIV */
+
+		.UserDiv {	float: right;
+					padding: 10px;
+		}
+
+/* INPUT */
+
+	input {	border: solid 1px black;
+			border-radius: 2px;
+			padding: 2px;
+			cursor: url('../storage/src/cursors/cursor32.png'), default;
+	}
+
+	input:focus {	border: solid 1px #FF8C00;
+					outline: none;
+	}
+
+	input[type="submit"]:hover, input[type="submit"]:focus {	background-color: #FF8C00;
+																transition: 0.5s;
+																transform: perspective(1px) scale(1.05);
+	}
+
+/* NAVIGATION BAR */
+
+	.NavBar {	position: relative;
+				background-color: #2F2F2F;
+				overflow: hidden;
+				border-top: 2px solid black;
+				border-bottom: 2px solid black;
+	}
+
+	.NavBar a {	float: left;
+				color: white;
+				text-align: center;
+				padding: 15px 15px;
+				text-decoration: none;
+				font-size: 15px;
+				font-weight: bold;
+				border-right: 2px solid black;
+	}
+
+	.NavBar a:hover {	background-color: #FF8C00;
+						color: black;
+	}
+
+	.NavBar a.Active {	background-color: #FF8C00;
+						color: black;
+	}
+
+/* FOOTER */
+
+	footer {	background-color: #4F4F4F;
+				position: fixed;
+  				left: 0;
+  				bottom: 0;
+  				height: 3%;
+  				width: 100%;
+  				border-top: 2px solid black;
+  				color: white;
+  				text-align: center;
+  				padding-top: 5px;
+  	}
+
+/* SOCIAL */
+
+	.SocialNetwork {	width: 20px;
+ 						float: left;
+ 						margin-left: 5px;
+ 						border: 1px solid black;
+ 						border-radius: 5px;
+ 	}
+
+/* ADS */
+
+	.HeaderAdsContainer {	background-color: white;
+							width: 100%;
+							height: 90px;
+							border-bottom: 2px solid black
+	}
+
+		#TestImg {	height: 90px;
+					width: 728px;
+					margin: auto;
+					display: block;
+		}
