@@ -1,0 +1,30 @@
+/* SUBJECT PANEL */
+
+	#subjectPanel {	height: 100%;
+					width: 70%;
+					background-color: #4F4F4F;
+					margin-top: 10px;
+					border: 2px solid black;
+					position: relative;
+					margin-left: 10px;
+	}
+
+	#subject {	width: 100%;
+				border: 2px solid black;
+				border-width: 0px 2px 0px 0px;
+
+	}
+
+	#subject > table {	width: 100%;						
+						border-collapse: collapse;
+						width: 100%;
+						display: table;
+	}
+
+	#subject > tr > td {	width: 25%;
+	}
+
+	#subjectImg {	height: 32px;
+					width: 48px;	
+					border-right: 2px solid black;
+	}
