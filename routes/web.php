@@ -12,7 +12,6 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('main');
 });
-
 Route::get('test', 'TestController@index');

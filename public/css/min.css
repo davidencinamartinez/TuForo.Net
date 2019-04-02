@@ -4,7 +4,8 @@
 			font-family: 'Lato', sans-serif;
 			font-size: 14px;
 			color: white;
-			cursor: url('../storage/src/cursors/cursor32.png'), default;
+			cursor: url('../storage/src/cursors/cursor32.png'), auto;
+			-moz-appearance: none;
 	}
 
 /* BODY */
@@ -88,6 +89,7 @@
   				color: white;
   				text-align: center;
   				padding-top: 5px;
+  				padding-bottom: 5px;
   	}
 
 /* SOCIAL */
