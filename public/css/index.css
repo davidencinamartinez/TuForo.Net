@@ -1,0 +1,36 @@
+/* THREAD PANEL */
+
+	#threadsPanel {	margin: 10px 0px 0px 10px;
+					width: 70%;
+					background-color: #2F2F2F;
+					border: 1px solid black;
+					border-collapse: collapse;
+	}
+
+/* THREAD INFO */
+
+	.threadInfo {	border: 1px solid black;
+	}
+
+	.threadInfo:hover {	background-color: #3F3F3F;
+	}
+
+	/* THREAD CATEGORY IMAGE */
+
+		.threadCategory {	border: 1px solid black;
+							border-width: 0px 1px 0px 0px;
+							width: 70px;
+		}
+
+		.threadCategory > img {	height: 40px;
+								width: 70px;
+								background-color: white;
+								float: left;
+		}
+
+	/* TREAD NAME */
+
+		.threadTitle {	padding-left: 10px;
+						width: 40%;
+						border-collapse: separate;
+		}

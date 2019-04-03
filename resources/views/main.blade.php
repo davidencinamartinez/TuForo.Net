@@ -2,7 +2,7 @@
 <html lang='es'>
 <head>
 	<meta charset='utf-8'>
-	<title>TuForo.Net @yield('title') - Internet somos todos</title>
+	<title>TuForo.Net @yield('title')</title>
 	<link rel='shortcut icon' type='image/png' href='storage/src/logos/favicon.png'>
 	<link rel='stylesheet' type='text/css' href='{{ asset("css/min.css") }}'>
 	@stack('styles')
