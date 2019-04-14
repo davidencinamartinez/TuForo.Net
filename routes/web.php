@@ -12,6 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('main');
+    return view('index');
 });
-Route::get('test', 'TestController@index');
+
+Route::get('forum', function () {
+    return view('forum');
+});
+
+Route::get('thread', function () {
+    return view('thread');
+});

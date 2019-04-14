@@ -4,8 +4,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 
-class TestController extends Controller
-{
+class TestController extends Controller {
 
     protected $message;
 
@@ -13,8 +12,7 @@ class TestController extends Controller
      * Create a new controller instance.
      * @return void
      */
-    public function __construct()
-    {
+    public function __construct() {
         $this->message = date('d-m-Y (H:i:s)');
     }
 
@@ -23,9 +21,8 @@ class TestController extends Controller
      * @param  Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
-    {
-        return view('test', [
+    public function index(Request $request) {
+        return view('index', [
             'message' => $this->message
         ]);
     }

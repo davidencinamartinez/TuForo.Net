@@ -10,8 +10,8 @@
 
 /* BODY */
 
-	body {	margin: 0;
-			padding: 0;
+	body {	margin: auto;
+			padding: auto;
 	}
 
 /* IMG BANNER */
@@ -29,7 +29,7 @@
 
 	/* USER DIV */
 
-		.UserDiv {	float: right;
+		.userDiv {	float: right;
 					padding: 10px;
 		}
 
@@ -52,14 +52,16 @@
 
 /* NAVIGATION BAR */
 
-	.NavBar {	position: relative;
+				
+	.navBar {	width: 100%;
+				position: relative;
 				background-color: #2F2F2F;
 				overflow: hidden;
 				border-top: 2px solid black;
 				border-bottom: 2px solid black;
 	}
 
-	.NavBar a {	float: left;
+	.navBar a {	float: left;
 				color: white;
 				text-align: center;
 				padding: 15px 15px;
@@ -67,14 +69,27 @@
 				font-size: 15px;
 				font-weight: bold;
 				border-right: 2px solid black;
+				text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 	}
 
-	.NavBar a:hover {	background-color: #FF8C00;
+	.navBar a:hover {	background-color: #FF8C00;
 						color: black;
+						text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 	}
 
-	.NavBar a.Active {	background-color: #FF8C00;
+	.navBar a.active {	background-color: #FF8C00;
 						color: black;
+						text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+	}
+
+	#newThreadButton {	background-color: #32CD32;
+						color: white;
+						text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	}
+
+	#newThreadButton:hover {	background-color: #FF8C00;
+								color: black;
+								text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 	}
 
 /* FOOTER */
@@ -84,7 +99,7 @@
 				overflow: hidden;
   				left: 0;
   				bottom: 0;
-  				height: 3%;
+  				height: 20px;
   				width: 100%;
   				border-top: 2px solid black;
   				color: white;
@@ -95,7 +110,7 @@
 
 /* SOCIAL */
 
-	.SocialNetwork {	width: 20px;
+	.socialNetwork {	width: 20px;
  						float: left;
  						margin-left: 5px;
  						border: 1px solid black;
@@ -104,7 +119,7 @@
 
 /* ADS */
 
-	.HeaderAdsContainer {	background-color: white;
+	.headerAdsContainer {	background-color: white;
 							width: 100%;
 							height: 90px;
 							border-bottom: 2px solid black
