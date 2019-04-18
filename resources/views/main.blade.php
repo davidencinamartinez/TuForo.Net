@@ -22,7 +22,7 @@
 			<form action='Redirect.php' method='POST'>
 				<input type='text' name='user' maxlength='20' placeholder='Usuario'>
 				<input type='password' name='password' maxlength='48' placeholder='Contraseña'>
-				<input type='submit' value='Entrar'>
+				<input type='submit' style="font-weight: bold;" value='Entrar'>
 			</form>
 		<br>
 		</div>
@@ -30,21 +30,19 @@
 	<div class='navBar'>
 		<a href='/' id='startingPoint'>Inicio</a>
 		<a href='forum' id='forumEntry'>Foro</a>
-		<a href='register' id="registerPage">Registro</a>
-		<a href='create' id="newThreadButton">Crear Hilo</a>
+		<a href='registro' id="registerPage">Registro</a>
+		<a href='newthread' id="newThreadButton">Crear Hilo</a>
 	</div>
 	<div class='headerAdsContainer'>
 	</div>
 	@section('postSection')
     @show
-    @section('otherSection')
-    @show
-	<footer>
+	<div id='footer'>
 		<div class='socialDiv'>
 			<a href='https://twitter.com/?lang=es' target='_blank'><img src='storage/src/logos/social/tw_logo.png' class='socialNetwork' alt='twitter_logo'></a>
 			<a href='https://www.facebook.com/' target='_blank'><img src='storage/src/logos/social/fb_logo.png' class='socialNetwork' alt='facebook_logo'></a>
 			<a href='https://www.instagram.com/' target='_blank'><img src='storage/src/logos/social/ig_logo.png' class='socialNetwork' alt='instagram_logo'></a>
 		</div>
-	</footer>	
+	</div>	
 </body>
 </html>

@@ -1,0 +1,34 @@
+/* REGISTER FORM DIV */
+
+	#registerPanel {	height: auto;
+						width: 90%;
+						background-color: #2F2F2F;
+						margin: auto;
+						margin-top: 20px;
+						margin-bottom: 20px;
+						padding: 20px;
+						position: relative;
+						display: flex;
+						text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+						border: 2px solid black;
+	}
+
+	/* FORM */
+
+		#inputForm {	height: auto;
+						width: 40%;
+						float: left;
+		}
+
+		/* PASSWORD IMAGES */
+
+			form > img {	vertical-align: middle;
+			}
+
+	/* PRIVACY POLICY */
+
+		#privacyPolicy {	height: auto;
+							width: 60%;
+							float: right;
+							margin-left: 10px;
+		}

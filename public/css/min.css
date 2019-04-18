@@ -85,21 +85,25 @@
 	#newThreadButton {	background-color: #32CD32;
 						color: white;
 						text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+						float: right;
+						border-left: 2px solid black;
+						border-right: none;
 	}
 
-	#newThreadButton:hover {	background-color: #FF8C00;
+	#newThreadButton:hover {	background-color: #28A428;
 								color: black;
 								text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 	}
 
 /* FOOTER */
 
-	footer {	background-color: #4F4F4F;
+	#footer {	background-color: #4F4F4F;
 				position: fixed;
+				margin-top: 20px;
 				overflow: hidden;
   				left: 0;
   				bottom: 0;
-  				height: 20px;
+  				height: auto;
   				width: 100%;
   				border-top: 2px solid black;
   				color: white;

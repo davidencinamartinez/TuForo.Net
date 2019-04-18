@@ -19,6 +19,7 @@ class Bbdd extends Migration
             $table->string('key');
             $table->string('email')->unique();
             $table->boolean('verified');
+            $table->timestamp('last_activity')->nullable();
             $table->timestamps();
             $table->integer('msg_count')->default(0);
             $table->integer('thread_count')->default(0);
@@ -39,6 +40,14 @@ class Bbdd extends Migration
             $table->string('last_reply_user')->nullable();
             $table->boolean('closed')->default(0);
         });
+
+        Schema::create('messages', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('thread_id');
+            $table->longtext('content');
+            $table->string('creator');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -50,5 +59,6 @@ class Bbdd extends Migration
     {
         Schema::dropIfExists('users');
         Schema::dropIfExists('threads');
+        Schema::dropIfExists('messages');
     }
 }

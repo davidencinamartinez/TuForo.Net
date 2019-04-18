@@ -58,7 +58,7 @@
                 </tr>
                 <tr class='threadInfo'>
                     <td class='threadCategory'>
-                        <img class="categoryPic" alt="informatica">
+                        <img class="categoryPic" alt="general">
                     </td>
                     <td class='threadTitle'>
                         <label><b>Necesito un PC Gaming (Presupuesto 500€)</b></label>
@@ -82,14 +82,20 @@
             <div id="miscPanel">
                 <h2>Estadísticas</h2>
                 <div style="text-align: justify; font-size: 16px">
-                    <b>Miembros: </b><label class="countMembers">3400</label>
+                    <b>Miembros: </b><label id="memberCount">{{$countMembers}}</label>
                     <br>
-                    <b>Hilos: </b><label class="countThreads">17000</label>
+                    <b>Hilos: </b><label id="threadCount">{{ $countThreads }}</label>
                     <br>
-                    <b>Mensajes: </b><label class="countMembers">44000</label>
+                    <b>Mensajes: </b><label id="messageCount">{{ $countMessages }}</label>
+                    <br>
+                    <b>Visitas: </b><label id="visitorCount">913.000</label>
+                    <br>
+                    <b>En línea: </b><label id="onlineCount">913.000</label>
+                    <br><br>
+                    <div style="width: 100%; text-align: center;">
                     <iframe src="https://freesecure.timeanddate.com/clock/i6pw1dlx/n31/tles4/fn14/fs20/fcfff/tc000/pct/ftb/bas2/bacfff/pa12/tt0/tw0/th1/tb4" frameborder="0" width="271" height="74" allowTransparency="true"></iframe>
-
-                    
+                    </div>
+                    <br>
                 </div>
             </div>
         </div>
