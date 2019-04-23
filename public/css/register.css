@@ -25,6 +25,11 @@
 			form > img {	vertical-align: middle;
 			}
 
+		/* SUBMIT BUTTON */
+
+			input['name=["reg_done"]'] {	font-weight: bold;
+			}
+
 	/* PRIVACY POLICY */
 
 		#privacyPolicy {	height: auto;
@@ -32,3 +37,11 @@
 							float: right;
 							margin-left: 10px;
 		}
+
+/* ERRORS */
+
+	.error {	font-weight: bold;
+				font-size: 14px;
+				color: #FF4040;
+	}
+

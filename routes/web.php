@@ -18,7 +18,7 @@ Route::get('/', 'TrackerController@index');
 // USER REGISTRATION
 
 Route::get('registro', 'RegisterController@create'); // FORM
-Route::post('user_exists','RegisterController@index'); // AJAX
+Route::get('lol','RegisterController@index'); // AJAX
 // Route::post('registro', 'RegisterController@store'); // STORE NEW USER
 
 // FORUM
@@ -35,6 +35,4 @@ Route::get('thread', function () {
 
 // NEW THREAD
 
-Route::get('newthread', function () {
-    return view('newthread');
-});
+Route::get('newthread', 'NewThreadController@index');

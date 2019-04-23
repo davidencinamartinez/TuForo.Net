@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 
 class RegisterController extends Controller
 {
@@ -13,9 +14,12 @@ class RegisterController extends Controller
     }
 
     public function index() {
-      $msg = DB::table('users')->count();
+      $data = DB::select('select username from users');
+      
+      
+      //return response()->json(['data'=>$data]);
+      return view('lol', ['mydata' => $data]);
 
-      return Response::json($msg);
 
    }
 }

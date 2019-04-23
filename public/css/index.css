@@ -48,3 +48,13 @@
 					border-radius: 10px 0px 0px 10px;
 					text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 	}
+
+/* ADS */
+	
+	.RightAdsContainer {	width: 300px;
+							height: 250px;
+							border: 2px solid black;
+							margin: auto auto 20px auto;
+							text-align: center;
+							background-color: black;
+	}

@@ -22,7 +22,7 @@
 			<form action='Redirect.php' method='POST'>
 				<input type='text' name='user' maxlength='20' placeholder='Usuario'>
 				<input type='password' name='password' maxlength='48' placeholder='Contraseña'>
-				<input type='submit' style="font-weight: bold;" value='Entrar'>
+				<input type='submit' value='Entrar'>
 			</form>
 		<br>
 		</div>
@@ -34,6 +34,9 @@
 		<a href='newthread' id="newThreadButton">Crear Hilo</a>
 	</div>
 	<div class='headerAdsContainer'>
+		<a href="https://www.livingroomofsatoshi.com/" target='_blank'>
+			<img src='storage/src/other/ad1.jpeg'>
+		</a>
 	</div>
 	@section('postSection')
     @show

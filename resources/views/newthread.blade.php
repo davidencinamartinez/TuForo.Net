@@ -9,5 +9,14 @@
     <script src='{{ asset("js/newthread.js") }}'></script>
 @endpush
 @section('postSection')
-dsfdf
+<script type="text/javascript">
+	function manolo() {
+		var data = <?php print_r($mydata) ?>;
+		
+		console.log(data[0].username);
+		$('button').after('<p>'+data[0].username+'</p>');
+	}
+</script>
+
+<button onclick="manolo()">TESTING</button>
 @stop
