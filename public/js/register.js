@@ -79,7 +79,7 @@ function checkPassword() {
 function checkCaptcha() {
 	var captcha = $('.g-recaptcha');
 	var captchaResponse = grecaptcha.getResponse();
-	if (captchaResponse.length < 334) {
+	if (captchaResponse.length <= 0) {
 		errorDisplay(captcha,'Verifica que eres humano');
 		return false;
 	} else {

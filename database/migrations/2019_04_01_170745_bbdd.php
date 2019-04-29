@@ -14,17 +14,19 @@ class Bbdd extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('username')->unique();
-            $table->string('key');
+            $table->increments('id');
+            $table->string('name')->unique();
             $table->string('email')->unique();
-            $table->boolean('verified');
-            $table->timestamp('last_activity')->nullable();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('password');
+            $table->rememberToken();
             $table->timestamps();
+            $table->timestamp('last_activity')->nullable();
             $table->integer('msg_count')->default(0);
             $table->integer('thread_count')->default(0);
             $table->string('user_pic')->nullable();
             $table->string('user_title')->nullable();
+            $table->string('user_bg_style')->nullable();
             $table->boolean('banned')->default(0);
         });
 
