@@ -31,7 +31,7 @@
 		<a href='/' id='startingPoint'>Inicio</a>
 		<a href='forum' id='forumEntry'>Foro</a>
 		<a href='registro' id="registerPage">Registro</a>
-		<a href='newthread' id="newThreadButton">Crear Hilo</a>
+		<a href='newthread' id="newThreadButton">Crear Tema</a>
 	</div>
 	<div class='headerAdsContainer'>
 		<a href="https://www.livingroomofsatoshi.com/" target='_blank'>

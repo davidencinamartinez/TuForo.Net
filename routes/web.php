@@ -13,7 +13,7 @@
 
 // INDEX
 
-Route::get('/', 'TrackerController@index');
+Route::get('/', 'IndexController@index');
 
 // USER REGISTRATION
 

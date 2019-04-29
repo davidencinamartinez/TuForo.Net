@@ -34,6 +34,7 @@ class Bbdd extends Migration
             $table->bigIncrements('id');
             $table->string('category');
             $table->string('thread');
+            $table->string('url')->unique();
             $table->timestamps();
             $table->string('creator');
             $table->integer('view_count')->default(0);

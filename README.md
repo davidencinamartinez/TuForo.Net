@@ -33,5 +33,3 @@
     * **Prioridad 2**  
       * **Registro**  
         * Control de errores  
-
-

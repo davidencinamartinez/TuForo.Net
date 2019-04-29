@@ -15,16 +15,30 @@ function navBarActive() {
 
 function threadCategoryPic() {
 	$('img[class="categoryPic"]').each(function(index, element) {
-		if (element.alt == 'general') {
+		if (element.alt == 'General') {
 			this.src = 'storage/src/categories/category01.png';
 		}
-		if (element.alt == 'motor') {
+		if (element.alt == 'Motor') {
 			this.src = 'storage/src/categories/category02.png';
 		}
-		if (element.alt == 'informatica') {
+		if (element.alt == 'Informatica') {
 			this.src = 'storage/src/categories/category03.png';
 		}
 
 		// REMAINING
+	});
+}
+
+function dateConvert() {
+	// THREAD DATES
+	var threadDateVal = $('.threadDate').val();
+	// DATE TODAY
+	var dayToday = new Date().getDate();
+	var monthToday = new Date().getMonth()+1;
+	var yearToday = new Date().getFullYear();
+	var dateToday = dayToday+'/'+monthToday+'/'+yearToday;
+	// LOOP
+	$.each(threadDateVal, function(index, val) {
+		 console.log(val);
 	});
 }

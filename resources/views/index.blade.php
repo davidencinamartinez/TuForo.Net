@@ -8,74 +8,45 @@
 @push('scripts')
 @endpush
 @section('postSection')
+    <?php
+        $threadData = json_decode($threadData);
+    ?>
     <script type="text/javascript">
         $(document).ready(function() {
             threadCategoryPic();
+            var threadData = {!!json_encode($threadData)!!};
+            console.log(threadData);
+            dateConvert();
         });
     </script>
     <div style="width: 100%; height: auto">
         <div style="width: 70%; float: left">
             <table id='threadsPanel' cellpadding='0' cellspacing='0'>
-            	<tr class='threadInfo' onclick='window.open("thread")'>
-            		<td class='threadCategory'>
-            			<img class="categoryPic" alt='motor'>
-            		</td>
-                    <td class='threadTitle'>
-                        <label><b>Bienvenido a TuForo.Net</b></label>
-                        <br>
-                        <label>ViBoXx</label>
-                    </td>
-            		<td class='threadLastMsg'>
-            			<label><b>Fecha:</b> <?php echo date('d/m/y - H:m:s'); ?></label>
-                        <br>
-                        <label>Lazarillo777</label>
-            		</td>
-            		<td class='threadLastMsg'>
-            			<label><b>Visitas: </b>239</label>
-                        <br>
-                        <label><b>Respuestas: </b>31</label>
-            		</td>
-            	</tr>
-                <tr class='threadInfo'>
-                    <td class='threadCategory'>
-                        <img class="categoryPic" alt="informatica">
-                    </td>
-                    <td class='threadTitle'>
-                        <label><b>Cheat Engine 18.4 - Instalación/Guía/Consejos</b></label>
-                        <br>
-                        <label>H@cK€rM@n</label>
-                    </td>
-                    <td class='threadLastMsg'>
-                        <label><b>Fecha:</b> <?php echo date('d/m/y - H:m:s'); ?></label>
-                        <br>
-                        <label>PepitoGriego</label>
-                    </td>
-                    <td class='threadLastMsg'>
-                        <label><b>Visitas: </b>122</label>
-                        <br>
-                        <label><b>Respuestas: </b>4</label>
-                    </td>
-                </tr>
-                <tr class='threadInfo'>
-                    <td class='threadCategory'>
-                        <img class="categoryPic" alt="general">
-                    </td>
-                    <td class='threadTitle'>
-                        <label><b>Necesito un PC Gaming (Presupuesto 500€)</b></label>
-                        <br>
-                        <label>ViBoXx</label>
-                    </td>
-                    <td class='threadLastMsg'>
-                        <label><b>Fecha:</b> <?php echo date('d/m/y - H:m:s'); ?></label>
-                        <br>
-                        <label>Ilitri</label>
-                    </td>
-                    <td class='threadLastMsg'>
-                        <label><b>Visitas: </b>298</label>
-                        <br>
-                        <label><b>Respuestas: </b>6</label>
-                    </td>
-                </tr>
+                @foreach($threadData as $threadData)
+                	<tr class='threadInfo' onclick='window.open("thread")'>
+                		<td class='threadCategory'>
+                			<img class="categoryPic" alt='{{ $threadData->category }}'>
+                		</td>
+                        <td class='threadTitle'>
+                            <label><b>{{ $threadData->thread }}</b></label>
+                            <br>
+                            <label>{{ $threadData->creator }}</label>
+                        </td>
+                		<td class='threadLastMsg'>
+                			<b>Fecha: </b>
+                            <label class='threadDate'>{{ date('d/m/y', strtotime($threadData->created_at)) }}</label>
+                            -
+                            <label>{{ date('H:i', strtotime($threadData->created_at)) }}</label>
+                            <br>
+                            <label>{{ $threadData->last_reply_user }}</label>
+                		</td>
+                		<td class='threadLastMsg'>
+                			<b>Visitas: </b><label>{{ $threadData->view_count }}</label>
+                            <br>
+                            <b>Respuestas: </b><label>{{ $threadData->reply_count }}</label>
+                		</td>
+                	</tr>
+                @endforeach
             </table>
         </div>
         <div style="width: 30%; float: right; text-align: center; margin-bottom: 20px;">
@@ -84,7 +55,7 @@
                 <div style="text-align: justify; font-size: 16px">
                     <b>Miembros: </b><label id="memberCount">{{$countMembers}}</label>
                     <br>
-                    <b>Hilos: </b><label id="threadCount">{{ $countThreads }}</label>
+                    <b>Temas: </b><label id="threadCount">{{ $countThreads }}</label>
                     <br>
                     <b>Mensajes: </b><label id="messageCount">{{ $countMessages }}</label>
                     <br>
