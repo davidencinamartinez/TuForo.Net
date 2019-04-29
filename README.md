@@ -8,12 +8,15 @@
 
 * **Especificaciones**  
     * **Prioridad 1**  
+      * **BBDD**  
+        * Tablas  
+        * Migración  
       * **Login**  
         * Vista ✔  
         * Controlador  
       * **Registro**  
         * Vista ✔  
-        * Controlador
+        * Controlador  
       * **Índice general**  
         * Vista ✔  
         * Controlador  
@@ -23,3 +26,12 @@
       * **Índice de temas por categoría**  
         * Vista  
         * Controlador  
+      * **Creación de tema**  
+        * Vista  
+        * Wysiwyg  
+        * Controlador  
+    * **Prioridad 2**  
+      * **Registro**  
+        * Control de errores  
+
+
