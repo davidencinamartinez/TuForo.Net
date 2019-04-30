@@ -14,6 +14,7 @@ class Bbdd extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('name')->unique();
             $table->string('email')->unique();
@@ -31,7 +32,8 @@ class Bbdd extends Migration
         });
 
         Schema::create('threads', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->engine = 'InnoDB';
+            $table->increments('id');
             $table->string('category');
             $table->string('thread');
             $table->string('url')->unique();
@@ -45,10 +47,13 @@ class Bbdd extends Migration
         });
 
         Schema::create('messages', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('thread_id');
+            $table->engine = 'InnoDB';
+            $table->increments('id');
+            $table->unsignedInteger('thread_id');
+            $table->foreign('thread_id')->references('id')->on('threads');
+            $table->unsignedInteger('creator');
+            $table->foreign('creator')->references('id')->on('users');
             $table->longtext('content');
-            $table->string('creator');
             $table->timestamps();
         });
     }

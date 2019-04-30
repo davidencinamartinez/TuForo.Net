@@ -30,6 +30,14 @@
         * Vista  
         * Wysiwyg  
         * Controlador  
+      * **Puesta en producción**  
     * **Prioridad 2**  
       * **Registro**  
-        * Control de errores  
+        * **Control de errores**  
+          * Cliente  
+          * Servidor  
+        * Recursos de la Web  
+        * Verificación por E-Mail  
+        * GAMP (Google Analytics Measurement Protocol)  
+    * **Prioridad 3**  
+      * Diseños CSS  
