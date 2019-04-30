@@ -101,7 +101,7 @@
 /* FOOTER */
 
 	#footer {	background-color: #4F4F4F;
-				position: fixed;
+				position: relative;
 				margin-top: 20px;
 				overflow: hidden;
   				left: 0;
@@ -131,4 +131,19 @@
 							border-bottom: 2px solid black;
 							text-align: center;
 							background-color: black;
+	}
+
+/* CUSTOM SCROLLBAR */
+
+	::-webkit-scrollbar {	width: 10px;
+	}
+
+	::-webkit-scrollbar-track {	background: white; 
+	}
+
+	::-webkit-scrollbar-thumb {	background: #FF8C00; 
+	  							border: solid 1px black;
+	}
+
+	::-webkit-scrollbar-thumb:hover {	background: #8E8E8E; 
 	}

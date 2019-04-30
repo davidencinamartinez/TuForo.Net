@@ -35,7 +35,7 @@
 	</div>
 	<div class='headerAdsContainer'>
 		<a href="https://www.livingroomofsatoshi.com/" target='_blank'>
-			<img src='storage/src/other/ad1.jpeg'>
+			<img src='storage/src/other/ad4.gif'>
 		</a>
 	</div>
 	@section('postSection')

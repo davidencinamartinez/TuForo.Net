@@ -40,4 +40,4 @@
         * Verificación por E-Mail  
         * GAMP (Google Analytics Measurement Protocol)  
     * **Prioridad 3**  
-      * Diseños CSS  
+      * Diseños CSS

@@ -66,7 +66,7 @@
                     <br><br>
                     <div class='RightAdsContainer'>
                         <a href="https://www.coolmod.com/promociones" target='_blank'>
-                            <img src='storage/src/other/ad2.jpeg'>
+                            <img src='storage/src/other/ad3.gif'>
                         </a>
                     </div>
                     <div style="width: 100%; text-align: center;">
