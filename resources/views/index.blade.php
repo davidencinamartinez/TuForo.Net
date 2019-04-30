@@ -6,6 +6,8 @@
 	<link rel='stylesheet' type='text/css' href='{{ asset("css/index.css") }}'>
 @endpush
 @push('scripts')
+<script type='text/javascript' src='{{ asset("js/moment_js/moment.js") }}'></script>
+<script type='text/javascript' src='{{ asset("js/moment_js/es.js") }}'></script>
 @endpush
 @section('postSection')
     <?php
@@ -15,7 +17,6 @@
         $(document).ready(function() {
             threadCategoryPic();
             var threadData = {!!json_encode($threadData)!!};
-            console.log(threadData);
             dateConvert();
         });
     </script>
@@ -33,14 +34,14 @@
                             <label>{{ $threadData->creator }}</label>
                         </td>
                 		<td class='threadLastMsg'>
-                			<b>Fecha: </b>
-                            <label class='threadDate'>{{ date('d/m/y', strtotime($threadData->created_at)) }}</label>
+                			<b>Último Mensaje: </b>
+                            <label class='threadDate'>{{ date('d/m/Y', strtotime($threadData->last_reply_time)) }}</label>
                             -
-                            <label>{{ date('H:i', strtotime($threadData->created_at)) }}</label>
+                            <label>{{ date('H:i', strtotime($threadData->last_reply_time)) }}</label>
                             <br>
                             <label>{{ $threadData->last_reply_user }}</label>
                 		</td>
-                		<td class='threadLastMsg'>
+                		<td class='threadInfo'>
                 			<b>Visitas: </b><label>{{ $threadData->view_count }}</label>
                             <br>
                             <b>Respuestas: </b><label>{{ $threadData->reply_count }}</label>
