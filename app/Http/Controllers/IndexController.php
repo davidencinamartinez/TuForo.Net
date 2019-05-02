@@ -21,11 +21,19 @@ class IndexController extends Controller
 		// COUNT MESSAGES
 		$countMessages = DB::table('messages')->count();
 
+		// COUNT VISITORS
+		$countVisitors = DB::table('threads')->sum('view_count')+1;
+
+		// COUNT ONLINE
+		$countOnline = DB::table('users')->where('last_activity', '>=', \DB::raw('DATE_SUB(NOW(), INTERVAL 1 HOUR)'))->count();
+		
 		// RESPONSE
 		return view('index', [	'threadData' => $threads,
 								'countMembers' => $countMembers,
 								'countThreads' => $countThreads,
-								'countMessages' => $countMessages
+								'countMessages' => $countMessages,
+								'countVisitors' => $countVisitors,
+								'countOnline' => $countOnline
 		]);
    }
 }

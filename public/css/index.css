@@ -29,11 +29,23 @@
 												float: left;
 			}
 
-		/* TREAD NAME */
+		/* THREAD TITLE / CREATOR */
 
-			td[class='threadTitle'] {	padding-left: 10px;
-										width: 45%;
-										border-collapse: separate;
+			.threadTitleCreator {	border-collapse: separate;
+									background-color: red;
+			}
+
+		/* THREAD LAST MESSAGE */
+
+			.threadLastMsg {	text-align: center;
+			}
+
+		/* THREAD STATS */
+
+			.threadStats {	text-align: left;
+										background-color: #FF8C00;
+										padding: 0px 5px 0px 5px;
+										border-left: 1px solid black; 
 			}
 
 /* MISC PANEL */

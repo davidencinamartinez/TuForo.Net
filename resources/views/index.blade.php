@@ -28,20 +28,23 @@
                 		<td class='threadCategory'>
                 			<img class="categoryPic" alt='{{ $threadData->category }}'>
                 		</td>
-                        <td class='threadTitle'>
-                            <label><b>{{ $threadData->thread }}</b></label>
+                        <td style="padding: 0px 5px 0px 5px">
+                            <div class='threadTitleCreator'>
+                                <label style="float: left;"><b>{{ $threadData->thread }}</b></label>
+                                <label style="float: right;" class='threadDate'>
+                                    <b>Último Mensaje: </b>
+                                    <label class="threadDate">{{ date('d/m/Y', strtotime($threadData->last_reply_time)) }}</label>
+                                    -
+                                    <label>{{ date('H:i', strtotime($threadData->last_reply_time)) }}</label>
+                                </label>
+                            </div>
                             <br>
-                            <label>{{ $threadData->creator }}</label>
+                    		<div class='threadLastMsg'>
+                                <label style="float: left;">{{ $threadData->creator }}</label>
+                                <label style="float: right;">{{ $threadData->last_reply_user }}</label>
+                    		</div>
                         </td>
-                		<td class='threadLastMsg'>
-                			<b>Último Mensaje: </b>
-                            <label class='threadDate'>{{ date('d/m/Y', strtotime($threadData->last_reply_time)) }}</label>
-                            -
-                            <label>{{ date('H:i', strtotime($threadData->last_reply_time)) }}</label>
-                            <br>
-                            <label>{{ $threadData->last_reply_user }}</label>
-                		</td>
-                		<td class='threadInfo'>
+                		<td class='threadStats'>
                 			<b>Visitas: </b><label>{{ $threadData->view_count }}</label>
                             <br>
                             <b>Respuestas: </b><label>{{ $threadData->reply_count }}</label>
@@ -60,9 +63,9 @@
                     <br>
                     <b>Mensajes: </b><label id="messageCount">{{ $countMessages }}</label>
                     <br>
-                    <b>Visitas: </b><label id="visitorCount">913.000</label>
+                    <b>Visitas: </b><label id="visitorCount">{{ $countVisitors }}</label>
                     <br>
-                    <b>En línea: </b><label id="onlineCount">913.000</label>
+                    <b>En línea: </b><label id="onlineCount">{{ $countOnline }}</label>
                     <br><br>
                     <div class='RightAdsContainer'>
                         <a href="https://www.coolmod.com/promociones" target='_blank'>

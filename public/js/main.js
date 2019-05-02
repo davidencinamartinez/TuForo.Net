@@ -19,7 +19,7 @@ function threadCategoryPic() {
 			this.src = 'storage/src/categories/Cat_General.png';
 		}
 		if (element.alt == 'Motor') {
-			this.src = 'storage/src/categories/Cat_Motor.png';
+			this.src = 'storage/src/categories/Cat_Cars.png';
 		}
 		if (element.alt == 'Informatica') {
 			this.src = 'storage/src/categories/Cat_Computing.png';
