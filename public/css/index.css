@@ -1,7 +1,7 @@
 /* THREAD PANEL */
 
 	#threadsPanel {	margin: 10px 0px 0px 10px;
-					width: 90%;
+					width: 100%;
 					background-color: #2F2F2F;
 					border: 1px solid black;
 					border-collapse: collapse;
@@ -19,40 +19,43 @@
 
 		/* THREAD CATEGORY IMAGE */
 
-			td[class='threadCategory'] {	padding: 2px;
-											width: 70px;
+			.threadCategory {	padding: 2px;
+								width: 70px;
 			}
 
-			td[class='threadCategory'] > img {	height: 40px;
-												width: 65px;
-												border-left: 0px;
-												float: left;
+			.threadCategory > img {	height: 40px;
+									width: 65px;
+									border-left: 0px;
+									float: left;
 			}
 
-		/* THREAD TITLE / CREATOR */
+		/* THREAD NAME */
 
-			.threadTitleCreator {	border-collapse: separate;
-									background-color: red;
+			.threadName {	padding: 0px 5px 0px 5px;
+							width: 60%;
 			}
 
 		/* THREAD LAST MESSAGE */
 
-			.threadLastMsg {	text-align: center;
+			.threadLastMsg {	padding: 0px 5px 0px 5px;
+								text-align: center;
+								border: 1px solid black;
+								border-width: 0px 1px 0px 1px;
 			}
 
 		/* THREAD STATS */
 
 			.threadStats {	text-align: left;
-										background-color: #FF8C00;
-										padding: 0px 5px 0px 5px;
-										border-left: 1px solid black; 
+							background-color: #FF8C00;
+							padding: 0px 5px 0px 5px;
+							border-left: 1px solid black; 
 			}
 
 /* MISC PANEL */
 
 	#miscPanel {	margin: 10px 0px 0px 10px;
 					height: auto;
-					width: 100%;
+					width: 80%;
 					padding: 10px;
 					background-color: #2F2F2F;
 					float: right;
@@ -60,6 +63,7 @@
 					border: 1px solid black;
 					border-radius: 10px 0px 0px 10px;
 					text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+					text-align: center;
 	}
 
 /* ADS */

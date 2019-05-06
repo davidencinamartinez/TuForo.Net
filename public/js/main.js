@@ -3,13 +3,27 @@ function navBarActive() {
 	var url = pathArray[1];
 	var navBarButton = $('.NavBar *').removeAttr('class');
 	if (url == '') {
-		$('a[id="startingPoint"]').attr('class', 'active');
+		$('#startingPoint').attr('class', 'active');
+		$('#footer').css('position', 'relative');
 	}
 	if (url == 'forum' || url == 'thread') {
-		$('a[id="forumEntry"]').attr('class', 'active');
+		$('#forumEntry').attr('class', 'active');
+		$('#footer').css('position', 'fixed');
 	}
 	if (url == 'registro') {
-		$('a[id="registerPage"]').attr('class', 'active');
+		$('#registerPage').attr('class', 'active');
+		$('#footer').css('position', 'fixed');
+	}
+	if (url == 'thread') {
+		$('#footer').css('position', 'relative');
+	}
+	if (url == 'newthread') {
+		$('#footer').css('position', 'fixed');
+		$('#newThreadButton').css({
+			backgroundColor: '#28A428',
+			color: 'black',
+			textShadow: '-1px 0 white, 0 1px white, 1px 0 white, 0 -1px white'
+		});
 	}
 }
 
@@ -46,8 +60,8 @@ function dateConvert() {
 	$('.threadDate').each(function(index, el) {
 		if ($(this).text() == moment().format('L')) {
 			$(this).text('Hoy');
-		} else {
-			console.log('lalala');
+		} else if ($(this).text() == moment().subtract(1,'days').format('L')) {
+			$(this).text('Ayer');
 		}
 	});
 	// DATE TODAY
