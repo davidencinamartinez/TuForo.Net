@@ -23,9 +23,7 @@ Route::get('lol','RegisterController@index'); // AJAX
 
 // FORUM
 
-Route::get('forum', function () {
-    return view('forum');
-});
+Route::get('forum', 'IndexController@catIndex'); // FORUM CATEGORIES
 
 // THREAD
 

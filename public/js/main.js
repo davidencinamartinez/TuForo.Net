@@ -8,7 +8,7 @@ function navBarActive() {
 	}
 	if (url == 'forum' || url == 'thread') {
 		$('#forumEntry').attr('class', 'active');
-		$('#footer').css('position', 'fixed');
+		$('#footer').css('position', 'relative');
 	}
 	if (url == 'registro') {
 		$('#registerPage').attr('class', 'active');
@@ -29,29 +29,39 @@ function navBarActive() {
 
 function threadCategoryPic() {
 	$('img[class="categoryPic"]').each(function(index, element) {
-		if (element.alt == 'General') {
+		if (element.alt == 1) { // OFFICIAL
+			this.src = 'storage/src/categories/Cat_Official.png';
+		}
+		if (element.alt == 2) { // GENERAL
 			this.src = 'storage/src/categories/Cat_General.png';
 		}
-		if (element.alt == 'Motor') {
+		if (element.alt == 3) { // MOTOR
 			this.src = 'storage/src/categories/Cat_Cars.png';
 		}
-		if (element.alt == 'Informatica') {
-			this.src = 'storage/src/categories/Cat_Computing.png';
-		}
-		if (element.alt == 'Gaming') {
-			this.src = 'storage/src/categories/Cat_Gaming.png';
-		}
-		if (element.alt == 'Musica') {
-			this.src = 'storage/src/categories/Cat_Music.png';
-		}
-		if (element.alt == 'Noticias') {
+		if (element.alt == 4) { // NEWS
 			this.src = 'storage/src/categories/Cat_News.png';
 		}
-		if (element.alt == 'Politica' || element.alt == 'Negocios') {
+		if (element.alt == 5) { // COMPUTING
+			this.src = 'storage/src/categories/Cat_Computing.png';
+		}
+		if (element.alt == 6) { // GAMES
+			this.src = 'storage/src/categories/Cat_Gaming.png';
+		}
+		if (element.alt == 7) { // MUSIC
+			this.src = 'storage/src/categories/Cat_Music.png';
+		}
+		if (element.alt == 8) { // POLITICS
 			this.src = 'storage/src/categories/Cat_Politics.png';
 		}
-
-		// REMAINING
+		if (element.alt == 9) { // FITNESS
+			this.src = 'storage/src/categories/Cat_Gym.png';
+		}
+		if (element.alt == 10) { // SPORTS
+			this.src = 'storage/src/categories/Cat_Sports.png';
+		}
+		if (element.alt == 11) { // CRIPTO
+			this.src = 'storage/src/categories/Cat_Cripto.png';
+		}
 	});
 }
 

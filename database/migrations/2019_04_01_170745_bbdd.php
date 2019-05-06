@@ -30,11 +30,19 @@ class Bbdd extends Migration
             $table->string('user_bg_style')->nullable();
             $table->boolean('banned')->default(0);
         });
+        
+        Schema::create('categories', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
+            $table->increments('id');
+            $table->string('name');
+            $table->string('description');
+        });
 
         Schema::create('threads', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->string('category');
+            $table->unsignedInteger('category');
+            $table->foreign('category')->references('id')->on('categories');
             $table->string('thread');
             $table->string('url')->unique();
             $table->timestamps();
@@ -56,6 +64,7 @@ class Bbdd extends Migration
             $table->longtext('content');
             $table->timestamps();
         });
+
     }
 
     /**
@@ -66,6 +75,7 @@ class Bbdd extends Migration
     public function down()
     {
         Schema::dropIfExists('users');
+        Schema::dropIfExists('categories');
         Schema::dropIfExists('threads');
         Schema::dropIfExists('messages');
     }

@@ -1,0 +1,4 @@
+Oficial -> Comunicados y temas de gran importancia para la comunidad de TuForo.Net.
+General -> Charlas, esparcimiento y temas que no tienen cabida en los otros subforos.
+Motor -> Todo sobre el motor: Coches, Noticias, Curiosidades ...
+Noticias -> Temas de actualidad y noticias de prensa.

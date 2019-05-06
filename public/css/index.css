@@ -11,10 +11,11 @@
 
 	/* THREAD INFO */
 
-		tr[class='threadInfo'] {	border: 1px solid black;
+		.threadInfo {	border: 1px solid black;
+						padding: 5px;
 		}
 
-		tr[class='threadInfo']:hover {	background-color: #3F3F3F;
+		.threadInfo:hover {	background-color: #3F3F3F;
 		}
 
 		/* THREAD CATEGORY IMAGE */

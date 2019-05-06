@@ -23,16 +23,16 @@
         <div style="width: 70%; float: left">
             <table id='threadsPanel'>
                 <tr class="threadInfo">
-                    <td class='threadCategory'>
+                    <td class='threadCategory' style="background-color: #4F4F4F; padding: 5px">
                         <b>Categoría</b>
                     </td>
-                    <td class='threadName' style="padding: 0px 5px 0px 5px">
+                    <td class='threadName' style="background-color: #4F4F4F; padding: 5px">
                         <b>Tema</b>
                     </td>
-                    <td class='threadLastMsg' style="border: 1px solid black; border-width: 0px 1px 0px 1px; padding: 0px 5px 0px 5px">
+                    <td class='threadLastMsg' style="background-color: #4F4F4F; border: 1px solid black; border-width: 0px 1px 0px 1px; padding: 0px 5px 0px 5px">
                         <b>Último Mensaje</b>
                     </td>
-                    <td class='threadVR' style='padding: 0px 5px 0px 5px'>
+                    <td style='background-color: #4F4F4F; padding: 0px 5px 0px 5px'>
                         <b>Visitas/Respuestas</b>
                     </td>
                 </tr>
