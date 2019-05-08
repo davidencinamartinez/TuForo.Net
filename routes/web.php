@@ -18,8 +18,7 @@ Route::get('/', 'IndexController@index');
 // USER REGISTRATION
 
 Route::get('registro', 'RegisterController@create'); // FORM
-Route::get('lol','RegisterController@index'); // AJAX
-// Route::post('registro', 'RegisterController@store'); // STORE NEW USER
+Route::post('registro', 'IndexController@store'); // STORE NEW USER
 
 // FORUM
 

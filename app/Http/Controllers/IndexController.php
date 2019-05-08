@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Carbon;
 use DB;
 
 class IndexController extends Controller {
@@ -45,5 +47,17 @@ class IndexController extends Controller {
 
    		return view('forum', [	'catData' => $categories
    		]);
+   }
+
+   public function store(Request $request) {
+   		DB::table('users')->insert([
+   			[	'name' => $request->input("reg_username"),
+   				'email' => $request->input("reg_email"),
+   				'password' => Hash::make($request->input('reg_password')),
+   				'remember_token' => $request->input("_token"),
+   				'created_at' => Carbon::now(),
+   				'updated_at' => Carbon::now()
+   			]
+   		])->validate();
    }
 }

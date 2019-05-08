@@ -9,11 +9,14 @@
 @push('scripts')
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src='{{ asset("js/register.js") }}'></script>
+    <script type='text/javascript' src='{{ asset("js/moment_js/moment.js") }}'></script>
+    <script type='text/javascript' src='{{ asset("js/moment_js/es.js") }}'></script>
 @endpush
 @section('postSection')
     <div id="registerPanel">
         <div id="inputForm">
-            <form method="POST" action="/register" autocomplete="off" onsubmit="return formValidation()">
+            <form method="POST" action="" onsubmit="return formValidation()">
+                @csrf
                 <p><b>Nombre de Usuario</b>*</p><input type="text" name="reg_username" maxlength="20" autofocus>
                 <p><b>Correo electrónico</b>*</p><input type="text" name="reg_email" maxlength="64">
                 <p><b>Contraseña</b>*</p><input type="password" name="reg_password" maxlength="64">

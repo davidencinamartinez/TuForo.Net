@@ -14,24 +14,6 @@ function showPassword(element) {
 	}
 }
 
-function userExists() {
-	var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
-	$.ajaxSetup({
-		headers: {  'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-		}
-	});
-	$.ajax({
-	   	type: 'get',
-	   	url: 'lol',
-	   	data: {_token: CSRF_TOKEN},
-	   success:function(data) {
-	      console.log(data[0].id);
-
-	      //$('input').eq(4).after('<label class="preventError"> '+data.msg+'</label>');
-	   }
-	});      
-}
-
 function errorDisplay(position,message) {
 	$(position).before($('<p>'+message+'</p>').attr({
 		class: 'error'
@@ -39,7 +21,7 @@ function errorDisplay(position,message) {
 }
 
 function checkName() {
-	var user = $('input').eq(3);
+	var user = $('input').eq(4);
 	if (user.val().length < 6) {
 		errorDisplay(user,'El nombre de usuario debe contener mínimo 6 carácteres');
 		return false;
@@ -52,7 +34,7 @@ function checkName() {
 }
 
 function checkMail() {
-	var mail = $('input').eq(4);
+	var mail = $('input').eq(5);
 	var reg = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,3}\b$/i;
 	if (reg.test(mail.val())) {
         return true;
@@ -63,8 +45,8 @@ function checkMail() {
 }
 
 function checkPassword() {
-	var pass = $('input').eq(5);
-	var pass_v = $('input').eq(6);
+	var pass = $('input').eq(6);
+	var pass_v = $('input').eq(7);
 	if (pass.val().length < 8) {
 		errorDisplay(pass,'La contraseña introducida es demasiado corta');
 		return false;
@@ -88,7 +70,7 @@ function checkCaptcha() {
 }
 
 function checkTerms() {
-	var terms = $('input').eq(7);
+	var terms = $('input').eq(8);
 	if (terms.is(':checked') == false) {
 		errorDisplay(terms,'Debes aceptar las condiciones de TuForo.Net');
 		return false;
@@ -109,6 +91,33 @@ function formValidation() {
 	if (result > 4) {
 		return true;
 	} else {
-		return false;	
+		return false;
 	}
+}
+
+function formSubmit() { // AJAX
+    $('#inputForm form').submit(function(e) {
+    	e.preventDefault();
+    	$.ajax({
+    	    type: 'POST',
+    	    url: 'registro',
+    	    data: { name: 'reg_username',
+    	            email: 'reg_email',
+    	            password: 'reg_password',
+    	            remember_token: '_token',
+    	            created_at: moment().format("YYYY-MM-DD HH:mm:ss"),
+    	            updated_at: moment().format("YYYY-MM-DD HH:mm:ss")
+    	        }
+    	})
+    	.done(function() {
+    	    console.log("success");
+    	    alert('SUCCESS');
+    	})
+    	.fail(function() {
+    	    console.log("error");
+    	})
+    	.always(function() {
+    	    console.log("complete");
+    	});
+    });
 }
