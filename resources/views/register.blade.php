@@ -15,7 +15,7 @@
 @section('postSection')
     <div id="registerPanel">
         <div id="inputForm">
-            <form method="POST" action="" onsubmit="return formValidation()">
+            <form method="POST" action="registro" onsubmit="return formValidation()">
                 @csrf
                 <p><b>Nombre de Usuario</b>*</p><input type="text" name="reg_username" maxlength="20" autofocus>
                 <p><b>Correo electrónico</b>*</p><input type="text" name="reg_email" maxlength="64">

@@ -94,30 +94,3 @@ function formValidation() {
 		return false;
 	}
 }
-
-function formSubmit() { // AJAX
-    $('#inputForm form').submit(function(e) {
-    	e.preventDefault();
-    	$.ajax({
-    	    type: 'POST',
-    	    url: 'registro',
-    	    data: { name: 'reg_username',
-    	            email: 'reg_email',
-    	            password: 'reg_password',
-    	            remember_token: '_token',
-    	            created_at: moment().format("YYYY-MM-DD HH:mm:ss"),
-    	            updated_at: moment().format("YYYY-MM-DD HH:mm:ss")
-    	        }
-    	})
-    	.done(function() {
-    	    console.log("success");
-    	    alert('SUCCESS');
-    	})
-    	.fail(function() {
-    	    console.log("error");
-    	})
-    	.always(function() {
-    	    console.log("complete");
-    	});
-    });
-}

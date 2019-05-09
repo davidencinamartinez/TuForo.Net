@@ -9,11 +9,9 @@
   <script src='{{ asset("js/thread.js") }}'></script>
 @endpush
 @section('postSection')
-  <script type="text/javascript">
-    $(document).ready(function() {
-      
-    });
-  </script>
+  <?php
+      $msgData = json_decode($msgData);
+  ?>
   <div id="threadBody">
     <h1>Bienvenido a TuForo.Net</h1>
     <div class="threadMsg">
@@ -44,6 +42,7 @@
         </tr>
       </table>
     </div>
+    @foreach($msgData as $msgData)
     <div class="threadMsg">
       <div class="msgInfo">
         <label class="msgTime">Hoy, 14:00</label>
@@ -72,5 +71,6 @@
         </tr>
       </table>
     </div>
+    @endforeach
   </div>
 @stop

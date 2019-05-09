@@ -2,6 +2,7 @@ function navBarActive() {
 	var pathArray = window.location.pathname.split('/');
 	var url = pathArray[1];
 	var navBarButton = $('.NavBar *').removeAttr('class');
+	console.log(window.screen.height+'x'+window.screen.width); // VER TAMAÑO PANTALLA
 	if (url == '') {
 		$('#startingPoint').attr('class', 'active');
 		$('#footer').css('position', 'relative');

@@ -58,6 +58,7 @@ class IndexController extends Controller {
    				'created_at' => Carbon::now(),
    				'updated_at' => Carbon::now()
    			]
-   		])->validate();
+   		]);
+   		return view('register');
    }
 }
