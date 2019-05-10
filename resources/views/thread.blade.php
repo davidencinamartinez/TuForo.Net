@@ -10,7 +10,7 @@
 @endpush
 @section('postSection')
   <?php
-      $msgData = json_decode($msgData);
+      $msgData = json_decode($threadData);
   ?>
   <div id="threadBody">
     <h1>Bienvenido a TuForo.Net</h1>

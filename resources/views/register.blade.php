@@ -15,7 +15,7 @@
 @section('postSection')
     <div id="registerPanel">
         <div id="inputForm">
-            <form method="POST" action="registro" onsubmit="return formValidation()">
+            <form>
                 @csrf
                 <p><b>Nombre de Usuario</b>*</p><input type="text" name="reg_username" maxlength="20" autofocus>
                 <p><b>Correo electrónico</b>*</p><input type="text" name="reg_email" maxlength="64">
@@ -32,7 +32,7 @@
                     <label>He leído y acepto los términos y condiciones de </label>
                     <b>TuForo.Net</b>
                 </p>
-                <input type="submit" id="reg_done" value="Registrarse">
+                <input type="button" id="reg_done" value="Registrarse" onclick="return formValidation()">
             </form>
         </div>
         <div id="privacyPolicy">

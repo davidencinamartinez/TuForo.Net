@@ -28,7 +28,6 @@ Route::get('forum', 'IndexController@catIndex'); // FORUM CATEGORIES
 
 Route::get('thread', function () {
     return view('thread');
-
 });
 
 // NEW THREAD
