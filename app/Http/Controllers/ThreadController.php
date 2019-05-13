@@ -3,20 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 
 class ThreadController extends Controller {
     
 	public function getThreadsIndex() {
 
-		$threads = 	DB::table(DB::raw('messages m, threads t, users u')) 
-					->select(DB::raw('m.created_at, m.id, m.content, u.name, u.user_title, u.user_pic, u.created_at, u.msg_count'))
-					->where('t.id', '=', 1)
-					->where('m.thread_id', '=', 't.id')
-					->where('m.creator', '=', 'u.id')
-					->get();
+		$threads = 	DB::SELECT('SELECT m.created_at, m.id, m.on_thread_id, u.name, u.user_title, u.user_pic, u.created_at, u.msg_count, m.content FROM messages m, users u, threads t WHERE t.id = 1 AND m.thread_id = t.id AND m.creator = u.id');
 
-		return view('thread', [	'threadData' => $threads]);
+		return view('thread', 	[	'threadData' => json_encode($threads)]);
 		// SELECT m.created_at, m.id, u.name, u.user_title, u.user_pic, u.created_at, u.msg_count, m.content FROM messages m, users u, threads t WHERE t.id = 1 AND m.thread_id = t.id AND m.creator = u.id
+
+		// GET AND RETRIEVE DATA ON BASE64
 
 	}
 }

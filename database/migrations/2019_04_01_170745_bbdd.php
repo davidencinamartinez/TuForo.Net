@@ -59,6 +59,7 @@ class Bbdd extends Migration
             $table->increments('id');
             $table->unsignedInteger('thread_id');
             $table->foreign('thread_id')->references('id')->on('threads');
+            $table->integer('on_thread_id');
             $table->unsignedInteger('creator');
             $table->foreign('creator')->references('id')->on('users');
             $table->longtext('content');
