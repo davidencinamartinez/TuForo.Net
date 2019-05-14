@@ -24,7 +24,7 @@ class IndexController extends Controller {
 		$countMessages = DB::table('messages')->count();
 
 		// COUNT VISITORS
-		$countVisitors = DB::table('threads')->sum('view_count')+1;
+		$countVisitors = DB::table('threads')->sum('view_count');
 
 		// COUNT ONLINE
 		$countOnline = DB::table('users')->where('last_activity', '>=', \DB::raw('DATE_SUB(NOW(), INTERVAL 1 HOUR)'))->count();

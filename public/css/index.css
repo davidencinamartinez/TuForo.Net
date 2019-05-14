@@ -36,6 +36,19 @@
 							width: 60%;
 			}
 
+			.threadName > b > a:link {	color: white;
+										text-decoration: none;
+			}
+
+			.threadName > b > a:hover {	color: #FF8C00;
+			}
+
+			.threadName > b > a:visited {	color: #dedede;
+			}			
+
+			.threadName > b > a:visited:hover {	color: #FF8C00;
+			}
+
 		/* THREAD LAST MESSAGE */
 
 			.threadLastMsg {	padding: 0px 5px 0px 5px;

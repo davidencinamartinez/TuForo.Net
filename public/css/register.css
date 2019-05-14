@@ -27,7 +27,13 @@
 
 		/* SUBMIT BUTTON */
 
-			input['name=["reg_done"]'] {	font-weight: bold;
+			#reg_done {	border: solid 1px black;
+						font-weight: bold;
+			}	
+
+			#reg_done:hover {	background-color: #FF8C00;
+								transition: 0.5s;
+								transform: perspective(1px) scale(1.05);
 			}
 
 	/* PRIVACY POLICY */

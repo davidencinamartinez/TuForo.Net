@@ -37,12 +37,12 @@
                     </td>
                 </tr>
                 @foreach($threadData as $threadData)
-                    <tr class="threadInfo" onclick='window.open("thread")'>
+                    <tr class="threadInfo">
                         <td class="threadCategory">
                             <img class='categoryPic' alt='{{ $threadData->category }}'>
                         </td>
                         <td class='threadName'>
-                            <b>{{ $threadData->thread }}</b>
+                            <b><a href="thread/{{ $threadData->id }}">{{ $threadData->thread }}</a></b>
                             <br>
                             <label style="float: left;">{{ $threadData->creator }}</label>
                         </td>

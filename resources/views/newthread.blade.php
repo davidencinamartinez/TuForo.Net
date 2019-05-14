@@ -1,6 +1,6 @@
 @extends('main')
 
-@section('title', 'TuForo.Net - Nuevo Hilo')
+@section('title', 'TuForo.Net - Nuevo Tema')
 
 @push('styles')
 	<link rel='stylesheet' type='text/css' href='{{ asset("css/newthread.css") }}'>
