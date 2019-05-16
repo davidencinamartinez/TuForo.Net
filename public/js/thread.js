@@ -13,3 +13,11 @@ function dateConvertMsg() {
 	var yearToday = new Date().getFullYear();
 	var dateToday = dayToday+'/'+monthToday+'/'+yearToday;
 }
+
+function setTitle() {
+	document.title = $('#threadBody h1').eq(0).text();
+}
+
+function replyPost() {
+	
+}

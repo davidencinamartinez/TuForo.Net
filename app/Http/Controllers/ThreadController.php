@@ -13,7 +13,11 @@ class ThreadController extends Controller {
 
 		DB::table('threads')->where('id','=',$id)->increment('view_count');
 
-		return view('thread', 	[	'threadData' => json_encode($threads)]);
+		$thread_title = DB::table('threads')->where('id','=',$id)->pluck('thread');
+
+		return view('thread', 	[	'threadData' => json_encode($threads),
+									
+								]);
 		// SELECT m.created_at, m.id, u.name, u.user_title, u.user_pic, u.created_at, u.msg_count, m.content FROM messages m, users u, threads t WHERE t.id = 1 AND m.thread_id = t.id AND m.creator = u.id
 
 		// GET AND RETRIEVE DATA ON BASE64
