@@ -101,7 +101,7 @@
 
 		#replyButtons {	margin: auto;
 						background-color: #4F4F4F;
-						width: 95%;
+						width: 70%;
 						padding: 10px;
 						border: solid 1px black;
 		}
@@ -123,15 +123,33 @@
 
 	/* REPLY MESSAGE */
 
-		textarea[name="replyMsg"] {	resize: none;
-									width: 90%;
-									height: 200px;
-									outline: none;
-									font-family: 'Lato', sans-serif;
-									font-size: 14px;
-									border: solid 1px black;
-									padding: 10px;
+		div[name="replyMsg"] {	
+								width: 70%;
+								background-color: white;
+								color: black;
+								min-height: 200px;
+								outline: none;
+								font-family: 'Lato', sans-serif;
+								font-size: 14px;
+								text-align: left;
+								border: solid 1px black;
+								padding: 10px;
+								margin: auto;
 		}
+
+		/* REPLY IMAGE */
+
+			div[name="replyMsg"] img {	max-width: 100%;
+			}
+
+		/* REPLY YOUTUBE EMBED */
+
+			div[name="replyMsg"] iframe {	height: 315px;
+											width: 560px;
+											display: block;
+					    					margin: 30px auto 30px auto;
+											border: 1px solid black;
+			}
 
 	/* REPLY BUTTON */
 
@@ -173,4 +191,9 @@
 							display: block;
 	    					margin: 30px auto 30px auto;
 							border: 1px solid black;
+		}
+
+		[contenteditable] {
+		  /* will match all elements with contenteditable attribute */
+		  display: block;
 		}

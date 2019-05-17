@@ -27,6 +27,7 @@ Route::get('forum', 'IndexController@catIndex'); // FORUM CATEGORIES
 // THREAD
 
 Route::get('thread/{id}', 'ThreadController@getThreadsIndex');
+Route::post('thread/{id}', 'ThreadController@submitReply');
 
 // NEW THREAD
 
