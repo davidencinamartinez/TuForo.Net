@@ -180,8 +180,8 @@
 
 		/* MESSAGE PROPERTIES */
 
-			.msgText > img {	max-width: 100%;
-								max-height: 100%;
+			.msgText > img, .msgText > div > img {	max-width: 700px;
+													max-height: 700px;
 			}				
 
 	/* YOUTUBE EMBED */

@@ -6,6 +6,7 @@
 	<link rel='shortcut icon' type='image/png' href='/storage/src/logos/favicon.png'>
 	@stack('styles')
 	<link rel='stylesheet' type='text/css' href='{{ asset("/css/min.css") }}'>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 	@stack('scripts')
 	<script src='{{ asset("/js/main.js") }}'></script>
 	<script src='{{ asset("/js/jquery-3.3.1.js") }}'></script>
@@ -19,12 +20,23 @@
 	<div class='header'>
 		<img id='Banner' src='/storage/src/logos/banner100.png' alt='tuforonetlogo'>
 		<div class='userDiv'>
-			<form action='Redirect.php' method='POST'>
+			@if (Auth::check())
+				<div class="userLoged">
+					Bienvenido!
+				  	<a href="/profile/{{ Auth::user()->remember_token}}">
+				  		<b class="dropbtn">{{ Auth::user()->name }}</b>
+				  	</a>
+				  <a href="/logout"><i class="fas fa-power-off"></i></a>
+				</div>
+			@else
+			<form action='/login' method='POST'>
+				@csrf
 				<input type='text' name='user' maxlength='20' placeholder='Usuario'>
 				<input type='password' name='password' maxlength='48' placeholder='Contraseña'>
 				<input type='submit' value='Entrar'>
 			</form>
 		<br>
+		@endif
 		</div>
 	</div>
 	<div class='navBar'>

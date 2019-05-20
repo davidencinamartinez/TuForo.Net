@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use DB;
 
 class ThreadController extends Controller {
@@ -18,18 +19,39 @@ class ThreadController extends Controller {
 		return view('thread', 	[	'threadData' => json_encode($threads)	]);
 	}
 
-	public function submitReply(Request $request, $id) {
+	public function submitReply(Request $request) {
 
-		$on_thread_id = DB::table('messages')->max('on_thread_id')->where('id','=',$id);
+		$on_thread_id = DB::table('messages')->where('thread_id','=',$request->input('thread_id'))->max('on_thread_id')+1;
+		$creator = DB::table('users')->where('name', '=', $request->input('creator'))->value('id');
 
 		DB::table('messages')->insert([
-			[	'thread_id' => $request->input("thread_id"),
+			[	'thread_id' => $request->input('thread_id'),
 				'on_thread_id' => $on_thread_id,
-				'creator' => 1,
-				'content' => $request->input("content"),
+				'creator' => $creator,
+				'content' => $request->input('content'),
 				'created_at' => Carbon::now(),
    				'updated_at' => Carbon::now()
 			]
 		]);
+
+		// INCREMENTS
+
+		DB::table('users')->where('name', '=', $request->input('creator'))->increment('msg_count');
+		
+		DB::table('threads')->where('id', '=', $request->input('thread_id'))->increment('reply_count');
+
+		// UPDATE
+
+		DB::table('threads')->where('id', '=', $request->input('thread_id'))->update([
+			'updated_at' => Carbon::now(),
+			'last_reply_time' => Carbon::now(),
+			'last_reply_user' => $request->input('creator'),
+		]);
+
+		DB::table('users')->where('id', '=', $creator)->update([
+			'last_activity' => Carbon::now()
+		]);
+
+		return back();
    	}
 }

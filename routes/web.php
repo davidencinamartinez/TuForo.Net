@@ -11,24 +11,29 @@
 |
 */
 
+// LOG IN & LOG OUT
+
+Route::post('/login', 'UserController@login');
+Route::get('/logout', 'UserController@logout');
+
 // INDEX
 
 Route::get('/', 'IndexController@index');
 
 // USER REGISTRATION
 
-Route::get('registro', 'RegisterController@create'); // FORM
-Route::post('registro', 'IndexController@store'); // STORE NEW USER
+Route::get('/registro', 'RegisterController@create'); // FORM
+Route::post('/registro', 'IndexController@store'); // STORE NEW USER
 
 // FORUM
 
-Route::get('forum', 'IndexController@catIndex'); // FORUM CATEGORIES
+Route::get('/forum', 'IndexController@catIndex'); // FORUM CATEGORIES
 
 // THREAD
 
-Route::get('thread/{id}', 'ThreadController@getThreadsIndex');
-Route::post('thread/{id}', 'ThreadController@submitReply');
+Route::get('/thread/{id}', 'ThreadController@getThreadsIndex');
+Route::post('/sendReply', 'ThreadController@submitReply');
 
 // NEW THREAD
 
-Route::get('newthread', 'NewThreadController@index');
+Route::get('/newthread', 'NewThreadController@index');

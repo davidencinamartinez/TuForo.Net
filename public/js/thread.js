@@ -75,32 +75,16 @@ function replyFormat() {
 		document.execCommand('createLink', true, urlPrompt);
 	});
 	$('#replyButton').on('click', function(event) {
-		$.ajaxSetup({
-			headers: {
-				'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-			}
-		});    
-		event.preventDefault();
-		$.ajax({
-			url: window.location.pathname,
-			type: 'POST',
-			data: {	thread_id: window.location.pathname.split('/')[2],
-					content: $('div[name="replyMsg"]').html(),
-		},
-		})
-		.done(function() {
-			console.log("success");
-		})
-		.fail(function() {
-			console.log("error");
-		})
-		.always(function() {
-			console.log("complete");
-		});
-		
+		replyCorrect		
 	});
 }
 
+function replyCorrect() {
+	$('input[name="thread_id"]').attr('value', window.location.pathname.split('/')[2]);
+	$('input[name="creator"]').attr('value', $('.userLoged a b').text());
+	$('input[name="content"]').attr('value', $('div[name="replyMsg"]').html());
+	return true;
+}
 /* 
 
 para el lunes

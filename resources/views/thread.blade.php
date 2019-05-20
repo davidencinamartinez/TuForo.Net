@@ -17,7 +17,6 @@
   <script type='text/javascript' src='{{ asset("/js/moment_js/es.js") }}'></script>
 @endpush
 @section('postSection')
-	@csrf
 	<script type="text/javascript">
 		$(document).ready(function() {
 		  setTitle();
@@ -54,28 +53,37 @@
       </table>
     </div>
     @endforeach
-    <div id="replyPost">
-	    <div id="replyButtons">
-	      <button><i class="fas fa-fill-drip"></i></button>
-	      <button><i class="fas fa-bold"></i></button>
-	      <button><i class="fas fa-italic"></i></button>
-	      <button><i class="fas fa-underline"></i></button>
-	      |
-	      <button><i class="fas fa-align-left"></i></button>
-	      <button><i class="fas fa-align-center"></i></button>
-	      <button><i class="fas fa-align-right"></i></button>
-	      <button><i class="fas fa-align-justify"></i></button>
-	      |
-	      <button><i class="fas fa-list-ul"></i></button>
-	      <button><i class="fas fa-list-ol"></i></button>
-	      |
-	      <button><i class="fas fa-image"></i></button>
-	      <button><i class="fas fa-video"></i></button>
-	      <button><i class="far fa-laugh-beam"></i></button>
-	      <button><i class="fas fa-link"></i></button>
-	    </div>
-	    <div name="replyMsg" placeholder="Introduce tu respuesta..." contenteditable="true"></div>
-	    <button id="replyButton">Responder</button>
+    @if (Auth::check())
+      <div id="replyPost">
+  	    <div id="replyButtons">
+  	      <button><i class="fas fa-fill-drip"></i></button>
+  	      <button><i class="fas fa-bold"></i></button>
+  	      <button><i class="fas fa-italic"></i></button>
+  	      <button><i class="fas fa-underline"></i></button>
+  	      |
+  	      <button><i class="fas fa-align-left"></i></button>
+  	      <button><i class="fas fa-align-center"></i></button>
+  	      <button><i class="fas fa-align-right"></i></button>
+  	      <button><i class="fas fa-align-justify"></i></button>
+  	      |
+  	      <button><i class="fas fa-list-ul"></i></button>
+  	      <button><i class="fas fa-list-ol"></i></button>
+  	      |
+  	      <button><i class="fas fa-image"></i></button>
+  	      <button><i class="fas fa-video"></i></button>
+  	      <button><i class="far fa-laugh-beam"></i></button>
+  	      <button><i class="fas fa-link"></i></button>
+  	    </div>
+        <div name="replyMsg" placeholder="Introduce tu respuesta..." contenteditable="true"></div>
+        <form action='/sendReply' method="POST" onsubmit="return replyCorrect()">
+          @csrf
+          <input type="hidden" name="thread_id">
+          <input type="hidden" name="creator">
+          <input type="hidden" name="content">
+          <input type="submit" id="replyButton" value="Responder">
+        </form>
+      </div>
+    @endif
     </div>
   </div>
 @stop
