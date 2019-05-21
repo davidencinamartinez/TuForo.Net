@@ -25,6 +25,21 @@
 								float: left;
 			}
 
+		/* CATEGORY LINK */
+
+			.catInfo > a:link {	text-decoration: none;
+								color: white;
+			}
+
+			.catInfo > a:hover {	color: #FF8C00;
+			}
+
+			.catInfo > a:visited {	color: #DEDEDE;
+			}			
+
+			.catInfo > a:visited:hover {	color: #FF8C00;
+			}
+
 		/* CATEGORY NAME */
 		
 			.catName {	font-size: 18px;

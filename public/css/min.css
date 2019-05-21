@@ -14,6 +14,13 @@
 			padding: auto;
 	}
 
+/* ERRORS */
+
+	.error {	font-weight: bold;
+				font-size: 14px;
+				color: #FF4040;
+	}
+
 /* IMG BANNER */
 
 	img[id="Banner"] {	width: 20%;
@@ -36,7 +43,6 @@
 		/* IF USER LOGED */
 
 			.userLoged {	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-
 			}
 
 			.userLoged a {	text-decoration: none;
@@ -47,6 +53,7 @@
 							background-color: #FF8C00;
 							border-radius: 50%;
 							border: 1px solid black;
+							transition: 0.25s ease-out;
 			}
 
 			.userLoged i:hover {	background-color: black;

@@ -44,13 +44,6 @@
 							margin-left: 10px;
 		}
 
-/* ERRORS */
-
-	.error {	font-weight: bold;
-				font-size: 14px;
-				color: #FF4040;
-	}
-
 /* SUCCESS PANEL */
 
 	#successPanel {	height: auto;

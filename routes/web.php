@@ -27,7 +27,7 @@ Route::post('/registro', 'IndexController@store'); // STORE NEW USER
 
 // FORUM
 
-Route::get('/forum', 'IndexController@catIndex'); // FORUM CATEGORIES
+Route::get('/foro', 'IndexController@catIndex'); // FORUM CATEGORIES
 
 // THREAD
 

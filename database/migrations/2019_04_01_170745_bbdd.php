@@ -36,6 +36,8 @@ class Bbdd extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('description');
+            $table->string('url')->unique;
+            $table->integer('last_msg_thread_id')->nullable();
         });
 
         Schema::create('threads', function (Blueprint $table) {
@@ -44,7 +46,6 @@ class Bbdd extends Migration
             $table->unsignedInteger('category');
             $table->foreign('category')->references('id')->on('categories');
             $table->string('thread');
-            $table->string('url')->unique();
             $table->timestamps();
             $table->string('creator');
             $table->integer('view_count')->default(0);

@@ -7,7 +7,7 @@ function navBarActive() {
 		$('#startingPoint').attr('class', 'active');
 		$('#footer').css('position', 'relative');
 	}
-	if (url == 'forum' || url == 'thread') {
+	if (url == 'foro' || url == 'thread') {
 		$('#forumEntry').attr('class', 'active');
 		$('#footer').css('position', 'relative');
 	}
@@ -26,6 +26,12 @@ function navBarActive() {
 			textShadow: '-1px 0 white, 0 1px white, 1px 0 white, 0 -1px white'
 		});
 	}
+}
+
+function errorDisplay(position,message) {
+	$(position).before($('<p>'+message+'</p>').attr({
+		class: 'error'
+	}));
 }
 
 function threadCategoryPic() {

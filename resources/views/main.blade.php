@@ -41,9 +41,13 @@
 	</div>
 	<div class='navBar'>
 		<a href='/' id='startingPoint'>Inicio</a>
-		<a href='/forum' id='forumEntry'>Foro</a>
+		<a href='/foro' id='forumEntry'>Foro</a>
 		<a href='/registro' id="registerPage">Registro</a>
-		<a href='/newthread' id="newThreadButton">Crear Tema</a>
+		@if (Auth::check())
+			<a href='/newthread' id="newThreadButton">Crear Tema</a>
+		@else
+			<a onclick="alert('Debes estar logeado para crear un nuevo tema.\nSerás redirigido a la página de inicio.')" href='/' id="newThreadButton">Crear Tema</a>
+		@endif
 	</div>
 	<div class='headerAdsContainer'>
 		<a href="https://www.livingroomofsatoshi.com/" target='_blank'>

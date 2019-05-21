@@ -85,19 +85,3 @@ function replyCorrect() {
 	$('input[name="content"]').attr('value', $('div[name="replyMsg"]').html());
 	return true;
 }
-/* 
-
-para el lunes
-
-cartel a4 apaisado jpg
-
-grupo aws2
-curso 2018-2019
-nombre participantes
-nombre proyecto
-eslogan
-fecha, hora y lugar
-
-mi fecha: martes 28 a las 7:30 
-
-*/

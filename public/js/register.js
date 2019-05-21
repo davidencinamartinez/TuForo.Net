@@ -14,14 +14,8 @@ function showPassword(element) {
 	}
 }
 
-function errorDisplay(position,message) {
-	$(position).before($('<p>'+message+'</p>').attr({
-		class: 'error'
-	}));
-}
-
 function checkName() {
-	var user = $('input').eq(4);
+	var user = $('input[name="reg_username"]');
 	if (user.val().length < 6) {
 		errorDisplay(user,'El nombre de usuario debe contener mínimo 6 carácteres');
 		return false;
@@ -34,7 +28,7 @@ function checkName() {
 }
 
 function checkMail() {
-	var mail = $('input').eq(5);
+	var mail = $('input[name="reg_email"]');
 	var reg = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,3}\b$/i;
 	if (reg.test(mail.val())) {
         return true;
@@ -45,8 +39,8 @@ function checkMail() {
 }
 
 function checkPassword() {
-	var pass = $('input').eq(6);
-	var pass_v = $('input').eq(7);
+	var pass = $('input[name="reg_password"]');
+	var pass_v = $('input[name="reg_passwordVerified"]');
 	if (pass.val().length < 8) {
 		errorDisplay(pass,'La contraseña introducida es demasiado corta');
 		return false;
@@ -70,7 +64,7 @@ function checkCaptcha() {
 }
 
 function checkTerms() {
-	var terms = $('input').eq(8);
+	var terms = $('input[name="reg_terms"]');
 	if (terms.is(':checked') == false) {
 		errorDisplay(terms,'Debes aceptar las condiciones de TuForo.Net');
 		return false;
@@ -83,7 +77,7 @@ function formValidation() {
 	$('.error').remove();
     var checkForm = [checkName(),checkMail(),checkPassword(),checkCaptcha(),checkTerms()];
     var result = 0;
-    var verifyMail = $('input').eq(5).val();
+    var verifyMail = $('input[name="reg_email"]').val();
 	$.ajaxSetup({
 		headers: {
 			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -99,10 +93,10 @@ function formValidation() {
         $.ajax({
             url: 'registro',
             type: 'POST',
-            data: { _token: $('input').eq(3).val(),
-                    reg_username: $('input').eq(4).val(),
-                    reg_email: $('input').eq(5).val(),
-                    reg_password: $('input').eq(6).val()
+            data: { _token: $('input[name="_token"]').val(),
+                    reg_username: $('input[name="reg_username"]').val(),
+                    reg_email: $('input[name="reg_email"]').val(),
+                    reg_password: $('input[name="reg_password"]').val()
         },
         })
         .done(function() {

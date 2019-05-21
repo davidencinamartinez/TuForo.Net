@@ -8,9 +8,8 @@ use DB;
 class NewThreadController extends Controller
 {
     public function index() {
-      $data = json_encode(DB::table('users')->get());
+      $categories = DB::table('categories')->get();
       
-      return view('newthread', ['mydata' => $data]);
-
+      return view('newthread')->with('cat', $categories);
    }
 }

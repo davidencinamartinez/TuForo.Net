@@ -28,9 +28,9 @@
 				</tr>
 				@foreach($catData as $catData)
 				<tr>
-					<td class='catInfo' onclick='window.open("forum/general")'>
+					<td class='catInfo'>
 						<img class='categoryPic' alt='{{ $catData->id }}'>
-						<b class='catName'>{{ $catData->name }}</b>
+						<a href="foro{{ $catData->url }}"><b class='catName'>{{ $catData->name }}</b></a>
 						<br>
 						<label class='catDesc'>{{ $catData->description }}</label>
 					</td>
