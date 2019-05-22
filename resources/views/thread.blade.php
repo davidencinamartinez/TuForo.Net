@@ -1,7 +1,3 @@
-<?php
-  $msgData = json_decode($threadData);
-  setlocale(LC_TIME, 'es_ES');
-?>
 @extends('main')
 
 @section('title', '-')
@@ -15,6 +11,7 @@
   <script src='{{ asset("/js/thread.js") }}'></script>
   <script type='text/javascript' src='{{ asset("/js/moment_js/moment.js") }}'></script>
   <script type='text/javascript' src='{{ asset("/js/moment_js/es.js") }}'></script>
+  <script type='text/javascript' src='{{ asset("/js/reply.js") }}'></script>
 @endpush
 @section('postSection')
 	<script type="text/javascript">
@@ -25,29 +22,29 @@
 		});
 	</script>
 	<div id="threadBody">
-    <h1>{!! $msgData[0]->thread !!}</h1>
-    @foreach($msgData as $msgData)
+    <h1>{{ $threadTitle }}</h1>
+    @foreach($threadData as $threadData)
     <div class="threadMsg">
       <div class="msgInfo">
-        <label class="msgTime">{{ date('d/m/Y', strtotime($msgData->msg_created_at)) }}</label>
-        <label>, {{ date('H:i', strtotime($msgData->msg_created_at)) }}</label>
-        <label class="msgId">#{{ $msgData->on_thread_id }}</label>
+        <label class="msgTime">{{ date('d/m/Y', strtotime($threadData->msg_created_at)) }}</label>
+        <label>, {{ date('H:i', strtotime($threadData->msg_created_at)) }}</label>
+        <label class="msgId">#{{ $threadData->on_thread_id }}</label>
       </div>
       <table class="msgBody" cellspacing="0">
         <tr>
           <td class="userInfo">
-            <label class="userName">{{ $msgData->name }}</label>
+            <label class="userName">{{ $threadData->name }}</label>
             <br>
-            <label class="userTitle">{{ $msgData->user_title }}</label>
+            <label class="userTitle">{{ $threadData->user_title }}</label>
             <br>
-            <img class="userPic" src="{{ $msgData->user_pic }}">
+            <img class="userPic" src="{{ $threadData->user_pic }}">
             <br>
-            <b>Registro: </b><label class="userRegDate">{{ strftime('%b %Y', strtotime($msgData->created_at)) }}</label>
+            <b>Registro: </b><label class="userRegDate">{{ strftime('%b %Y', strtotime($threadData->created_at)) }}</label>
             <br>
-            <b>Mensajes: </b><label class="userMsgCount">{{ $msgData->msg_count }}</label>
+            <b>Mensajes: </b><label class="userMsgCount">{{ $threadData->msg_count }}</label>
           </td>
           <td class="msgText">
-            {!! $msgData->content !!}
+            {!! $threadData->content !!}
           </td>
         </tr>
       </table>
@@ -56,23 +53,23 @@
     @if (Auth::check())
       <div id="replyPost">
   	    <div id="replyButtons">
-  	      <button><i class="fas fa-fill-drip"></i></button>
-  	      <button><i class="fas fa-bold"></i></button>
-  	      <button><i class="fas fa-italic"></i></button>
-  	      <button><i class="fas fa-underline"></i></button>
-  	      |
-  	      <button><i class="fas fa-align-left"></i></button>
-  	      <button><i class="fas fa-align-center"></i></button>
-  	      <button><i class="fas fa-align-right"></i></button>
-  	      <button><i class="fas fa-align-justify"></i></button>
-  	      |
-  	      <button><i class="fas fa-list-ul"></i></button>
-  	      <button><i class="fas fa-list-ol"></i></button>
-  	      |
-  	      <button><i class="fas fa-image"></i></button>
-  	      <button><i class="fas fa-video"></i></button>
-  	      <button><i class="far fa-laugh-beam"></i></button>
-  	      <button><i class="fas fa-link"></i></button>
+  	       <button type="button"><i class="fas fa-fill-drip"></i></button>
+            <button type="button"><i class="fas fa-bold"></i></button>
+            <button type="button"><i class="fas fa-italic"></i></button>
+            <button type="button"><i class="fas fa-underline"></i></button>
+            |
+            <button type="button"><i class="fas fa-align-left"></i></button>
+            <button type="button"><i class="fas fa-align-center"></i></button>
+            <button type="button"><i class="fas fa-align-right"></i></button>
+            <button type="button"><i class="fas fa-align-justify"></i></button>
+            |
+            <button type="button"><i class="fas fa-list-ul"></i></button>
+            <button type="button"><i class="fas fa-list-ol"></i></button>
+            |
+            <button type="button"><i class="fas fa-image"></i></button>
+            <button type="button"><i class="fas fa-video"></i></button>
+            <button type="button"><i class="far fa-laugh-beam"></i></button>
+            <button type="button"><i class="fas fa-link"></i></button>
   	    </div>
         <div name="replyMsg" placeholder="Introduce tu respuesta..." contenteditable="true"></div>
         <form action='/sendReply' method="POST" onsubmit="return replyCorrect()">

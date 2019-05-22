@@ -22,10 +22,10 @@
 		<div class='userDiv'>
 			@if (Auth::check())
 				<div class="userLoged">
-					Bienvenido!
+					Bienvenido
 				  	<a href="/profile/{{ Auth::user()->remember_token}}">
 				  		<b class="dropbtn">{{ Auth::user()->name }}</b>
-				  	</a>
+				  	</a>!&#8194;
 				  <a href="/logout"><i class="fas fa-power-off"></i></a>
 				</div>
 			@else

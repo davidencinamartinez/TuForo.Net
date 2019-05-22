@@ -37,3 +37,4 @@ Route::post('/sendReply', 'ThreadController@submitReply');
 // NEW THREAD
 
 Route::get('/newthread', 'NewThreadController@index');
+Route::post('/createThread', 'NewThreadController@newThreadStore');

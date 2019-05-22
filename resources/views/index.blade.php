@@ -20,7 +20,7 @@
         });
     </script>
     <div style="width: 100%; height: auto">
-        <div style="width: 70%; float: left">
+        <div style="width: 70%; float: left; margin: 10px 0px 10px 0px;">
             <table id='threadsPanel'>
                 <tr class="threadInfo">
                     <td class='threadCategory' style="background-color: #4F4F4F; padding: 5px">

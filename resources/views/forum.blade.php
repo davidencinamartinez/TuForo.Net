@@ -16,7 +16,7 @@
 	    });
 	</script>
 	<div style="width: 100%; height: auto;">
-		<div style="width: 70%; float: left">
+		<div style="width: 70%; float: left; margin: 10px 0px 10px 0px;">
 			<table id="catPanel">
 				<tr>
 					<td class='catInfo' style="background-color: #4F4F4F">
@@ -30,7 +30,7 @@
 				<tr>
 					<td class='catInfo'>
 						<img class='categoryPic' alt='{{ $catData->id }}'>
-						<a href="foro{{ $catData->url }}"><b class='catName'>{{ $catData->name }}</b></a>
+						<a href="foro/{{ $catData->url }}"><b class='catName'>{{ $catData->name }}</b></a>
 						<br>
 						<label class='catDesc'>{{ $catData->description }}</label>
 					</td>

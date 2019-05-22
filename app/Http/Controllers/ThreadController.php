@@ -14,9 +14,11 @@ class ThreadController extends Controller {
 
 		DB::table('threads')->where('id','=',$id)->increment('view_count');
 
-		$thread_title = DB::table('threads')->where('id','=',$id)->pluck('thread');
+		$thread_title = DB::table('threads')->where('id','=',$id)->value('thread');
 
-		return view('thread', 	[	'threadData' => json_encode($threads)	]);
+		return view('thread', 	[	'threadData' => $threads,
+									'threadTitle' => $thread_title
+		]);
 	}
 
 	public function submitReply(Request $request) {

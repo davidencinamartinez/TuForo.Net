@@ -25,6 +25,7 @@ function navBarActive() {
 			color: 'black',
 			textShadow: '-1px 0 white, 0 1px white, 1px 0 white, 0 -1px white'
 		});
+		$('#startingPoint').attr('class', 'active');
 	}
 }
 

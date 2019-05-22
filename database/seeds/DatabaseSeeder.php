@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -61,12 +62,26 @@ class DatabaseSeeder extends Seeder
 	  			]
 	  		]);  
 
+	  	// USER
+
+  			DB::table('users')->insert([
+  				[	'name' => 'ViBoXx',
+  					'email' => 'viboxx@gmail.com',
+  					'password' => Hash::make('P@ssw0rd'),
+  					'remember_token' => str_random(50),
+  					'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+  					'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+  					'user_pic' => '/storage/src/profiles/ViBoXx.gif',
+  					'user_title' => '⭐ Maestro del Foro ⭐'
+  				]
+  			]);
+
 	  	// THREADS
 
   			DB::table('threads')->insert([
   				[	'category' => 1,
   					'thread' => 'Bienvenidos a TuForo.Net',
-  					'created_at' => Carbon::now(),
+  					'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
   					'creator' => 'ViBoXx'
   				]
   			]);
