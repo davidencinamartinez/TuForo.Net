@@ -35,9 +35,13 @@
 						<label class='catDesc'>{{ $catData->description }}</label>
 					</td>
 					<td class='catLastMsg'>
-						<b>Bienvenido a TuForo.Net</b>
+						@if ($catData->last_msg_thread_id->isEmpty()) {
+						<b>{{$catData->last_msg_thread_id}}</b>
 						<br>
 						<label>Hoy - 14:25</label>
+					}
+						@else
+						@endif
 					</td>
 				</tr>
 				@endforeach

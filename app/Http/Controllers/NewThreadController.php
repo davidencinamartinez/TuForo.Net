@@ -20,14 +20,15 @@ class NewThreadController extends Controller
    		// VARS 
 
    			$t_cat = DB::table('categories')->where('url', '=', $request->input('thread_category'))->value('id');
-   			$t_id = DB::table('threads')->max('id');
+   			$t_id = DB::table('threads')->max('id')+1;
  
    		// USERS UPDATE
 
    			DB::table('users')->where('id', '=', auth()->guard()->id())->update(
    				[
    					'last_activity' => Carbon::now()->format('Y-m-d H:i:s'),
-   					'thread_count' => DB::raw('thread_count + 1')
+   					'msg_count' => DB::raw('msg_count + 1'),
+                  'thread_count' => DB::raw('thread_count + 1')
    				]
    			);
 
@@ -37,11 +38,12 @@ class NewThreadController extends Controller
 				[	'category' => $t_cat,
 					'thread' => $request->input('thread_title'),
 					'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-	   				'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
-	   				'creator' => auth()->guard()->user()->name,
-	   				'last_reply_time' => Carbon::now()->format('Y-m-d H:i:s'),
-	   				'last_reply_user' => auth()->guard()->user()->name
-	   			]
+   				'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+               'last_activity' => Carbon::now()->format('Y-m-d H:i:s'),
+   				'creator' => auth()->guard()->user()->name,
+   				'last_reply_time' => Carbon::now()->format('Y-m-d H:i:s'),
+   				'last_reply_user' => auth()->guard()->user()->name
+	   		]
 			]);
 
 		// MESSAGE CREATION

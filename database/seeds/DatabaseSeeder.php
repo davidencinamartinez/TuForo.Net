@@ -18,7 +18,9 @@ class DatabaseSeeder extends Seeder
   			DB::table('categories')->insert([
 	  			[	'name' => 'Oficial',
 	  				'description' => 'Comunicados y temas de gran importancia para la comunidad de TuForo.Net.',
-	  				'url' => '/oficial'
+	  				'url' => '/oficial',
+	  				'last_msg_thread_id' => 1,
+	  				'last_msg_thread_time' => Carbon::now()->format('Y-m-d H:i:s')
 	  			],
 	  			[	'name' => 'General',
 	  				'description' => 'Charlas, esparcimiento y temas que no tienen cabida en los otros subforos.',
@@ -71,6 +73,9 @@ class DatabaseSeeder extends Seeder
   					'remember_token' => str_random(50),
   					'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
   					'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+  					'last_activity' => Carbon::now()->format('Y-m-d H:i:s'),
+  					'msg_count' => 1,
+  					'thread_count' => 1,
   					'user_pic' => '/storage/src/profiles/ViBoXx.gif',
   					'user_title' => '⭐ Maestro del Foro ⭐'
   				]
@@ -82,7 +87,10 @@ class DatabaseSeeder extends Seeder
   				[	'category' => 1,
   					'thread' => 'Bienvenidos a TuForo.Net',
   					'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-  					'creator' => 'ViBoXx'
+  					'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+  					'creator' => 'ViBoXx',
+  					'last_reply_time' => Carbon::now()->format('Y-m-d H:i:s'),
+  					'last_reply_user' => 'ViBoXx'
   				]
   			]);
 
@@ -92,7 +100,9 @@ class DatabaseSeeder extends Seeder
   				[	'thread_id' => 1,
   					'on_thread_id' => 1,
   					'creator' => 1,
-  					'content' => '<b>Bienvenidos a TuForo.Net!</b> :D'
+  					'content' => '<b>Bienvenidos a TuForo.Net!!!</b><div>Que lo paséis Bien :D</div><div><br></div><div style="text-align: center;"><br></div><div style="text-align: center;"><img src="https://sayingimages.com/wp-content/uploads/bring-in-celebration-meme.jpg"><br>',
+  					'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+  					'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
   				]
   			]);
     }

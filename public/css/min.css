@@ -20,6 +20,7 @@
 	.error {	font-weight: bold;
 				font-size: 14px;
 				color: #FF4040;
+				text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 	}
 
 /* IMG BANNER */
@@ -227,6 +228,9 @@
 								margin: auto;
 								text-shadow: none;
 								word-break: break-word;
+		}
+
+		div[ name="replyMsg"]:empty:not(:focus):before {	content: attr(data-placeholder)
 		}
 
 		/* REPLY IMAGE */

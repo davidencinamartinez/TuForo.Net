@@ -7,6 +7,7 @@
 @endpush
 @push('scripts')
     <script type='text/javascript' src='{{ asset("/js/reply.js") }}'></script>
+    <script type='text/javascript' src='{{ asset("/js/newthread.js") }}'></script>
 @endpush
 @section('postSection')
 <script type="text/javascript">
@@ -15,7 +16,7 @@
 	});
 </script>
 	<div id="newThreadPanel">
-		<form action='/createThread' method="POST" onsubmit="return replyCorrect()">
+		<form action='/createThread' method="POST" onsubmit="return threadEmptyTitle() && replyCorrect()">
 			<h2><b>Título del tema</b></h2><input type="text" name="thread_title" maxlength="85" autofocus>
 		    <div id="replyPost">
 			    <div id="replyButtons">
@@ -37,7 +38,7 @@
 			      <button type="button"><i class="far fa-laugh-beam"></i></button>
 			      <button type="button"><i class="fas fa-link"></i></button>
 			    </div>
-	      		<div name="replyMsg" placeholder="Introduce tu respuesta..." contenteditable="true"></div>
+	      		<div name="replyMsg" contenteditable="true" data-placeholder="Introduce tu respuesta ..."></div>
 	      		<br>
 			@csrf
 			<input type="hidden" name="thread_id">

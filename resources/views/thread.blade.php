@@ -71,7 +71,7 @@
             <button type="button"><i class="far fa-laugh-beam"></i></button>
             <button type="button"><i class="fas fa-link"></i></button>
   	    </div>
-        <div name="replyMsg" placeholder="Introduce tu respuesta..." contenteditable="true"></div>
+        <div name="replyMsg" contenteditable="true" data-placeholder="Introduce tu respuesta ..."></div>
         <form action='/sendReply' method="POST" onsubmit="return replyCorrect()">
           @csrf
           <input type="hidden" name="thread_id">
