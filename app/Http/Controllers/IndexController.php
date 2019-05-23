@@ -43,8 +43,7 @@ class IndexController extends Controller {
 
    		// GET ALL CATEGORIES
 
-   		$categories = json_encode(DB::table('categories')->orderBy('id', 'ASC')->get());
-
+   		$categories = DB::table('categories')->get();
    		return view('forum', [	'catData' => $categories
    		]);
    }

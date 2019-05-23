@@ -18,49 +18,47 @@ class DatabaseSeeder extends Seeder
   			DB::table('categories')->insert([
 	  			[	'name' => 'Oficial',
 	  				'description' => 'Comunicados y temas de gran importancia para la comunidad de TuForo.Net.',
-	  				'url' => '/oficial',
-	  				'last_msg_thread_id' => 1,
-	  				'last_msg_thread_time' => Carbon::now()->format('Y-m-d H:i:s')
+	  				'url' => 'oficial'
 	  			],
 	  			[	'name' => 'General',
 	  				'description' => 'Charlas, esparcimiento y temas que no tienen cabida en los otros subforos.',
-	  				'url' => '/general'
+	  				'url' => 'general'
 	  			],
 	  			[	'name' => 'Motor',
 	  				'description' => 'Todo sobre el motor: Coches, Noticias, Curiosidades ...',
-	  				'url' => '/motor'
+	  				'url' => 'motor'
 	  			],
 	  			[	'name' => 'Noticias',
 	  				'description' => 'Temas de actualidad y noticias de prensa.',
-	  				'url' => '/noticias'
+	  				'url' => 'noticias'
 	  			],
 	  			[	'name' => 'Informática',
 	  				'description' => 'Temas relacionados con la Tecnología, Informática, Smartphones ...',
-	  				'url' => '/informatica'
+	  				'url' => 'informatica'
 	  			],
 	  			[	'name' => 'Juegos',
 	  				'description' => 'Temas sobre Videojuegos, independientemente de su plataforma.',
-	  				'url' => '/juegos'
+	  				'url' => 'juegos'
 	  			],
 	  			[	'name' => 'Música',
 	  				'description' => 'Conciertos, festivales, lanzamientos y todo lo relacionado con el mundo de la música.',
-	  				'url' => '/musica'
+	  				'url' => 'musica'
 	  			],
 	  			[	'name' => 'Política',
 	  				'description' => 'Ideologías, partidos políticos, debates ...',
-	  				'url' => '/politica'
+	  				'url' => 'politica'
 	  			],
 	  			[	'name' => 'Fitness',
 	  				'description' => 'Temas relacionados con el mundo del Fitness, el gimnasio y las pesas.',
-	  				'url' => '/fitness'
+	  				'url' => 'fitness'
 	  			],
 	  			[	'name' => 'Deportes',
 	  				'description' => 'Todo lo relacionado con temas deportivos como fútbol, baloncesto, tennis ...',
-	  				'url' => '/deportes'
+	  				'url' => 'deportes'
 	  			],
 	  			[	'name' => 'Criptomonedas',
 	  				'description' => 'Todo lo relacionado con Bitcoin, Ethereum, Blockchain ...',
-	  				'url' => '/criptomonedas'
+	  				'url' => 'criptomonedas'
 	  			]
 	  		]);  
 
@@ -105,5 +103,12 @@ class DatabaseSeeder extends Seeder
   					'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
   				]
   			]);
+
+  			// UPDATE CATEGORY
+
+  			DB::table('categories')->where('id', '=', 1)->update([
+			'last_msg_title' => 'Bienvenidos a TuForo.Net',
+			'last_msg_time' => Carbon::now()->format('Y-m-d H:i:s')
+			]);
     }
 }

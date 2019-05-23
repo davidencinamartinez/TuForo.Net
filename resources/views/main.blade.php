@@ -10,6 +10,8 @@
 	@stack('scripts')
 	<script src='{{ asset("/js/main.js") }}'></script>
 	<script src='{{ asset("/js/jquery-3.3.1.js") }}'></script>
+	<script type='text/javascript' src='{{ asset("js/moment_js/moment.js") }}'></script>
+	<script type='text/javascript' src='{{ asset("js/moment_js/es.js") }}'></script>
 </head>
 <script type="text/javascript">
 	$(document).ready(function() {

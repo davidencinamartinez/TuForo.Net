@@ -6,9 +6,6 @@
 	<link rel='stylesheet' type='text/css' href='{{ asset("css/forum.css") }}'>	
 @endpush
 @section('postSection')
-	<?php
-	    $catData = json_decode($catData);
-	?>
 	<script type="text/javascript">
 	    $(document).ready(function() {
 	        threadCategoryPic();
@@ -35,12 +32,14 @@
 						<label class='catDesc'>{{ $catData->description }}</label>
 					</td>
 					<td class='catLastMsg'>
-						@if ($catData->last_msg_thread_id->isEmpty()) {
-						<b>{{$catData->last_msg_thread_id}}</b>
-						<br>
-						<label>Hoy - 14:25</label>
-					}
+						@if (is_null($catData->last_msg_title)) 
+						<b>No hay temas disponibles</b>
 						@else
+						<b>{{ $catData->last_msg_title }}</b>
+						<br>
+						<label class="threadDate">{{ date('d/m/Y', strtotime($catData->last_msg_time)) }}</label>
+						-
+						<label>{{ date('H:i', strtotime($catData->last_msg_time)) }}</label>
 						@endif
 					</td>
 				</tr>

@@ -131,7 +131,7 @@
 /* FOOTER */
 
 	#footer {	background-color: #4F4F4F;
-				position: relative;
+				position: fixed;
 				margin-top: 20px;
 				overflow: hidden;
   				left: 0;
@@ -276,8 +276,8 @@
 
 		/* MESSAGE PROPERTIES */
 
-			.msgText > img, .msgText > div > img {	max-width: 700px;
-													max-height: 700px;
+			.msgText > img, .msgText > div > img {	max-width: 100%;
+													height: auto;
 			}				
 
 	/* YOUTUBE EMBED */

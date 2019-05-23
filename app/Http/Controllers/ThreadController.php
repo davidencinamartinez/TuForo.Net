@@ -25,6 +25,8 @@ class ThreadController extends Controller {
 
 		$on_thread_id = DB::table('messages')->where('thread_id','=',$request->input('thread_id'))->max('on_thread_id')+1;
 		$creator = DB::table('users')->where('name', '=', $request->input('creator'))->value('id');
+		$thread_cat = DB::table('threads')->where('id', '=', $request->input('thread_id'))->value('category');
+		$thread_title = DB::table('threads')->where('id', '=', $request->input('thread_id'))->value('thread');
 
 		DB::table('messages')->insert([
 			[	'thread_id' => $request->input('thread_id'),
@@ -53,6 +55,12 @@ class ThreadController extends Controller {
 		DB::table('users')->where('id', '=', $creator)->update([
 			'last_activity' => Carbon::now()
 		]);
+
+		DB::table('categories')->where('id', '=', $thread_cat)->update(
+		   [  'last_msg_title' => $thread_title,
+		      'last_msg_time' => Carbon::now()->format('Y-m-d H:i:s')
+		   ]
+		);
 
 		return back();
    	}

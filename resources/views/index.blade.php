@@ -6,8 +6,6 @@
 	<link rel='stylesheet' type='text/css' href='{{ asset("css/index.css") }}'>
 @endpush
 @push('scripts')
-<script type='text/javascript' src='{{ asset("js/moment_js/moment.js") }}'></script>
-<script type='text/javascript' src='{{ asset("js/moment_js/es.js") }}'></script>
 @endpush
 @section('postSection')
     <?php

@@ -6,17 +6,18 @@ function navBarActive() {
 	if (url == '') {
 		$('#startingPoint').attr('class', 'active');
 		$('#footer').css('position', 'relative');
+
 	}
 	if (url == 'foro' || url == 'thread') {
 		$('#forumEntry').attr('class', 'active');
-		$('#footer').css('position', 'relative');
+		
 	}
 	if (url == 'registro') {
 		$('#registerPage').attr('class', 'active');
 		$('#footer').css('position', 'fixed');
 	}
 	if (url == 'thread') {
-		$('#footer').css('position', 'relative');
+		
 	}
 	if (url == 'newthread') {
 		$('#footer').css('position', 'fixed');

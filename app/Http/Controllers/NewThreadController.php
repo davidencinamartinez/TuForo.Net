@@ -25,12 +25,19 @@ class NewThreadController extends Controller
    		// USERS UPDATE
 
    			DB::table('users')->where('id', '=', auth()->guard()->id())->update(
-   				[
-   					'last_activity' => Carbon::now()->format('Y-m-d H:i:s'),
+   				[  'last_activity' => Carbon::now()->format('Y-m-d H:i:s'),
    					'msg_count' => DB::raw('msg_count + 1'),
                   'thread_count' => DB::raw('thread_count + 1')
    				]
    			);
+
+         // CATEGORY UPDATE
+
+            DB::table('categories')->where('name', '=', $request->input('thread_category'))->update(
+               [  'last_msg_title' => $request->input('thread_title'),
+                  'last_msg_time' => Carbon::now()->format('Y-m-d H:i:s')
+               ]
+            );
 
    		// THREAD CREATION
 
@@ -39,7 +46,6 @@ class NewThreadController extends Controller
 					'thread' => $request->input('thread_title'),
 					'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
    				'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
-               'last_activity' => Carbon::now()->format('Y-m-d H:i:s'),
    				'creator' => auth()->guard()->user()->name,
    				'last_reply_time' => Carbon::now()->format('Y-m-d H:i:s'),
    				'last_reply_user' => auth()->guard()->user()->name
@@ -54,9 +60,9 @@ class NewThreadController extends Controller
 					'creator' => auth()->guard()->id(),
 					'content' => $request->input('content'),
 					'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-	   				'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-   				]
-   			]);
+	   			'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+   			]
+   		]);
 			
 			return Redirect::to('/');
 	}

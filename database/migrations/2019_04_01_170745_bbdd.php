@@ -37,8 +37,8 @@ class Bbdd extends Migration
             $table->string('name');
             $table->string('description');
             $table->string('url')->unique;
-            $table->integer('last_msg_thread_id')->nullable();
-            $table->timestamp('last_msg_thread_time')->nullable();
+            $table->string('last_msg_title')->nullable();
+            $table->timestamp('last_msg_time')->nullable();
         });
 
         Schema::create('threads', function (Blueprint $table) {
