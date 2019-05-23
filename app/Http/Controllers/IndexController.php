@@ -55,8 +55,18 @@ class IndexController extends Controller {
    				'password' => Hash::make($request->input('reg_password')),
    				'remember_token' => $request->input("_token"),
    				'created_at' => Carbon::now(),
-   				'updated_at' => Carbon::now()
+   				'updated_at' => Carbon::now(),
+   				'user_pic' => '/storage/src/logos/logo128.png',
+   				'user_title' => 'Miembro de TuForo.Net'
    			]
    		]);
+   }
+
+   public function catThreads($category) {
+   	$threads_cat = DB::table('categories')->where('url', '=', $category)->value('id');
+   	$threads = 	DB::table('threads')->where('category', '=', $threads_cat)->get();
+
+   	return view('threadByCategory', [	'catData' => $threads
+   	]);
    }
 }

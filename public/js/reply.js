@@ -70,6 +70,7 @@ function replyCorrect() {
 		errorDisplay($('#replyButton'),'No puedes enviar un mensaje vacío. Debes escribir al menos un carácter.');
 		replyStatus = false;
 	} else {
+		contentEmpty.replace(/(<\/?(?:b|i|u|a|div|ul|ol|li|iframe|img)[^>]*>)|<[^>]+>/ig, '$1'); // WHITELIST
 		$('input[name="thread_id"]').attr('value', window.location.pathname.split('/')[2]);
 		$('input[name="creator"]').attr('value', $('.userLoged a b').text());
 		$('input[name="content"]').attr('value', $('div[name="replyMsg"]').html());

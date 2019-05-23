@@ -10,7 +10,7 @@ class ThreadController extends Controller {
     
 	public function getThreadsIndex($id) {
 
-		$threads = 	DB::SELECT('SELECT m.created_at as msg_created_at, m.id, m.on_thread_id, u.name, u.user_title, u.user_pic, u.created_at, u.msg_count, m.content, t.thread FROM messages m, users u, threads t WHERE t.id = '.$id.' AND m.thread_id = t.id AND m.creator = u.id');
+		$threads = 	DB::SELECT('SELECT m.created_at as msg_created_at, m.id, m.on_thread_id, u.name, u.user_title, u.user_pic, u.created_at, u.msg_count, m.content, t.thread FROM messages m, users u, threads t WHERE t.id = '.$id.' AND m.thread_id = t.id AND m.creator = u.id ORDER BY m.on_thread_id');
 
 		DB::table('threads')->where('id','=',$id)->increment('view_count');
 
