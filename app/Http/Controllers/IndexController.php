@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
+use App\Order;
+use App\Mail\OrderShipped;
 
 class IndexController extends Controller {
 
@@ -49,6 +52,7 @@ class IndexController extends Controller {
    }
 
    public function store(Request $request) {
+      try {
    		DB::table('users')->insert([
    			[	'name' => $request->input("reg_username"),
    				'email' => $request->input("reg_email"),
@@ -60,13 +64,21 @@ class IndexController extends Controller {
    				'user_title' => 'Miembro de TuForo.Net'
    			]
    		]);
+      }catch( \Illuminate\Database\QueryException $e){
+         return view('errors.500');
+      }
+ 
    }
 
    public function catThreads($category) {
-   	$threads_cat = DB::table('categories')->where('url', '=', $category)->value('id');
-   	$threads = 	DB::table('threads')->where('category', '=', $threads_cat)->get();
+      try {
+   	  $threads_cat = DB::table('categories')->where('url', '=', $category)->value('id');
+   	  $threads = 	DB::table('threads')->where('category', '=', $threads_cat)->get();
 
-   	return view('threadByCategory', [	'catData' => $threads
-   	]);
+      	return view('threadByCategory', [	'catData' => $threads
+      	]);
+      }catch( \Illuminate\Database\QueryException $e){
+         return view('errors.500');
+      }
    }
 }

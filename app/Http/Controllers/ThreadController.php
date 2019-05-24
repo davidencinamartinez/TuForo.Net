@@ -10,15 +10,19 @@ class ThreadController extends Controller {
     
 	public function getThreadsIndex($id) {
 
-		$threads = 	DB::SELECT('SELECT m.created_at as msg_created_at, m.id, m.on_thread_id, u.name, u.user_title, u.user_pic, u.created_at, u.msg_count, m.content, t.thread FROM messages m, users u, threads t WHERE t.id = '.$id.' AND m.thread_id = t.id AND m.creator = u.id ORDER BY m.on_thread_id');
+		try {
+			$threads = 	DB::SELECT('SELECT m.created_at as msg_created_at, m.id, m.on_thread_id, u.name, u.user_title, u.user_pic, u.created_at, u.msg_count, m.content, t.thread FROM messages m, users u, threads t WHERE t.id = '.$id.' AND m.thread_id = t.id AND m.creator = u.id ORDER BY m.on_thread_id');
 
-		DB::table('threads')->where('id','=',$id)->increment('view_count');
+			DB::table('threads')->where('id','=',$id)->increment('view_count');
 
-		$thread_title = DB::table('threads')->where('id','=',$id)->value('thread');
+			$thread_title = DB::table('threads')->where('id','=',$id)->value('thread');
 
-		return view('thread', 	[	'threadData' => $threads,
-									'threadTitle' => $thread_title
-		]);
+			return view('thread', 	[	'threadData' => $threads,
+										'threadTitle' => $thread_title
+			]);
+		}catch( \Illuminate\Database\QueryException $e){
+         return view('errors.404');
+      }
 	}
 
 	public function submitReply(Request $request) {

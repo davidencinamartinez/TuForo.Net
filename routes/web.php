@@ -39,3 +39,5 @@ Route::post('/sendReply', 'ThreadController@submitReply');
 
 Route::get('/newthread', 'NewThreadController@index');
 Route::post('/createThread', 'NewThreadController@newThreadStore');
+
+// PROFILE

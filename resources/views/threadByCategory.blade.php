@@ -12,6 +12,15 @@
         $(document).ready(function() {
             threadCategoryPic();
             dateConvert();
+            var showText = function (target, message, index, interval) {    
+              if (index < message.length) { 
+                $(target).append(message[index++]); 
+                setTimeout(function () { showText(target, message, index, interval); }, interval); 
+              } 
+            }
+            $(function () { 
+              showText("h1", "No hay temas disponibles (⌣_⌣)", 0, 60);    
+            }); 
         });
     </script>
     @if($catData->count())
@@ -71,17 +80,12 @@
                     <iframe src="https://freesecure.timeanddate.com/clock/i6pw1dlx/n31/tles4/fn14/fs20/fcfff/tc000/pct/ftb/bas2/bacfff/pa12/tt0/tw0/th1/tb4" frameborder="0" width="271" height="74" allowTransparency="true"></iframe>
                 </div>
             </div>
-    @else        
-        <div id="noData">
-            <img src="/storage/src/other/error.png">
-            <p id="parseError"></p>
-            <script type="text/javascript">
-                $(document).ready(function() {
-                    errorDisplay($('#parseError'), 'Lo sentimos. No hay temas disponibles para esta categoría.');    
-                });
-            </script>
-        </div>
-    @endif
         </div>
     </div>
+    @else    
+    <div id="noData">
+        <img src="/storage/src/other/error.png">
+        <h1></h1>
+    </div>
+    @endif
 @stop
