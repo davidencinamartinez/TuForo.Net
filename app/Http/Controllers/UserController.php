@@ -21,7 +21,7 @@ class UserController extends Controller
                 DB::table('users')->where('name', '=', Input::get('user'))->update(['last_activity' => Carbon::now()]);
     			return back();
     		}} else {
-				return back()->with('err','Hsdasaf');
+				return back()->with('err','No se pudieron autenticar las credenciales');
     		}
     }
 
@@ -29,4 +29,29 @@ class UserController extends Controller
         Auth::logout();
         return Redirect::to('/');
     }
+
+    public function getProfile($name) {
+            $user = DB::table('users')->where('name', '=', $name)->get();
+            if ($user->count() > 0) {
+                $username = DB::table('users')->where('name', '=', $name)->value('name');
+                return view('profile', [    'userData' => $user,
+                                            'title' => $username
+                ]);
+            } else {
+            return view('errors.404');
+            }
+        }
+
+    public function updateProfile(Request $request) {
+        try {
+            DB::table('users')->where('id', '=', $request->input('id'))->update(
+               [  'user_title' => $request->input('user_title'),
+                  'user_pic' => $request->input('user_pic')
+               ]
+            );
+            return back();
+        } catch( \Illuminate\Database\QueryException $e){
+         return view('errors.500');
+        }
+    } 
 }

@@ -1,6 +1,6 @@
 @extends('main')
 
-@section('title', '-')
+@section('title', $threadTitle)
 
 @push('styles')
 	<link rel='stylesheet' type='text/css' href='{{ asset("/css/thread.css") }}'>
@@ -8,7 +8,6 @@
  	<meta name="csrf-token" content="{{ csrf_token() }}">
 @endpush
 @push('scripts')
-  <script src='{{ asset("/js/thread.js") }}'></script>
   <script type='text/javascript' src='{{ asset("/js/moment_js/moment.js") }}'></script>
   <script type='text/javascript' src='{{ asset("/js/moment_js/es.js") }}'></script>
   <script type='text/javascript' src='{{ asset("/js/reply.js") }}'></script>
@@ -16,8 +15,6 @@
 @section('postSection')
 	<script type="text/javascript">
 		$(document).ready(function() {
-		  setTitle();
-		  dateConvertMsg();
 		  replyFormat();
 		});
 	</script>
@@ -53,7 +50,6 @@
     @if (Auth::check())
       <div id="replyPost">
   	    <div id="replyButtons">
-  	       <button type="button"><i class="fas fa-fill-drip"></i></button>
             <button type="button"><i class="fas fa-bold"></i></button>
             <button type="button"><i class="fas fa-italic"></i></button>
             <button type="button"><i class="fas fa-underline"></i></button>
@@ -68,7 +64,6 @@
             |
             <button type="button"><i class="fas fa-image"></i></button>
             <button type="button"><i class="fas fa-video"></i></button>
-            <button type="button"><i class="far fa-laugh-beam"></i></button>
             <button type="button"><i class="fas fa-link"></i></button>
   	    </div>
         <div name="replyMsg" contenteditable="true" data-placeholder="Introduce tu respuesta ..."></div>

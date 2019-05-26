@@ -1,6 +1,6 @@
 @extends('main')
 
-@section('title', 'TuForo.Net - Foro')
+@section('title', 'Foro - TuForo.Net')
 
 @push('styles')
 	<link rel='stylesheet' type='text/css' href='{{ asset("css/forum.css") }}'>	
@@ -9,7 +9,6 @@
 	<script type="text/javascript">
 	    $(document).ready(function() {
 	        threadCategoryPic();
-	        dateConvert();
 	    });
 	</script>
 	<div style="width: 100%; height: auto;">

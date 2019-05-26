@@ -1,6 +1,6 @@
 @extends('main')
 
-@section('title', 'TuForo.Net - Registro')
+@section('title', 'Registro - TuForo.Net')
 
 @push('styles')
     <link rel='stylesheet' type='text/css' href='{{ asset("css/register.css") }}'>

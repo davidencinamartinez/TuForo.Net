@@ -41,3 +41,6 @@ Route::get('/newthread', 'NewThreadController@index');
 Route::post('/createThread', 'NewThreadController@newThreadStore');
 
 // PROFILE
+
+Route::get('/profile/{name}', 'UserController@getProfile');
+Route::post('/updateProfile', 'UserController@updateProfile');

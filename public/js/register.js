@@ -107,10 +107,8 @@ function formValidation() {
             	src: 'storage/src/other/reg_done.png'
             });
             var successText = 	'<b>Bienvenido a TuForo.Net</b>!'+
-            					'<br />En breve recibirás un correo a ...<br />'+
-            					'<b>'+verifyMail+'</b><br />'+
-            					'Podrás acceder en cuánto hayas verificado tu cuenta.'+
-            					'<br />Disfruta de tu estancia!';
+            					'<br />Disfruta de tu estancia!'+
+            					'<a href="/"><h3>Haz click aquí para volver al inicio</h3></a>';
 			successPanel.html('<img id="successImg" src="storage/src/other/reg_done.png"><br><br>'+successText);
 			$('#registerPanel').append(successPanel);
         })

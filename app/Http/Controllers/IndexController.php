@@ -15,7 +15,7 @@ class IndexController extends Controller {
     public function index() {
 
 		// THREAD INFO
-		$threads = json_encode(DB::table('threads')->orderBy('last_reply_time', 'DESC')->get());
+		$threads = DB::table('threads')->orderBy('last_reply_time', 'DESC')->get();
 
 		// COUNT MEMBERS
 		$countMembers = DB::table('users')->count();
@@ -72,12 +72,15 @@ class IndexController extends Controller {
 
    public function catThreads($category) {
       try {
-   	  $threads_cat = DB::table('categories')->where('url', '=', $category)->value('id');
-   	  $threads = 	DB::table('threads')->where('category', '=', $threads_cat)->get();
-
+         $catAvailable = DB::table('categories')->where('url', '=', $category);
+        if ($catAvailable->count() > 0) {
+         $threads_cat = DB::table('categories')->where('url', '=', $category)->value('id');
+         $threads =   DB::table('threads')->where('category', '=', $threads_cat)->get();
       	return view('threadByCategory', [	'catData' => $threads
       	]);
-      }catch( \Illuminate\Database\QueryException $e){
+      } else {
+         return view('errors.404');
+      }}catch( \Illuminate\Database\QueryException $e){
          return view('errors.500');
       }
    }

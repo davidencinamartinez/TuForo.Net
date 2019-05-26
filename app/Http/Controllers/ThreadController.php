@@ -5,12 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use DB;
+use Auth;
 
 class ThreadController extends Controller {
     
 	public function getThreadsIndex($id) {
 
 		try {
+			$threadAvailable = DB::table('threads')->where('id', '=', $id);
+
+			if ($threadAvailable->count() > 0) {
+				
 			$threads = 	DB::SELECT('SELECT m.created_at as msg_created_at, m.id, m.on_thread_id, u.name, u.user_title, u.user_pic, u.created_at, u.msg_count, m.content, t.thread FROM messages m, users u, threads t WHERE t.id = '.$id.' AND m.thread_id = t.id AND m.creator = u.id ORDER BY m.on_thread_id');
 
 			DB::table('threads')->where('id','=',$id)->increment('view_count');
@@ -20,8 +25,11 @@ class ThreadController extends Controller {
 			return view('thread', 	[	'threadData' => $threads,
 										'threadTitle' => $thread_title
 			]);
+			} else {
+				return view('errors.404');		
+			}
 		}catch( \Illuminate\Database\QueryException $e){
-         return view('errors.404');
+         return view('errors.500');
       }
 	}
 

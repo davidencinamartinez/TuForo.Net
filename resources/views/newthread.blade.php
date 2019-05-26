@@ -1,6 +1,6 @@
 @extends('main')
 
-@section('title', 'TuForo.Net - Nuevo Tema')
+@section('title', 'Nuevo Tema - TuForo.Net')
 
 @push('styles')
 	<link rel='stylesheet' type='text/css' href='{{ asset("css/newthread.css") }}'>
@@ -20,7 +20,6 @@
 			<h2><b>Título del tema</b></h2><input type="text" name="thread_title" maxlength="85" autofocus>
 		    <div id="replyPost">
 			    <div id="replyButtons">
-			      <button type="button"><i class="fas fa-fill-drip"></i></button>
 			      <button type="button"><i class="fas fa-bold"></i></button>
 			      <button type="button"><i class="fas fa-italic"></i></button>
 			      <button type="button"><i class="fas fa-underline"></i></button>
@@ -35,7 +34,6 @@
 			      |
 			      <button type="button"><i class="fas fa-image"></i></button>
 			      <button type="button"><i class="fas fa-video"></i></button>
-			      <button type="button"><i class="far fa-laugh-beam"></i></button>
 			      <button type="button"><i class="fas fa-link"></i></button>
 			    </div>
 	      		<div name="replyMsg" contenteditable="true" data-placeholder="Introduce tu respuesta ..."></div>

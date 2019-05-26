@@ -8,15 +8,6 @@
 @push('scripts')
 @endpush
 @section('postSection')
-    <?php
-        $threadData = json_decode($threadData);
-    ?>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            threadCategoryPic();
-            dateConvert();
-        });
-    </script>
     <div style="width: 100%; height: auto">
         <div style="width: 70%; float: left; margin: 10px 0px 10px 0px;">
             <table id='threadsPanel'>

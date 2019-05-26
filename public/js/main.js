@@ -7,7 +7,7 @@ function navBarActive() {
 	var threadsTable = $('#catPanel').length;
 		$('.active').removeAttr('class');
 	//var navBarButton = $('.NavBar *').removeAttr('class');
-	if (url == '') {
+	if (url == '' || url == 'profile') {
 		$('#startingPoint').attr('class', 'active');
 	}
 	if (url == 'foro' || url == 'thread') {
@@ -86,11 +86,22 @@ function threadCategoryPic() {
 }
 
 function dateConvert() {
-	$('.threadDate').each(function(index, el) {
-		if ($(this).text() == moment().format('L')) {
-			$(this).text('Hoy');
-		} else if ($(this).text() == moment().subtract(1,'days').format('L')) {
-			$(this).text('Ayer');
-		}
-	});
+	if ($('.threadDate').length > 0) {
+		$('.threadDate').each(function(index, el) {
+			if ($(this).text() == moment().format('L')) {
+				$(this).text('Hoy');
+			} else if ($(this).text() == moment().subtract(1,'days').format('L')) {
+				$(this).text('Ayer');
+			}
+		});
+	}
+	if ($('.msgTime').length > 0) {
+		$('.msgTime').each(function(index, el) {
+			if ($(this).text() == moment().format('L')) {
+				$(this).text('Hoy');
+			} else if ($(this).text() == moment().subtract(1,'days').format('L')) {
+				$(this).text('Ayer');
+			}
+		});
+	}
 }

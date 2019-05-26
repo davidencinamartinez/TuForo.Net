@@ -16,16 +16,20 @@
 <script type="text/javascript">
 	$(document).ready(function() {
 		navBarActive();
+		dateConvert();
+		threadCategoryPic();
 	});
 </script>
 <body>
 	<div class='header'>
-		<img id='Banner' src='/storage/src/logos/banner100.png' alt='tuforonetlogo'>
+		<a href="/">
+			<img id='Banner' src='/storage/src/logos/banner100.png' alt='tuforonetlogo' clickeable>
+		</a>
 		<div class='userDiv'>
 			@if (Auth::check())
 				<div class="userLoged">
 					Bienvenido
-				  	<a href="/profile/{{ Auth::user()->remember_token}}">
+				  	<a href="/profile/{{ strtolower(Auth::user()->name)}}">
 				  		<b class="dropbtn">{{ Auth::user()->name }}</b>
 				  	</a>!&#8194;
 				  <a href="/logout"><i class="fas fa-power-off"></i></a>
