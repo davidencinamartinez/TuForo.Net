@@ -19,7 +19,14 @@
 			navBarActive();
 			dateConvert();
 			threadCategoryPic();
-			
+			(adsbygoogle = window.adsbygoogle || []).push({
+				google_ad_client: "ca-pub-2178837299566296",
+				enable_page_level_ads: true
+	        	});
+	        	window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());	
+			gtag('config', 'UA-140861516-1');
 		});
 	</script>
 </head>
