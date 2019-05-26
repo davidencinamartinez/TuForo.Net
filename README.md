@@ -1,6 +1,6 @@
 # TuForo.Net
 
-## Inicio del Proyecto **TuForo.Net**: 22 de Marzo de 2019  
+* Inicio del Proyecto **TuForo.Net**: 22 de Marzo de 2019  
     
 ***
 
