@@ -6,7 +6,7 @@
     * **Usuario**: 6Q2R&3K5H!  
     * **Contraseña**: SiOFTrGB%@LP  
     
-**Aquí podrás encontrar información relacionada con el proyecto:**
+***
 
 ## Instalación
 [Manual de instalación](https://github.com/Dencina1996/TuForo.Net/wiki/Instalaci%C3%B3n)
