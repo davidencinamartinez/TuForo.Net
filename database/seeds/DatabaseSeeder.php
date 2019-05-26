@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
 	  				'url' => 'general'
 	  			],
 	  			[	'name' => 'Motor',
-	  				'description' => 'Todo sobre el motor: Coches, Noticias, Curiosidades ...',
+	  				'description' => 'Todo sobre el motor: Coches, noticias, curiosidades ...',
 	  				'url' => 'motor'
 	  			],
 	  			[	'name' => 'Noticias',
@@ -33,7 +33,7 @@ class DatabaseSeeder extends Seeder
 	  				'url' => 'noticias'
 	  			],
 	  			[	'name' => 'Informática',
-	  				'description' => 'Temas relacionados con la Tecnología, Informática, Smartphones ...',
+	  				'description' => 'Temas relacionados con la tecnología, informática, telefonía ...',
 	  				'url' => 'informatica'
 	  			],
 	  			[	'name' => 'Juegos',
@@ -45,11 +45,11 @@ class DatabaseSeeder extends Seeder
 	  				'url' => 'musica'
 	  			],
 	  			[	'name' => 'Política',
-	  				'description' => 'Ideologías, partidos políticos, debates ...',
+	  				'description' => 'Debates sobre ideologías, partidos políticos, campañas electorales ...',
 	  				'url' => 'politica'
 	  			],
 	  			[	'name' => 'Fitness',
-	  				'description' => 'Temas relacionados con el mundo del Fitness, el gimnasio y las pesas.',
+	  				'description' => 'Temas relacionados con el mundo del fitness, el gimnasio y las pesas.',
 	  				'url' => 'fitness'
 	  			],
 	  			[	'name' => 'Deportes',
@@ -67,8 +67,8 @@ class DatabaseSeeder extends Seeder
   			DB::table('users')->insert([
   				[	'name' => 'ViBoXx',
   					'email' => 'viboxx@gmail.com',
-  					'password' => Hash::make('P@ssw0rd'),
-  					'remember_token' => str_random(50),
+  					'password' => Hash::make('supermarche666!'),
+  					'remember_token' => str_random(60),
   					'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
   					'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
   					'last_activity' => Carbon::now()->format('Y-m-d H:i:s'),

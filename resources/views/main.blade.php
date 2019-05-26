@@ -12,14 +12,24 @@
 	<script src='{{ asset("/js/jquery-3.3.1.js") }}'></script>
 	<script type='text/javascript' src='{{ asset("js/moment_js/moment.js") }}'></script>
 	<script type='text/javascript' src='{{ asset("js/moment_js/es.js") }}'></script>
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-140861516-1"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			navBarActive();
+			dateConvert();
+			threadCategoryPic();
+			(adsbygoogle = window.adsbygoogle || []).push({
+					google_ad_client: "ca-pub-2178837299566296",
+					enable_page_level_ads: true
+		        	});
+		        	window.dataLayer = window.dataLayer || [];
+				function gtag(){dataLayer.push(arguments);}
+				gtag('js', new Date());	
+				gtag('config', 'UA-140861516-1');
+		});
+	</script>
 </head>
-<script type="text/javascript">
-	$(document).ready(function() {
-		navBarActive();
-		dateConvert();
-		threadCategoryPic();
-	});
-</script>
 <body>
 	<div class='header'>
 		<a href="/">
