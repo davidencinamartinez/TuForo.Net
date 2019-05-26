@@ -15,14 +15,13 @@ class UserController extends Controller
 {
     protected function login(Request $request) {
     	$user = User::where('name', '=', Input::get('user'))->first();
-    	if ($user != null) {
-    		if (Hash::check(Input::get('password'), $user->password)) {
-    			Auth::login($user);
-                DB::table('users')->where('name', '=', Input::get('user'))->update(['last_activity' => Carbon::now()]);
-    			return back();
-    		}} else {
-				return back()->with('err','No se pudieron autenticar las credenciales');
-    		}
+    	if ($user != null && Hash::check(Input::get('password'), $user->password)) {
+    		Auth::login($user);
+            DB::table('users')->where('name', '=', Input::get('user'))->update(['last_activity' => Carbon::now()]);
+    		return back();
+    	} else {
+             return redirect()->back()->with('err','Usuario o contraseña incorrectos. Vuelva a probar de nuevo.');
+        }
     }
 
     protected function logout() {
