@@ -113,7 +113,9 @@ function formValidation() {
 			$('#registerPanel').append(successPanel);
         })
         .fail(function(e) {
-            console.log("error"+e);
+        	errorDisplay($('input[name="reg_username"]'),'El nombre de usuario ya está en uso');
+        	console.log('error');
+
         })
         .always(function() {
             console.log("complete");

@@ -53,17 +53,22 @@ class IndexController extends Controller {
 
    public function store(Request $request) {
       try {
-   		DB::table('users')->insert([
-   			[	'name' => $request->input("reg_username"),
-   				'email' => $request->input("reg_email"),
-   				'password' => Hash::make($request->input('reg_password')),
-   				'remember_token' => $request->input("_token"),
-   				'created_at' => Carbon::now(),
-   				'updated_at' => Carbon::now(),
-   				'user_pic' => '/storage/src/logos/logo128.png',
-   				'user_title' => 'Miembro de TuForo.Net'
-   			]
-   		]);
+         $user = DB::table('users')->where('name', '=', $request->input('reg_username'));
+         if ($user->count()) {
+      		DB::table('users')->insert([
+      			[	'name' => $request->input("reg_username"),
+      				'email' => $request->input("reg_email"),
+      				'password' => Hash::make($request->input('reg_password')),
+      				'remember_token' => $request->input("_token"),
+      				'created_at' => Carbon::now(),
+      				'updated_at' => Carbon::now(),
+      				'user_pic' => '/storage/src/logos/logo128.png',
+      				'user_title' => 'Miembro de TuForo.Net'
+      			]
+      		]);
+         } else {
+            return Redirect::to('/registro')->with('err','Usuario o contraseña incorrectos. Vuelva a probar de nuevo.');
+         }
       }catch( \Illuminate\Database\QueryException $e){
          return view('errors.500');
       }

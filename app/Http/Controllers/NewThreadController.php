@@ -23,11 +23,24 @@ class NewThreadController extends Controller
 
          try {
 
-   		// VARS 
+         // VARS 
 
-   			$t_cat = DB::table('categories')->where('url', '=', $request->input('thread_category'))->value('id');
-   			$t_id = DB::table('threads')->max('id')+1;
+            $t_cat = DB::table('categories')->where('url', '=', $request->input('thread_category'))->value('id');
+            $t_id = intval(DB::table('threads')->max('id'))+1;
  
+         // THREAD CREATION
+
+            DB::table('threads')->insert([
+            [  'category' => $t_cat,
+               'thread' => $request->input('thread_title'),
+               'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+               'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+               'creator' => auth()->guard()->user()->name,
+               'last_reply_time' => Carbon::now()->format('Y-m-d H:i:s'),
+               'last_reply_user' => auth()->guard()->user()->name
+            ]
+         ]);
+            
          // MESSAGE CREATION
 
             DB::table('messages')->insert([
@@ -40,14 +53,14 @@ class NewThreadController extends Controller
                ]
             ]);
 
-   		// USERS UPDATE
+         // USERS UPDATE
 
-   			DB::table('users')->where('id', '=', auth()->guard()->id())->update(
-   				[  'last_activity' => Carbon::now()->format('Y-m-d H:i:s'),
-   					'msg_count' => DB::raw('msg_count + 1'),
+            DB::table('users')->where('id', '=', auth()->guard()->id())->update(
+               [  'last_activity' => Carbon::now()->format('Y-m-d H:i:s'),
+                  'msg_count' => DB::raw('msg_count + 1'),
                   'thread_count' => DB::raw('thread_count + 1')
-   				]
-   			);
+               ]
+            );
 
          // CATEGORY UPDATE
 
@@ -57,21 +70,9 @@ class NewThreadController extends Controller
                ]
             );
 
-   		// THREAD CREATION
-
-   			DB::table('threads')->insert([
-				[	'category' => $t_cat,
-					'thread' => $request->input('thread_title'),
-					'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-   				'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
-   				'creator' => auth()->guard()->user()->name,
-   				'last_reply_time' => Carbon::now()->format('Y-m-d H:i:s'),
-   				'last_reply_user' => auth()->guard()->user()->name
-	   		]
-			]);
-			
-			return Redirect::to('/');
-   	  } catch( \Illuminate\Database\QueryException $e){
+         
+         return Redirect::to('/');
+        } catch( \Illuminate\Database\QueryException $e){
                return view('errors.500');
          }
       }

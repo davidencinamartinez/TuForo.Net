@@ -17,6 +17,9 @@
         <div id="inputForm">
             <form>
                 @csrf
+                @if(session()->has('err'))
+                    <h1>MIERDA DE VACA</h1>
+                @endif
                 <p><b>Nombre de Usuario</b>*</p><input type="text" name="reg_username" maxlength="20" autofocus>
                 <p><b>Correo electrónico</b>*</p><input type="text" name="reg_email" maxlength="64">
                 <p><b>Contraseña</b>*</p><input type="password" name="reg_password" maxlength="64">
