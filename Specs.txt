@@ -1,0 +1,3 @@
+------------- ESPECIFICACIONES FUTURAS ---------------
+
+1. CSS dinámico según resolución de pantalla (y según S.O.)
