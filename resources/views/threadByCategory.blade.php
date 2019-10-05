@@ -19,7 +19,7 @@
               } 
             }
             $(function () { 
-              showText("h1", "No hay temas disponibles (⌣_⌣)", 0, 60);    
+              showText("h1", "No hay temas disponibles", 0, 90);    
             }); 
         });
     </script>
@@ -28,7 +28,7 @@
         <div style="width: 70%; float: left; margin: 10px 0px 10px 0px;">
             <table id='threadsPanel'>
                 <tr class="threadInfo">
-                    <td class='threadCategory' style="background-color: #4F4F4F; padding: 5px">
+                    <td class='threadCategory' style="background-color: #4F4F4F; padding: 5px; text-align: center">
                         <b>Categoría</b>
                     </td>
                     <td class='threadName' style="background-color: #4F4F4F; padding: 5px">

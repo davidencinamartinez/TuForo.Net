@@ -7,6 +7,7 @@
 	@stack('styles')
 	<link rel='stylesheet' type='text/css' href='{{ asset("/css/min.css") }}'>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700&display=swap&subset=latin-ext" rel="stylesheet">
 	@stack('scripts')
 	<script src='{{ asset("/js/main.js") }}'></script>
 	<script src='{{ asset("/js/jquery-3.3.1.js") }}'></script>
@@ -41,7 +42,7 @@
 					Bienvenido
 				  	<a href="/profile/{{ strtolower(Auth::user()->name)}}">
 				  		<b class="dropbtn">{{ Auth::user()->name }}</b>
-				  	</a>!&#8194;
+				  	</a>&nbsp;
 				  <a href="/logout"><i class="fas fa-power-off"></i></a>
 				</div>
 			@else

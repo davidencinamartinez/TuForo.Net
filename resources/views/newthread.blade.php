@@ -42,7 +42,7 @@
 			<input type="hidden" name="thread_id">
 			<input type="hidden" name="creator">
 			<input type="hidden" name="content">
-			<b>Categoría: </b>
+			<b>Categoría:&nbsp;</b>
 			<select name="thread_category">
 			@foreach($cat as $category) 
 	        	<option value="{{ $category->url }}">{{ $category->name }}</option>

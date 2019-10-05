@@ -5,7 +5,6 @@
 			-moz-font-family: 'Lato', sans-serif;
 			font-size: 14px;
 			color: white;
-			cursor: url('../storage/src/cursors/cursor32.png'), auto;
 			-moz-appearance: none;
 	}
 
@@ -68,7 +67,6 @@
 	input {	border: solid 1px black;
 			border-radius: 2px;
 			padding: 5px;
-			cursor: url('../storage/src/cursors/cursor32.png'), default;
 	}
 
 	input:focus {	border: solid 1px #FF8C00;

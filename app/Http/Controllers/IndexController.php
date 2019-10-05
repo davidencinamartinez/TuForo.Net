@@ -54,7 +54,7 @@ class IndexController extends Controller {
    public function store(Request $request) {
       try {
          $user = DB::table('users')->where('name', '=', $request->input('reg_username'));
-         if ($user->count()) {
+         
       		DB::table('users')->insert([
       			[	'name' => $request->input("reg_username"),
       				'email' => $request->input("reg_email"),
@@ -66,10 +66,7 @@ class IndexController extends Controller {
       				'user_title' => 'Miembro de TuForo.Net'
       			]
       		]);
-         } else {
-            return Redirect::to('/registro')->with('err','Usuario o contraseña incorrectos. Vuelva a probar de nuevo.');
-         }
-      }catch( \Illuminate\Database\QueryException $e){
+      } catch ( \Illuminate\Database\QueryException $e){
          return view('errors.500');
       }
  

@@ -67,7 +67,7 @@ class DatabaseSeeder extends Seeder
   			DB::table('users')->insert([
   				[	'name' => 'ViBoXx',
   					'email' => 'viboxx@gmail.com',
-  					'password' => Hash::make('supermarche666!'),
+  					'password' => Hash::make('Supermarche666!'),
   					'remember_token' => str_random(60),
   					'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
   					'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
