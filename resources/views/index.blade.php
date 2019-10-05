@@ -31,16 +31,18 @@
                             <img class='categoryPic' alt='{{ $threadData->category }}'>
                         </td>
                         <td class='threadName'>
-                            <b><a href="thread/{{ $threadData->id }}">{{ $threadData->thread }}</a></b>
+                            <b>
+                                <a href="thread/{{ $threadData->id }}">{{ $threadData->thread }}</a>
+                            </b>
                             <br>
-                            <label style="float: left;">{{ $threadData->creator }}</label>
+                            <a href="/profile/{{ strtolower($threadData->creator) }}">{{ $threadData->creator }}</a>
                         </td>
                         <td class='threadLastMsg'>
                             <label class='threadDate'>{{ date('d/m/Y', strtotime($threadData->last_reply_time)) }}</label>
                             -
                             <label>{{ date('H:i', strtotime($threadData->last_reply_time)) }}</label>
                             <br>
-                            <label>{{ $threadData->last_reply_user }}</label>
+                            <a href="/profile/{{ strtolower($threadData->last_reply_user) }}">{{ $threadData->last_reply_user }}</a>
                         </td>
                 		<td class='threadStats'>
                 			<b>Visitas: </b>
@@ -55,6 +57,13 @@
         </div>
         <div style='width: 30%; float: right; text-align: center; margin-bottom: 20px;'>
             <div id='miscPanel'>
+                <form action='/login' method='POST'>
+                    <b>Buscar:&nbsp;</b>
+                    <input type="text" name="searchThread">&nbsp;
+                    <button type="submit" id="searchButton">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
                 <h2>Estadísticas</h2>
                 <div>
                     <b>Miembros: </b><label id="memberCount">{{$countMembers}}</label>

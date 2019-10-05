@@ -50,12 +50,28 @@
 			.threadName > b > a:visited:hover {	color: #FF8C00;
 			}
 
+		/* THREAD CREATOR */
+
+			.threadName > a {	color: white;
+								text-decoration: none;
+			}
+
+			.threadName > a:hover {	color: #FF8C00;
+			}
+
 		/* THREAD LAST MESSAGE */
 
 			.threadLastMsg {	padding: 0px 5px 0px 5px;
 								text-align: center;
 								border: 1px solid black;
 								border-width: 0px 1px 0px 1px;
+			}
+
+			.threadLastMsg > a {	color: white;
+									text-decoration: none;
+			}
+
+			.threadLastMsg > a:hover {	color: #FF8C00
 			}
 
 		/* THREAD STATS */

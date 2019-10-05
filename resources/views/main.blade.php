@@ -52,7 +52,9 @@
 				<input type='password' name='password' maxlength='48' placeholder='Contraseña'>
 				<input type='submit' value='Entrar'>
 			</form>
+			No tienes cuenta?&nbsp;<a href="/registro" style="color: white; text-decoration: none;"><b>Regístrate</b></a>
 			@if(session()->has('err'))
+			<br>
 				<p class="error" style="display: contents">{{session('err')}}</p>
 			@endif
 		<br>

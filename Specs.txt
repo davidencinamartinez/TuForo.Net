@@ -1,3 +1,13 @@
 ------------- ESPECIFICACIONES FUTURAS ---------------
 
 1. CSS dinámico según resolución de pantalla (y según S.O.)
+
+
+-- REGISTRO DE USUARIOS --
+
+1. Envío de mail de confirmación
+2. Reglaje de Login (Si el usuario ha confirmado su mail)
+
+-- PÁGINA --
+
+1. Buscador
