@@ -9,10 +9,13 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use App\Order;
 use App\Mail\OrderShipped;
+use Jenssegers\Agent\Agent;
 
 class IndexController extends Controller {
 
     public function index() {
+
+      $agent = new Agent(); // DEVICE INFO
 
 		// THREAD INFO
 		$threads = DB::table('threads')->orderBy('last_reply_time', 'DESC')->get();
@@ -33,13 +36,24 @@ class IndexController extends Controller {
 		$countOnline = DB::table('users')->where('last_activity', '>=', \DB::raw('DATE_SUB(NOW(), INTERVAL 1 HOUR)'))->count();
 		
 		// RESPONSE
-		return view('index', [	'threadData' => $threads,
-								'countMembers' => $countMembers,
-								'countThreads' => $countThreads,
-								'countMessages' => $countMessages,
-								'countVisitors' => $countVisitors,
-								'countOnline' => $countOnline
-		]);
+
+      if ($agent->isMobile()) {
+         return view('mobile.index', [  'threadData' => $threads,
+                           'countMembers' => $countMembers,
+                           'countThreads' => $countThreads,
+                           'countMessages' => $countMessages,
+                           'countVisitors' => $countVisitors,
+                           'countOnline' => $countOnline
+         ]);
+      } else {
+         return view('index', [  'threadData' => $threads,
+                           'countMembers' => $countMembers,
+                           'countThreads' => $countThreads,
+                           'countMessages' => $countMessages,
+                           'countVisitors' => $countVisitors,
+                           'countOnline' => $countOnline
+         ]);   
+      }
    }
    
    public function catIndex() {

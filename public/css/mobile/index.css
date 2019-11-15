@@ -1,0 +1,61 @@
+/* THREADS PANEL */
+
+	#threadsPanel {	width: 90%;
+					margin: auto;
+	}
+
+	/* THREAD INFO */
+
+		.threadInfo {	border-bottom: solid 1px black;
+						padding: 0.5vh;
+						width: 100%;
+						display: inline-table;
+						background-color: #2F2F2F;
+		}
+
+		.threadInfo:nth-of-type(1) {	border-top: solid 1px black;
+										margin-top: 1vh;
+		}
+
+		/* THREAD CATEGORY IMAGE */
+
+			.threadCategory img {	width: 12vw;
+									padding-right: 1vw;
+			}
+
+		/* THREAD NAME */		
+
+			.threadName {	font-size: 1.5vh;
+							width: 100%;
+			}
+
+			.threadName > b > a:link {	color: white;
+										text-decoration: none;
+			}
+
+			.threadName > b > a:visited {	color: #DEDEDE;
+			}			
+
+		/* THREAD STATISTICS */
+
+			.threadStats {	font-size: 1.25vh;
+			}
+	
+/* ADVERTISEMENT */
+
+	#mobileAdsContainerTop {	width: max-content;
+								margin: auto;
+								margin-top: 1vh;
+	}
+
+@media screen and (orientation:landscape) {
+
+	.threadName {	font-size: 2vw;
+					width: 100%;
+	}
+
+	.threadStats {	font-size: 1.5vw;
+	}
+
+}
+

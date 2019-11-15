@@ -1,0 +1,134 @@
+/* HTML / BODY */
+
+	* {	margin: 0;
+		padding: 0;
+	}
+
+	html, body {	background-color: #8E8E8E;
+					font-family: 'Lato', sans-serif;
+					-moz-font-family: 'Lato', sans-serif;
+					color: white;
+					-moz-appearance: none;
+					width: 100%;
+	}
+
+/* ERROR */
+
+	.error:nth-of-type(1) {	font-weight: bold;
+							font-size: 1.5vh;
+							color: #FF4040;
+							text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+							display: contents;
+							padding: 1vh;
+							z-index: 2;
+	}
+
+/* USER HEADER PANEL */
+
+	.header {	padding: 2.5vw;
+				background-color: #4F4F4F;
+				border: solid 2px black;
+				right: 0;
+	}
+
+	/* USER TOP BUTTONS */
+
+		.userPanel {	font-size: 3.5vw;
+						padding: 20px;
+						border: solid 2px black;
+						text-align: center;
+						outline: none;
+						font-weight: bold;
+						transition: 0.4s;
+						margin: 0 0 1vh 0;
+						border-radius: 10px;
+		}
+
+		.userPanel:active {	background-color: #FF8C00;
+							transform: perspective(1px) scale(1.05);
+							transition: 0.5s;
+		}
+
+		.userPanel:nth-of-type(3) {	float: right;
+		}
+
+		/* USER LOGIN FORM */
+
+		.userForm {	padding: 0;
+					background-color: white;
+					max-height: 0;
+					color: black;
+					overflow: hidden;
+					transition: max-height 0.2s ease-out;
+					font-size: 3vw;
+					border-radius: 10px;
+					text-align: center;
+					background-color: #8E8E8E;
+		}
+
+		#loginForm {	padding: 2.5vw;
+						text-align: center;
+						margin: auto;
+		}
+
+		#loginForm > input {	text-align: center;
+								padding: 0.5vh;
+								border: solid 1px black;
+								margin: 0.5vh;
+								width: 50%;
+								font-size: 3vw;
+		}
+
+		#loginButton:active {	background-color: #FF8C00;
+								transform: perspective(1px) scale(1.05);
+								transition: 0.5s;
+		}
+
+/* FOOTER */
+
+	#footer {	background-color: #2F2F2F;
+				position: relative;
+				margin-top: 20px;
+				overflow: hidden;
+  				left: 0;
+  				bottom: 0;
+  				height: auto;
+  				width: 100%;
+  				border-top: 2px solid black;
+  				color: white;
+  				text-align: center;
+  				padding-top: 5px;
+  				padding-bottom: 5px;
+  				margin-bottom: 0;
+  	}
+
+	/* SOCIAL */
+
+		.socialDiv {	margin: 0 0 0 1vh;
+		}
+
+		.socialNetwork {	width: 6vw;
+	 						float: left;
+	 						margin-left: 5px;
+	 						border: 1px solid black;
+	 						border-radius: 15%;
+	 	}
+
+	/* GO UP BUTTON */
+
+		#goUpButton {	padding: 0.5vh; 
+						float: right; 
+						margin: 0 1vh 0 0;
+						width: 20vw;
+		}
+
+		#goUpButton > a {	text-decoration: none;
+							color: black;
+		}
+
+@media screen and (orientation:landscape) {
+
+	.error:nth-of-type(1) {	font-size: 2.5vw;
+	}
+
+}

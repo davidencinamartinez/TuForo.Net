@@ -6,21 +6,25 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\HtmlString;
 use App\User; 
 use Hash;
 use DB;
 use Illuminate\Support\Carbon;
 
-class UserController extends Controller
-{
+class UserController extends Controller {   
+    
+    // USER LOGIN //
+
     protected function login(Request $request) {
+        
     	$user = User::where('name', '=', Input::get('user'))->first();
     	if ($user != null && Hash::check(Input::get('password'), $user->password)) {
     		Auth::login($user);
             DB::table('users')->where('name', '=', Input::get('user'))->update(['last_activity' => Carbon::now()]);
     		return back();
     	} else {
-             return redirect()->back()->with('err','Usuario o contraseña incorrectos. Vuelva a probar de nuevo.');
+            return redirect()->back()->with('err', new HtmlString('Usuario o contraseña incorrectos. Vuelva a probar de nuevo.<br>Intentos: 1 de 5.'));
         }
     }
 

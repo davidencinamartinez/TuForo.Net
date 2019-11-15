@@ -14,6 +14,7 @@
 	/* THREAD INFO */
 
 		.threadInfo {	border: 2px solid black;
+						background-color: #2F2F2F;
 		}
 
 		.threadInfo:hover {	background-color: #3F3F3F;
