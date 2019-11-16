@@ -19,24 +19,29 @@
 	</div>
 	<br>
 	<div id="threadsPanel">
-		@foreach($threadData as $threadData)
+		@foreach($threadData as $thread)
 		<table class="threadInfo">
 		    <tr>
 		    	<td class="threadCategory" rowspan="2">
-		    	    <img class='categoryPic' src='storage/src/categories/{{ $threadData->category }}.png'>
+		    	    <img class='categoryPic' src='storage/src/categories/{{ $thread->category }}.png'>
 		    	</td>
 		        <td class='threadName'>
 		            <b>
-						<a href="thread/{{ $threadData->id }}">{{ $threadData->thread }}</a>
+						<a href="thread/{{ $thread->id }}">{{ $thread->thread }}</a>
 		            </b>
 		         </td>
 		     </tr>
 		     <tr>
 				<td class='threadStats'>
-		            <p>{{ $threadData->reply_count }} mensajes. Últ. mens. <label class='threadDate'>{{ date('d/m/Y', strtotime($threadData->last_reply_time)) }}</label> por {{ $threadData->last_reply_user }}</p>
+		            <p>{{ $thread->reply_count }} mensajes. Últ. mens. <label class='threadDate'>{{ date('d/m/Y', strtotime($thread->last_reply_time)) }}</label> por {{ $thread->last_reply_user }}</p>
 				</td>
 			</tr>
 		</table>
 		@endforeach
+		<div style="text-align: center; margin: 5vh;">
+		  <div class="pageSelector">
+		    {{$threadData->links()}}
+		  </div>
+		</div>
 	</div>
 @stop

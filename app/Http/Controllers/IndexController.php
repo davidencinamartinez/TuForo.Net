@@ -18,7 +18,7 @@ class IndexController extends Controller {
       $agent = new Agent(); // DEVICE INFO
 
 		// THREAD INFO
-		$threads = DB::table('threads')->orderBy('last_reply_time', 'DESC')->paginate(1);
+		$threads = DB::table('threads')->orderBy('last_reply_time', 'DESC');
 
 		// COUNT MEMBERS
 		$countMembers = DB::table('users')->count();
@@ -38,7 +38,7 @@ class IndexController extends Controller {
 		// RESPONSE
 
       if ($agent->isMobile()) {
-         return view('mobile.index', [  'threadData' => $threads,
+         return view('mobile.index', [  'threadData' => $threads->paginate(25),
                            'countMembers' => $countMembers,
                            'countThreads' => $countThreads,
                            'countMessages' => $countMessages,
@@ -46,7 +46,7 @@ class IndexController extends Controller {
                            'countOnline' => $countOnline
          ]);
       } else {
-         return view('index', [  'threadData' => $threads,
+         return view('index', [  'threadData' => $threads->paginate(40),
                            'countMembers' => $countMembers,
                            'countThreads' => $countThreads,
                            'countMessages' => $countMessages,

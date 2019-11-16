@@ -8,31 +8,6 @@
 @push('scripts')
 @endpush
 @section('postSection')
-<style>
-    .pagination {
-      display: inline-block;
-      text-align: center;
-    }
-
-    .pagination li {    display: contents;
-    }
-
-    .page-link {   color: white;
-      background-color: #2F2F2F;
-      padding: 6px 10px;
-      text-decoration: none;
-      border: 1px solid black;
-      font-size: 22px;  
-      text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-    }
-
-    .page-link:hover {  background-color: #FF8C00;}
-
-    span:not([aria-hidden="true"]).page-link  {   background-color: #FF8C00;
-    }
-
-
-</style>
     <div style="width: 100%; height: auto">
         <div style="width: 70%; float: left; margin: 10px 0px 10px 0px;">
             <table id='threadsPanel'>
@@ -80,7 +55,7 @@
                 @endforeach
             </table>
             <div style="text-align: center;">
-              <div class="pagination">
+              <div class="pageSelector">
                 {{$threadData->links()}}
               </div>
             </div>

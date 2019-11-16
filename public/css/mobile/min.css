@@ -84,6 +84,30 @@
 								transition: 0.5s;
 		}
 
+/* PAGINATOR */
+
+	.pageSelector {	display: inline-block;
+	  				text-align: center;
+	}
+
+	.pageSelector li {	display: contents;
+	}
+
+	.page-link {	color: white;
+					background-color: #2F2F2F;
+					padding: 6px 10px;
+					text-decoration: none;
+					border: 1px solid black;
+					font-size: 22px;  
+					text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	}
+
+	.page-link:hover {	background-color: #4F4F4F;
+	}
+
+	span:not([aria-hidden="true"]).page-link {	background-color: #FF8C00;
+	}
+
 /* FOOTER */
 
 	#footer {	background-color: #2F2F2F;
