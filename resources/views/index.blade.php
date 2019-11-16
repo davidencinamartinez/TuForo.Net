@@ -8,6 +8,31 @@
 @push('scripts')
 @endpush
 @section('postSection')
+<style>
+    .pagination {
+      display: inline-block;
+      text-align: center;
+    }
+
+    .pagination li {    display: contents;
+    }
+
+    .page-link {   color: white;
+      background-color: #2F2F2F;
+      padding: 6px 10px;
+      text-decoration: none;
+      border: 1px solid black;
+      font-size: 22px;  
+      text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    }
+
+    .page-link:hover {  background-color: #FF8C00;}
+
+    span:not([aria-hidden="true"]).page-link  {   background-color: #FF8C00;
+    }
+
+
+</style>
     <div style="width: 100%; height: auto">
         <div style="width: 70%; float: left; margin: 10px 0px 10px 0px;">
             <table id='threadsPanel'>
@@ -25,35 +50,40 @@
                         <b>Visitas/Respuestas</b>
                     </td>
                 </tr>
-                @foreach($threadData as $threadData)
+                @foreach($threadData as $thread)
                     <tr class="threadInfo">
                         <td class="threadCategory">
-                            <img class='categoryPic' alt='{{ $threadData->category }}'>
+                            <img class='categoryPic' src='storage/src/categories/{{ $thread->category }}.png'>
                         </td>
                         <td class='threadName'>
                             <b>
-                                <a href="thread/{{ $threadData->id }}">{{ $threadData->thread }}</a>
+                                <a href="thread/{{ $thread->id }}">{{ $thread->thread }}</a>
                             </b>
                             <br>
-                            <a href="/profile/{{ strtolower($threadData->creator) }}">{{ $threadData->creator }}</a>
+                            <a href="/profile/{{ strtolower($thread->creator) }}">{{ $thread->creator }}</a>
                         </td>
                         <td class='threadLastMsg'>
-                            <label class='threadDate'>{{ date('d/m/Y', strtotime($threadData->last_reply_time)) }}</label>
+                            <label class='threadDate'>{{ date('d/m/Y', strtotime($thread->last_reply_time)) }}</label>
                             -
-                            <label>{{ date('H:i', strtotime($threadData->last_reply_time)) }}</label>
+                            <label>{{ date('H:i', strtotime($thread->last_reply_time)) }}</label>
                             <br>
-                            <a href="/profile/{{ strtolower($threadData->last_reply_user) }}">{{ $threadData->last_reply_user }}</a>
+                            <a href="/profile/{{ strtolower($thread->last_reply_user) }}">{{ $thread->last_reply_user }}</a>
                         </td>
                 		<td class='threadStats'>
                 			<b>Visitas: </b>
-                            <label>{{ $threadData->view_count }}</label>
+                            <label>{{ $thread->view_count }}</label>
                             <br>
                             <b>Respuestas: </b>
-                            <label>{{ $threadData->reply_count }}</label>
+                            <label>{{ $thread->reply_count }}</label>
                 		</td>
                 	</tr>
                 @endforeach
             </table>
+            <div style="text-align: center;">
+              <div class="pagination">
+                {{$threadData->links()}}
+              </div>
+            </div>
         </div>
         <div style='width: 30%; float: right; text-align: center; margin-bottom: 20px;'>
             <div id='miscPanel'>

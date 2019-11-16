@@ -25,7 +25,7 @@
 				@foreach($catData as $catData)
 				<tr>
 					<td class='catInfo'>
-						<img class='categoryPic' alt='{{ $catData->id }}'>
+						<img class='categoryPic' src='storage/src/categories/{{ $catData->id }}.png'>
 						<a href="foro/{{ $catData->url }}"><b class='catName'>{{ $catData->name }}</b></a>
 						<br>
 						<label class='catDesc'>{{ $catData->description }}</label>

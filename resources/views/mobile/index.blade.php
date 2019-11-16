@@ -23,7 +23,7 @@
 		<table class="threadInfo">
 		    <tr>
 		    	<td class="threadCategory" rowspan="2">
-		    	    <img class='categoryPic' alt='{{ $threadData->category }}'>
+		    	    <img class='categoryPic' src='storage/src/categories/{{ $threadData->category }}.png'>
 		    	</td>
 		        <td class='threadName'>
 		            <b>

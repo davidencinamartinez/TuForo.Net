@@ -19,7 +19,6 @@
 		$(document).ready(function() {
 			navBarActive();
 			dateConvert();
-			threadCategoryPic();
 			(adsbygoogle = window.adsbygoogle || []).push({
 				google_ad_client: "ca-pub-2178837299566296",
 				enable_page_level_ads: true

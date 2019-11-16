@@ -18,7 +18,7 @@ class IndexController extends Controller {
       $agent = new Agent(); // DEVICE INFO
 
 		// THREAD INFO
-		$threads = DB::table('threads')->orderBy('last_reply_time', 'DESC')->get();
+		$threads = DB::table('threads')->orderBy('last_reply_time', 'DESC')->paginate(1);
 
 		// COUNT MEMBERS
 		$countMembers = DB::table('users')->count();

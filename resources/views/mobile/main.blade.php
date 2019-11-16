@@ -14,7 +14,6 @@
 	<script type="text/javascript">
 		$(document).ready(function() {
 			dateConvert();
-			threadCategoryPic();
 			(adsbygoogle = window.adsbygoogle || []).push({
 				google_ad_client: "ca-pub-2178837299566296",
 				enable_page_level_ads: true
@@ -64,14 +63,14 @@
 		</div>
 	<script>
 		document.getElementsByClassName("userPanel")[2].addEventListener("click", function() {
-	  	var panel = this.nextElementSibling;
-	  	this.classList.toggle("active");
-	    if (panel.style.maxHeight) {
-	      panel.style.maxHeight = null;
-	    } else {
-	      panel.style.maxHeight = panel.scrollHeight + "px";
-	    } 
-	  });
+			var panel = this.nextElementSibling;
+			this.classList.toggle("active");
+			if (panel.style.maxHeight) {
+			  panel.style.maxHeight = null;
+			} else {
+			  panel.style.maxHeight = panel.scrollHeight + "px";
+			} 
+		});
 	</script>
 	</div>
 	@section('postSection')
