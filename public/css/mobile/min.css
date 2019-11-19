@@ -88,6 +88,7 @@
 
 	.pageSelector {	display: inline-block;
 	  				text-align: center;
+	  				margin: 2.5vh;
 	}
 
 	.pageSelector li {	display: contents;
@@ -98,7 +99,7 @@
 					padding: 6px 10px;
 					text-decoration: none;
 					border: 1px solid black;
-					font-size: 22px;  
+					font-size: 2.5vh;  
 					text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 	}
 
@@ -153,6 +154,9 @@
 @media screen and (orientation:landscape) {
 
 	.error:nth-of-type(1) {	font-size: 2.5vw;
+	}
+
+	.page-link {	font-size: 2.5vw;
 	}
 
 }

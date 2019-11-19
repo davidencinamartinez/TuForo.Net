@@ -38,10 +38,28 @@
 			</tr>
 		</table>
 		@endforeach
-		<div style="text-align: center; margin: 5vh;">
-		  <div class="pageSelector">
-		    {{$threadData->links()}}
-		  </div>
+		@if($threadData->count() >= 25)
+			<div style="text-align: center;">
+			  <div class="pageSelector">
+			    {{$threadData->links()}}
+			  </div>
+			</div>
+		@endif
+	</div>
+	<h1 id="statsTitle">Estadísticas</h1>
+	<ul id="forumStats">
+		<li>Temas: <b>{{ $countThreads }}</b></li>
+		<li>Visitas: <b>{{ $countVisitors }}</b></li>
+		<li>Miembros: <b>{{$countMembers}}</b></li>
+		<li>Mensajes: <b>{{ $countMessages }}</b></li>
+		<li>En línea: <b>{{ $countOnline }}</b></li>
+	</ul>
+	<div id="mobileAdsContainerBottom">
+		<div style="float: left;">
+			<img src="{{url('storage/src/other/mad3.jpeg')}}" style="border: solid 1px black;">
+		</div>
+		<div style="float: right;">
+			<img src="{{url('storage/src/other/mad4.jpg')}}" style="border: solid 1px black;">
 		</div>
 	</div>
 @stop

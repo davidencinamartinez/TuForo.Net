@@ -40,7 +40,6 @@ function replyFormat() {
 	$('button').eq(9).on('click' , function(event) { // ADD IMAGE BUTTON
 		var replyImg = prompt("Introduce la URL de la imagen:");
 		$('div[name="replyMsg"]').focus();
-		document.execCommand('insertParagraph');
 		document.execCommand('insertimage', null, replyImg);		
 	});
 	$('button').eq(10).on('click' , function(event) { // YOUTUBE EMBED BUTTON

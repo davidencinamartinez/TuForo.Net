@@ -24,7 +24,7 @@ class UserController extends Controller {
             DB::table('users')->where('name', '=', Input::get('user'))->update(['last_activity' => Carbon::now()]);
     		return back();
     	} else {
-            return redirect()->back()->with('err', new HtmlString('Usuario o contraseña incorrectos. Vuelva a probar de nuevo.<br>Intentos: 1 de 5.'));
+            return redirect()->back()->with('err', new HtmlString('Usuario o contraseña incorrectos.<br>Intentos: 1 de 5.'));
         }
     }
 

@@ -62,6 +62,7 @@ class DatabaseSeeder extends Seeder
 	  			]
 	  		]);  
 
+	  	/*
 	  	// USER
 
   			DB::table('users')->insert([
@@ -78,7 +79,7 @@ class DatabaseSeeder extends Seeder
   					'user_title' => '⭐ Maestro del Foro ⭐'
   				]
   			]);
-
+		
 	  	// THREADS
 
   			DB::table('threads')->insert([
@@ -110,5 +111,6 @@ class DatabaseSeeder extends Seeder
 			'last_msg_title' => 'Bienvenidos a TuForo.Net',
 			'last_msg_time' => Carbon::now()->format('Y-m-d H:i:s')
 			]);
+			*/
     }
 }

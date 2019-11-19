@@ -38,7 +38,7 @@ class IndexController extends Controller {
 		// RESPONSE
 
       if ($agent->isMobile()) {
-         return view('mobile.index', [  'threadData' => $threads->paginate(25),
+         return view('mobile.index', [  'threadData' => $threads->paginate(2),
                            'countMembers' => $countMembers,
                            'countThreads' => $countThreads,
                            'countMessages' => $countMessages,
@@ -71,7 +71,7 @@ class IndexController extends Controller {
          
       		DB::table('users')->insert([
       			[	'name' => $request->input("reg_username"),
-      				'email' => $request->input("reg_email"),
+                  'email' => $request->input("reg_email"),
       				'password' => Hash::make($request->input('reg_password')),
       				'remember_token' => $request->input("_token"),
       				'created_at' => Carbon::now(),

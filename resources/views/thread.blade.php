@@ -13,40 +13,47 @@
   <script type='text/javascript' src='{{ asset("/js/reply.js") }}'></script>
 @endpush
 @section('postSection')
-	<script type="text/javascript">
+  <script type="text/javascript">
 		$(document).ready(function() {
 		  replyFormat();
 		});
 	</script>
 	<div id="threadBody">
     <h1>{{ $threadTitle }}</h1>
-    @foreach($threadData as $threadData)
+    @foreach($threadData as $thread)
     <div class="threadMsg">
       <div class="msgInfo">
-        <label class="msgTime">{{ date('d/m/Y', strtotime($threadData->msg_created_at)) }}</label>
-        <label>, {{ date('H:i', strtotime($threadData->msg_created_at)) }}</label>
-        <label class="msgId">#{{ $threadData->on_thread_id }}</label>
+        <label class="msgTime">{{ date('d/m/Y', strtotime($thread->msg_created_at)) }}</label>
+        <label>, {{ date('H:i', strtotime($thread->msg_created_at)) }}</label>
+        <label class="msgId">#{{ $thread->on_thread_id }}</label>
       </div>
       <table class="msgBody" cellspacing="0">
         <tr>
           <td class="userInfo">
-            <label class="userName">{{ $threadData->name }}</label>
+            <label class="userName">{{ $thread->name }}</label>
             <br>
-            <label class="userTitle">{{ $threadData->user_title }}</label>
+            <label class="userTitle">{{ $thread->user_title }}</label>
             <br>
-            <img class="userPic" src="{{ $threadData->user_pic }}">
+            <img class="userPic" src="{{ $thread->user_pic }}">
             <br>
-            <b>Registro: </b><label class="userRegDate">{{ strftime('%b %Y', strtotime($threadData->created_at)) }}</label>
+            <b>Registro: </b><label class="userRegDate">{{ strftime('%b %Y', strtotime($thread->reg_date)) }}</label>
             <br>
-            <b>Mensajes: </b><label class="userMsgCount">{{ $threadData->msg_count }}</label>
+            <b>Mensajes: </b><label class="userMsgCount">{{ $thread->msg_count }}</label>
           </td>
           <td class="msgText">
-            {!! $threadData->content !!}
+            {!! $thread->content !!}
           </td>
         </tr>
       </table>
     </div>
     @endforeach
+    @if($threadData->count() >= 40)
+      <div style="text-align: center;">
+        <div class="pageSelector">
+          {{$threadData->links()}}
+        </div>
+      </div>
+    @endif
     @if (Auth::check())
       <div id="replyPost">
   	    <div id="replyButtons">
