@@ -38,7 +38,7 @@ class IndexController extends Controller {
 		// RESPONSE
 
       if ($agent->isMobile()) {
-         return view('mobile.index', [  'threadData' => $threads->paginate(2),
+         return view('mobile.index', [  'threadData' => $threads->paginate(25),
                            'countMembers' => $countMembers,
                            'countThreads' => $countThreads,
                            'countMessages' => $countMessages,

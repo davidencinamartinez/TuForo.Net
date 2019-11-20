@@ -8,7 +8,7 @@
 @push('scripts')
 @endpush
 @section('postSection')
-	<img src="/storage/src/logos/banner100.png" style="display: flex; margin: auto; margin-top: 1vh;">
+	<img src="/storage/src/logos/banner100.png" style="display: flex; margin: 1vh auto;">
 	<div id="mobileAdsContainerTop">
 		<div style="float: left;">
 			<img src="{{url('storage/src/other/mad1.gif')}}" style="border: solid 1px black;">
@@ -17,7 +17,7 @@
 			<img src="{{url('storage/src/other/mad2.gif')}}" style="border: solid 1px black;">
 		</div>
 	</div>
-	<br>
+	<h1 class="contentTitle">Últimos temas</h1>
 	<div id="threadsPanel">
 		@foreach($threadData as $thread)
 		<table class="threadInfo">
@@ -33,7 +33,7 @@
 		     </tr>
 		     <tr>
 				<td class='threadStats'>
-		            <p>{{ $thread->reply_count }} mensajes. Últ. mens. <label class='threadDate'>{{ date('d/m/Y', strtotime($thread->last_reply_time)) }}</label> por {{ $thread->last_reply_user }}</p>
+		            <p>{{ $thread->reply_count }} mensajes. Últ. mens. <label class='threadDate'>{{ date('d/m/Y', strtotime($thread->last_reply_time)) }}</label> ({{ date('H:i', strtotime($thread->last_reply_time)) }}) por {{ $thread->last_reply_user }}</p>
 				</td>
 			</tr>
 		</table>
@@ -46,7 +46,7 @@
 			</div>
 		@endif
 	</div>
-	<h1 id="statsTitle">Estadísticas</h1>
+	<h1 class="contentTitle">Estadísticas</h1>
 	<ul id="forumStats">
 		<li>Temas: <b>{{ $countThreads }}</b></li>
 		<li>Visitas: <b>{{ $countVisitors }}</b></li>

@@ -43,3 +43,78 @@
 
 		.msgText img {	max-width: 100%;
 		}
+
+/* REPLY */
+
+	#replyPanel {	float: right;
+					margin: 1vh;
+	}
+
+	#replyPost {	width: 100%;
+				    display: inline-block;
+				    background-color: #2F2F2F;
+					border: solid 1px black top bottom;
+				    margin: 1vh auto;
+				    word-break: break-all;
+	}
+
+	#replyButtons {	text-align: center;
+					padding: 2.5vh;
+	}
+
+	#replyButtons button {	min-width: 5vh;
+							min-height: 5vh;
+							font-size: 2.5vh;
+							border-radius: 10px;
+							box-shadow: none;
+							outline: none;
+	}
+
+	#replyButtons button:active {	background-color: #FF8C00;
+									transition: 0.5s;
+	}
+
+	#userMsg {	min-height: 15vh;
+				height: auto;
+				width: 90%;
+				font-size: 3vh;
+				background-color: #8E8E8E;
+				margin: auto;
+				padding: 1vh;
+				border-radius: 10px;
+				outline: none;
+				text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	}
+
+	iframe {	border: solid 1px black;
+	}
+
+	#replyButton {	margin: 1vh;
+					float: right;
+	}
+
+@media screen and (orientation:landscape) {
+
+	#threadTitle {	font-size: 3.5vw;
+	}
+
+	.msgPost li {	font-size: 2vw;
+					padding: 0.75vw;
+	}
+
+	.userInfo img {	width: 5vw;
+	}
+
+	#replyButtons button {	width: 10vh;
+							height: 10vh;
+							font-size: 6.5vh;
+	}
+
+	#userMsg {	min-height: 20vw;
+				padding: 2vw;
+				font-size: 3vw;
+	}
+
+	#replyButton {	margin: 4vw;
+	}
+}

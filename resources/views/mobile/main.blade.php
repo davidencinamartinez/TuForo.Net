@@ -6,6 +6,7 @@
 	<link rel='shortcut icon' type='image/png' href='/storage/src/logos/favicon.png'>
 	@stack('styles')
 	<link rel='stylesheet' type='text/css' href='{{ asset("/css/mobile/min.css") }}'>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 	@stack('scripts')
 	<script src='{{ asset("/js/jquery-3.3.1.js") }}'></script>
 	<script src='{{ asset("/js/main.js") }}'></script>
@@ -43,6 +44,8 @@
 				  		<b class="dropbtn">{{ Auth::user()->name }}</b>
 				  	</a>&nbsp;
 				  <a href="/logout"><i class="fas fa-power-off"></i></a>
+				  <br>
+				  	<img src="{{ Auth::user()->user_pic }}">
 				</div>
 			@else
 				<form id="loginForm" action='/login' method='POST'>
@@ -65,6 +68,7 @@
 		document.getElementsByClassName("userPanel")[2].addEventListener("click", function() {
 			var panel = this.nextElementSibling;
 			this.classList.toggle("active");
+			document.getElementsByClassName("userForm")[0].focus();
 			if (panel.style.maxHeight) {
 			  panel.style.maxHeight = null;
 			} else {

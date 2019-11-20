@@ -11,6 +11,7 @@ use App\User;
 use Hash;
 use DB;
 use Illuminate\Support\Carbon;
+use Jenssegers\Agent\Agent;
 
 class UserController extends Controller {   
     
@@ -34,12 +35,22 @@ class UserController extends Controller {
     }
 
     public function getProfile($name) {
+
+            $agent = new Agent(); // DEVICE INFO
+
             $user = DB::table('users')->where('name', '=', $name)->get();
             if ($user->count() > 0) {
-                $username = DB::table('users')->where('name', '=', $name)->value('name');
-                return view('profile', [    'userData' => $user,
-                                            'title' => $username
-                ]);
+                if ($agent->isMobile()) {
+                    $username = DB::table('users')->where('name', '=', $name)->value('name');
+                    return view('mobile.profile', [    'userData' => $user,
+                                                'title' => $username
+                    ]);
+                } else {
+                    $username = DB::table('users')->where('name', '=', $name)->value('name');
+                    return view('profile', [    'userData' => $user,
+                                                'title' => $username
+                    ]);
+                }
             } else {
             return view('errors.404');
             }

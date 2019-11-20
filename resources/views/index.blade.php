@@ -54,11 +54,13 @@
                 	</tr>
                 @endforeach
             </table>
-            <div style="text-align: center;">
-              <div class="pageSelector">
-                {{$threadData->links()}}
-              </div>
-            </div>
+           @if ($threadData->hasPages())
+             <div style="text-align: center;">
+               <div class="pageSelector">
+                 {{$threadData->links()}}
+               </div>
+             </div>
+           @endif
         </div>
         <div style='width: 30%; float: right; text-align: center; margin-bottom: 20px;'>
             <div id='miscPanel'>

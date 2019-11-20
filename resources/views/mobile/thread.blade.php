@@ -1,20 +1,21 @@
 @extends('mobile.main')
 
-@section('title', $threadTitle)
+@section('title', $threadTitle.' - TuForo.Net')
 
 @push('styles')
 	<link rel='stylesheet' type='text/css' href='{{ asset("/css/mobile/thread.css") }}'>
+	<meta name="csrf-token" content="{{ csrf_token() }}">
 @endpush
 @push('scripts')
-	<script type='text/javascript' src='{{ asset("/js/reply.js") }}'></script>
+	<script src='{{ asset("/js/mobile/reply.js") }}'></script>
 @endpush
 @section('postSection')
 	<script type="text/javascript">
 		$(document).ready(function() {
-		  replyFormat();
+		 	replyFormat();
 		});
 	</script>
-	<h1 id="threadTitle">{{ $threadTitle }}</h1>
+	<h1 class="contentTitle">{{ $threadTitle }}</h1>
     @foreach($threadData as $thread)
 		<ul class="msgPost">
 			<li class="userInfo">
@@ -28,11 +29,31 @@
 			</li>
 		</ul>
 	@endforeach
-	@if($threadData->count() >= 25)
+	@if ($threadData->hasPages())
 		<div style="text-align: center;">
 		  <div class="pageSelector">
 		    {{$threadData->links()}}
 		  </div>
+		</div>
+	@endif
+	<button id="replyPanel" class="userPanel">Responder</button>
+	@if (Auth::check())
+		<div id="replyPost" style="visibility: hidden; display: none;">
+		    <div id="replyButtons">
+		    <button class="wysiwyg" type="button"><i class="fas fa-bold"></i></button>
+		    <button class="wysiwyg" type="button"><i class="fas fa-italic"></i></button>
+		    <button class="wysiwyg" type="button"><i class="fas fa-underline"></i></button>
+		    <button class="wysiwyg" type="button"><i class="fas fa-image"></i></button>
+		    <button class="wysiwyg" type="button"><i class="fas fa-link"></i></button>
+		    </div>
+		<div id="userMsg" name="replyMsg" contenteditable="false" data-placeholder="Introduce tu respuesta ..."></div>
+		<form action='/sendReply' method="POST" onsubmit="return replyCorrect()">
+		  @csrf
+		  <input type="hidden" name="thread_id">
+		  <input type="hidden" name="creator">
+		  <input type="hidden" name="content">
+		  <input class="userPanel" type="submit" id="replyButton" value="Enviar respuesta">
+		</form>
 		</div>
 	@endif
 @stop

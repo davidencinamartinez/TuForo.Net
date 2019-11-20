@@ -21,6 +21,7 @@
 							display: contents;
 							padding: 1vh;
 							z-index: 2;
+							text-align: center;
 	}
 
 /* USER HEADER PANEL */
@@ -83,6 +84,14 @@
 								transform: perspective(1px) scale(1.05);
 								transition: 0.5s;
 		}
+
+/* TITLES */
+
+	.contentTitle {	text-align: center;
+					font-size: 2.5vh;
+					text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+					margin: 1vh;
+	}
 
 /* PAGINATOR */
 
@@ -159,4 +168,6 @@
 	.page-link {	font-size: 2.5vw;
 	}
 
+	.contentTitle {	font-size: 3vw;
+	}
 }

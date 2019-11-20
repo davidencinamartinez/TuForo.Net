@@ -1,6 +1,6 @@
 @extends('main')
 
-@section('title', $threadTitle)
+@section('title', $threadTitle.' - TuForo.Net')
 
 @push('styles')
 	<link rel='stylesheet' type='text/css' href='{{ asset("/css/thread.css") }}'>
@@ -11,13 +11,13 @@
   <script type='text/javascript' src='{{ asset("/js/moment_js/moment.js") }}'></script>
   <script type='text/javascript' src='{{ asset("/js/moment_js/es.js") }}'></script>
   <script type='text/javascript' src='{{ asset("/js/reply.js") }}'></script>
-@endpush
-@section('postSection')
   <script type="text/javascript">
 		$(document).ready(function() {
 		  replyFormat();
 		});
 	</script>
+@endpush
+@section('postSection')
 	<div id="threadBody">
     <h1>{{ $threadTitle }}</h1>
     @foreach($threadData as $thread)
@@ -47,7 +47,7 @@
       </table>
     </div>
     @endforeach
-    @if($threadData->count() >= 40)
+    @if ($threadData->hasPages())
       <div style="text-align: center;">
         <div class="pageSelector">
           {{$threadData->links()}}
@@ -57,21 +57,21 @@
     @if (Auth::check())
       <div id="replyPost">
   	    <div id="replyButtons">
-            <button type="button"><i class="fas fa-bold"></i></button>
-            <button type="button"><i class="fas fa-italic"></i></button>
-            <button type="button"><i class="fas fa-underline"></i></button>
+            <button class="wysiwyg" type="button"><i class="fas fa-bold"></i></button>
+            <button class="wysiwyg" type="button"><i class="fas fa-italic"></i></button>
+            <button class="wysiwyg" type="button"><i class="fas fa-underline"></i></button>
             |
-            <button type="button"><i class="fas fa-align-left"></i></button>
-            <button type="button"><i class="fas fa-align-center"></i></button>
-            <button type="button"><i class="fas fa-align-right"></i></button>
-            <button type="button"><i class="fas fa-align-justify"></i></button>
+            <button class="wysiwyg" type="button"><i class="fas fa-align-left"></i></button>
+            <button class="wysiwyg" type="button"><i class="fas fa-align-center"></i></button>
+            <button class="wysiwyg" type="button"><i class="fas fa-align-right"></i></button>
+            <button class="wysiwyg" type="button"><i class="fas fa-align-justify"></i></button>
             |
-            <button type="button"><i class="fas fa-list-ul"></i></button>
-            <button type="button"><i class="fas fa-list-ol"></i></button>
+            <button class="wysiwyg" type="button"><i class="fas fa-list-ul"></i></button>
+            <button class="wysiwyg" type="button"><i class="fas fa-list-ol"></i></button>
             |
-            <button type="button"><i class="fas fa-image"></i></button>
-            <button type="button"><i class="fas fa-video"></i></button>
-            <button type="button"><i class="fas fa-link"></i></button>
+            <button class="wysiwyg" type="button"><i class="fas fa-image"></i></button>
+            <button class="wysiwyg" type="button"><i class="fas fa-video"></i></button>
+            <button class="wysiwyg" type="button"><i class="fas fa-link"></i></button>
   	    </div>
         <div name="replyMsg" contenteditable="true" data-placeholder="Introduce tu respuesta ..."></div>
         <form action='/sendReply' method="POST" onsubmit="return replyCorrect()">
