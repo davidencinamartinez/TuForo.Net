@@ -35,7 +35,7 @@
                                 <a href="thread/{{ $thread->id }}">{{ $thread->thread }}</a>
                             </b>
                             <br>
-                            <a href="/profile/{{ strtolower($thread->creator) }}">{{ $thread->creator }}</a>
+                            <a href="/profile/{{ strtolower($thread->creator) }}" class="userProf">{{ $thread->creator }}</a>
                         </td>
                         <td class='threadLastMsg'>
                             <label class='threadDate'>{{ date('d/m/Y', strtotime($thread->last_reply_time)) }}</label>

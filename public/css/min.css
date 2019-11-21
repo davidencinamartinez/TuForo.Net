@@ -138,6 +138,15 @@
 								text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 	}
 
+/* OTHER STUFF */
+
+	.userProf {	text-decoration: none;
+				color: white;
+	}
+
+	.userProf:hover {	color: #FF8C00;
+	}
+
 /* PAGINATOR */
 
 	.pageSelector {	display: inline-block;
