@@ -20,7 +20,7 @@
 		<ul class="msgPost">
 			<li class="userInfo">
 				<img class="userPic" src="{{ $thread->user_pic }}">
-				<label class="userName">{{ $thread->name }}</label>
+				<label class="userName"><a href="/profile/{{ $thread->name }}">{{ $thread->name }}</a></label>
 				<br>
 				<label class="msgTime">{{ date('d/m/Y', strtotime($thread->msg_created_at)) }}</label><label>, {{ date('H:i', strtotime($thread->msg_created_at)) }}</label>
 			</li>

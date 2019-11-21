@@ -8,7 +8,7 @@
 
 /* MESSAGES */
 
-	.msgPost {	width: 90%;
+	.msgPost {	width: 95%;
 			    background-color: #2F2F2F;
 			    border: solid 1px black;
 			    -webkit-border-radius: 8px;
@@ -35,6 +35,14 @@
 		.userInfo .userName {	font-weight: bold;
 
 		}
+
+		.userName a {	text-decoration: none;
+						color: white;
+		}
+
+		.userName a:hover {	color: #FF8C00;
+		}
+		
 	/* MESSAGE CONTENT */
 
 		.msgText {	background-color: #4F4F4F;

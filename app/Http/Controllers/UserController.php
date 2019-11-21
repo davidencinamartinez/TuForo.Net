@@ -42,8 +42,8 @@ class UserController extends Controller {
             if ($user->count() > 0) {
                 if ($agent->isMobile()) {
                     $username = DB::table('users')->where('name', '=', $name)->value('name');
-                    return view('mobile.profile', [    'userData' => $user,
-                                                'title' => $username
+                    return view('mobile.profile', [     'userData' => $user,
+                                                        'title' => $username
                     ]);
                 } else {
                     $username = DB::table('users')->where('name', '=', $name)->value('name');

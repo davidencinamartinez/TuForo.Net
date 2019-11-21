@@ -14,51 +14,58 @@
 		</h1>
 		<div id="userInfo">
 		@if (Auth::id() == $data->id)
-			<img id="profilePic" src="{!! $data->user_pic !!}">
-			<h3>Temas:
-				<label><b>{!! $data->thread_count !!}</b></label>
-			</h3>   
-			<h3>Mensajes:
-				<label>{!! $data->msg_count !!}</label>
-			</h3>   
-			<h3>Fecha de registro:
-				<label>{{ strftime('%b %Y', strtotime($data->created_at)) }}</label>
-			</h3> 
-			<h3>Última actividad:
-				<label class="msgTime">{{ date('d/m/Y', strtotime($data->last_activity)) }}</label>
-				<label>, {{ date('H:i', strtotime($data->last_activity)) }}</label>
-			</h3>
 			<form action="/updateProfile" method="POST">
 				@csrf
-				<input type="hidden" name="id" value="{!! $data->id !!}">
-				<h3>E-Mail:</h3>
-				<h3>
-					<label>{!! $data->email !!}</label>
-				</h3>
-				<h3>Título:</h3>
-				<input type="text" name="user_title" value="{!! $data->user_title !!}" maxlength="20">
-				<h3><input type="submit" value="Actualizar"></h3>
+				<img id="profilePic" src="{!! $data->user_pic !!}" onerror="this.src='/storage/src/logos/logo128.png';$('input[name=user_pic]').attr('value', '/storage/src/logos/logo128.png');">
+				<br>
+				<ul id="dataInfo">
+					<input type="hidden" name="id" value="{!! $data->id !!}">
+					<li>
+						<label><b>Temas:</b>
+							{!! $data->thread_count !!}
+						</label>
+					</li>
+					<li>
+						<label><b>Mensajes:</b>
+							<label>{!! $data->msg_count !!}</label>
+						</label>   
+					</li>
+					<li>
+						<label><b>Fecha de registro:</b>
+							<label>{{ strftime('%b %Y', strtotime($data->created_at)) }}</label>
+						</label> 
+					</li>
+					<li>
+						<label><b>E-Mail:</b>
+							<label>{!! $data->email !!}</label>
+						</label>
+					</li>
+					<li>
+						<label><b>Título:</b></label>
+						<br>
+						<input type="text" name="user_title" value="{!! $data->user_title !!}" maxlength="20">
+						<input type="text" name="user_pic" value="{!! $data->user_pic !!}" maxlength="255" style="display: none;">
+					</li>
+				</ul>
+				<input class="userPanel" type="submit" value="Actualizar" style="display: none">
 			</form>  
+			<script type="text/javascript">
+				$("#profilePic").on('click', function(event) {
+					var newImg = prompt("Introduce la URL de la imagen:");
+					if (newImg != null) {
+						$("input[name='user_pic']").attr('value', newImg);
+						$("#profilePic").attr("src", newImg);
+						$("input[value='Actualizar']").css('display', 'block');
+					} else {
+						return false;
+					}
+				});
+				$("form[action='/updateProfile'] input").on('input change', function(event) {
+					$("input[value='Actualizar']").css('display', 'block');
+				});
+			</script>
 		@else 
-			<h1 class="contentTitle">
-				<label>{!! $data->name !!}</label>
-			</h1>
-			<h3>
-				<label>{!! $data->user_title !!}</label>
-			</h3>
-			<h3>Temas:
-				<label>{!! $data->thread_count !!}</label>
-			</h3>   
-			<h3>Mensajes:
-				<label>{!! $data->msg_count !!}</label>
-			</h3>   
-			<h3>Fecha de registro:
-				<label>{{ strftime('%b %Y', strtotime($data->created_at)) }}</label>
-			</h3> 
-			<h3>Última actividad:
-				<label class="msgTime">{{ date('d/m/Y', strtotime($data->last_activity)) }}</label>
-				<label>, {{ date('H:i', strtotime($data->last_activity)) }}</label>
-			</h3>  
+			
 		@endif
 		</div>
 	@endforeach

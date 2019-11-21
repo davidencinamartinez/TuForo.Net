@@ -30,7 +30,7 @@
       <table class="msgBody" cellspacing="0">
         <tr>
           <td class="userInfo">
-            <label class="userName">{{ $thread->name }}</label>
+            <label class="userName"><a href="/profile/{{ $thread->name }}">{{ $thread->name }}</a></label>
             <br>
             <label class="userTitle">{{ $thread->user_title }}</label>
             <br>
