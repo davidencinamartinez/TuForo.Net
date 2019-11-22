@@ -11,13 +11,13 @@
   <script type='text/javascript' src='{{ asset("/js/moment_js/moment.js") }}'></script>
   <script type='text/javascript' src='{{ asset("/js/moment_js/es.js") }}'></script>
   <script type='text/javascript' src='{{ asset("/js/reply.js") }}'></script>
-  <script type="text/javascript">
-		$(document).ready(function() {
-		  replyFormat();
-		});
-	</script>
 @endpush
 @section('postSection')
+  <script type="text/javascript">
+    $(document).ready(function() {
+      replyFormat();
+    });
+  </script>
 	<div id="threadBody">
     <h1>{{ $threadTitle }}</h1>
     @foreach($threadData as $thread)
