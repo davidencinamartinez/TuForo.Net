@@ -24,6 +24,10 @@
 	            <p>* (Todos los campos son obligatorios)</p>
 	            <br>
 	            <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" data-theme="dark" style="margin: 1vh auto;"></div>
+	            <object data='storage/src/other/AvisoLegal.pdf'>
+				    <p>Aviso legal y términos de uso:</p>
+				    <p><a href="storage/src/other/AvisoLegal.pdf" style="text-decoration: none;color: #FF8C00; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">Descargar aquí</a>
+	            </object>
 	            <p id="PTerms" style="margin: 1vh auto;">
 	                <input type="checkbox" name="reg_terms" style="width: 40px; height: 40px;">
 	                <label style="vertical-align: text-bottom;">He leído y acepto los términos y condiciones de <b>TuForo.Net</b>*</label>
@@ -33,7 +37,4 @@
 	        </form>
 	    </div>
 	</div>
-	<script type="text/javascript">
-		$('iframe').parent().css({ 'transform' : 'scale(0.77)', '-webkit-transform' : 'scale(0.77)' });
-	</script>
 @stop
