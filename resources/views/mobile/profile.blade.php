@@ -3,6 +3,8 @@
 @section('title', $title.' - TuForo.Net')
 
 @push('styles')
+<meta name="keywords" content="{!! $userData[0]->name !!},tuforo,foro,español">
+    <meta name="description" content="Perfil de {!! $userData[0]->name !!} Temas: {!! $userData[0]->thread_count !!} Mensajes: {!! $userData[0]->msg_count !!} Fecha de registro: {{ strftime('%b %Y', strtotime($userData[0]->created_at)) }}">
 	<link rel='stylesheet' type='text/css' href='{{ asset("css/mobile/profile.css") }}'>
 @endpush
 @push('scripts')
@@ -65,7 +67,35 @@
 				});
 			</script>
 		@else 
-			
+			<img id="profilePic" src="{!! $data->user_pic !!}" onerror="this.src='/storage/src/logos/logo128.png';$('input[name=user_pic]').attr('value', '/storage/src/logos/logo128.png');">
+			<br>
+			<ul id="dataInfo">
+				<li>
+					<label><b>Temas:</b>
+						{!! $data->thread_count !!}
+					</label>
+				</li>
+				<li>
+					<label><b>Mensajes:</b>
+						<label>{!! $data->msg_count !!}</label>
+					</label>   
+				</li>
+				<li>
+					<label><b>Fecha de registro:</b>
+						<label>{{ strftime('%b %Y', strtotime($data->created_at)) }}</label>
+					</label> 
+				</li>
+				<li>
+					<label><b>E-Mail:</b>
+						<label>{!! $data->email !!}</label>
+					</label>
+				</li>
+				<li>
+					<label><b>Título:</b>
+						<label>{!! $data->user_title !!}</label>
+					</label>
+				</li>
+			</ul>
 		@endif
 		</div>
 	@endforeach

@@ -3,6 +3,8 @@
 @section('title', $title.' - TuForo.Net')
 
 @push('styles')
+<meta name="keywords" content="{!! $userData[0]->name !!},tuforo,foro,español">
+    <meta name="description" content="Perfil de {!! $userData[0]->name !!} Temas: {!! $userData[0]->thread_count !!} Mensajes: {!! $userData[0]->msg_count !!} Fecha de registro: {{ strftime('%b %Y', strtotime($userData[0]->created_at)) }}">
     <link rel='stylesheet' type='text/css' href='{{ asset("css/profile.css") }}'>
 @endpush
 @push('scripts')

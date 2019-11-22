@@ -3,9 +3,11 @@
 @section('title', $threadTitle.' - TuForo.Net')
 
 @push('styles')
+<meta name="keywords" content="{{ $threadTitle }}, tuforo,foro,español">
+    <meta name="description" content="{{ $threadTitle }}">
 	<link rel='stylesheet' type='text/css' href='{{ asset("/css/mobile/thread.css") }}'>
 	<meta name="csrf-token" content="{{ csrf_token() }}">
-	<meta name="description" content="{{ $threadData[0]->content }}">
+	<meta name="description" content="{{ html_entity_decode($threadData[0]->content) }}">
 @endpush
 @push('scripts')
 	<script src='{{ asset("/js/mobile/reply.js") }}'></script>

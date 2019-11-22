@@ -3,6 +3,8 @@
 @section('title', 'TuForo.Net - Internet Somos Todos')
 
 @push('styles')
+<meta name="keywords" content="TuForo.Net,tuforo,foro,español">
+    <meta name="description" content="Bienvenido a TuForo.Net. Aquí encontrarás temas, opiniones y debates sobre temas de todo tipo. Únete a nuestra comunidad.">
 	<link rel='stylesheet' type='text/css' href='{{ asset("css/index.css") }}'>
 @endpush
 @push('scripts')
