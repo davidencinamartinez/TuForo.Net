@@ -11,10 +11,26 @@
 	<img src="/storage/src/logos/banner100.png" style="display: flex; margin: 1vh auto;">
 	<div id="mobileAdsContainerTop">
 		<div style="float: left;">
-			<img src="{{url('storage/src/other/mad1.gif')}}" style="border: solid 1px black;">
+			<!-- TOP LEFT AD CONTAINER (MOBILE INDEX) 300x250 -->
+			<amp-ad
+			     layout="fixed"
+			     width="300"
+			     height="250"
+			     type="adsense"
+			     data-ad-client="ca-pub-2178837299566296"
+			     data-ad-slot="5661977290">
+			</amp-ad>
 		</div>
 		<div style="float: right;">
-			<img src="{{url('storage/src/other/mad2.gif')}}" style="border: solid 1px black;">
+			<!-- TOP RIGHT AD CONTAINER (MOBILE INDEX) 300x250 -->
+			<amp-ad
+			     layout="fixed"
+			     width="300"
+			     height="250"
+			     type="adsense"
+			     data-ad-client="ca-pub-2178837299566296"
+			     data-ad-slot="9740823106">
+			</amp-ad>
 		</div>
 	</div>
 	<h1 class="contentTitle">Últimos temas</h1>
@@ -56,10 +72,26 @@
 	</ul>
 	<div id="mobileAdsContainerBottom">
 		<div style="float: left;">
-			<img src="{{url('storage/src/other/mad3.jpeg')}}" style="border: solid 1px black;">
+			<!-- BOTTOM LEFT AD CONTAINER (MOBILE INDEX) 300x250 -->
+			<amp-ad
+			     layout="fixed"
+			     width="300"
+			     height="250"
+			     type="adsense"
+			     data-ad-client="ca-pub-2178837299566296"
+			     data-ad-slot="5313163948">
+			</amp-ad>
 		</div>
 		<div style="float: right;">
-			<img src="{{url('storage/src/other/mad4.jpg')}}" style="border: solid 1px black;">
+			<!-- BOTTOM RIGHT AD CONTAINER (MOBILE INDEX) 300x250 -->
+			<amp-ad
+			     layout="fixed"
+			     width="300"
+			     height="250"
+			     type="adsense"
+			     data-ad-client="ca-pub-2178837299566296"
+			     data-ad-slot="4752220307">
+			</amp-ad>
 		</div>
 	</div>
 @stop

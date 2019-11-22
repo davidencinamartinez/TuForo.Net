@@ -48,9 +48,14 @@
 		<div style='width: 30%; float: right; text-align: center; margin-bottom: 20px;'>
 		    <div id='miscPanel'>
 				<div class='RightAdsContainer'>
-                    <a href="https://www.coolmod.com/promociones" target='_blank'>
-                        <img src='storage/src/other/ad5.gif'>
-                    </a>
+                    <!-- RIGHT AD CONTAINER (FORUM) 300x600 -->
+                    <ins class="adsbygoogle"
+                         style="display:inline-block;width:300px;height:600px"
+                         data-ad-client="ca-pub-2178837299566296"
+                         data-ad-slot="4871639807"></ins>
+                    <script>
+                         (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
 				</div>
 				<div style="width: 100%; text-align: center;">
                     <iframe src="https://freesecure.timeanddate.com/clock/i6pw1dlx/n31/tles4/fn14/fs20/fcfff/tc000/pct/ftb/bas2/bacfff/pa12/tt0/tw0/th1/tb4" frameborder="0" width="271" height="74" allowTransparency="true"></iframe>
