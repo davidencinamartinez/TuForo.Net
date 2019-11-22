@@ -27,7 +27,8 @@
 	/* MESSAGE CREATOR */
 
 
-		.userInfo img {	width: 4vh;
+		.userInfo img {	height: 60px;
+						width: 60px;
 						float: right;
 						border-radius: 10px;
 		}
@@ -110,7 +111,8 @@
 					padding: 0.75vw;
 	}
 
-	.userInfo img {	width: 5vw;
+	.userInfo img {	width: 50px;
+					height: 50px;
 	}
 
 	#replyButtons button {	width: 10vh;

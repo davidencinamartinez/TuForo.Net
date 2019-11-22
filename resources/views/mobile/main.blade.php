@@ -45,7 +45,6 @@
 				  	</a>&nbsp;
 				  <a href="/logout"><i class="fas fa-power-off"></i></a>
 				  <br>
-				  	<img src="{{ Auth::user()->user_pic }}">
 				</div>
 			@else
 				<form id="loginForm" action='/login' method='POST'>

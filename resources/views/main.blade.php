@@ -71,9 +71,17 @@
 		@endif
 	</div>
 	<div class='headerAdsContainer'>
-		<a href="https://www.livingroomofsatoshi.com/" target='_blank'>
-			<img src='/storage/src/other/ad4.gif'>
-		</a>
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- Bloque 1 -->
+		<ins class="adsbygoogle"
+		     style="display:block"
+		     data-ad-client="ca-pub-2178837299566296"
+		     data-ad-slot="7738881260"
+		     data-ad-format="auto"
+		     data-full-width-responsive="true"></ins>
+		<script>
+		     (adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
 	</div>
 	@section('postSection')
     @show
