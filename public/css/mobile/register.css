@@ -1,0 +1,45 @@
+/* REGISTER FORM DIV */
+
+	#registerPanel {	height: auto;
+						width: 90%;
+						background-color: #2F2F2F;
+						margin: 1vh auto;
+						padding: 1vh;
+						position: relative;
+						display: flex;
+						text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+						border: 1px solid black;
+						font-size: 1.5vh;
+	}
+
+	/* FORM */
+
+		#inputForm form input[type="text"], #inputForm form input[type="password"] {
+			margin: 1vh auto;
+			font-size: 1.5vh; 
+			padding: 0.25vh;
+		}
+
+		/* PASSWORD IMAGES */
+
+			form > img {	vertical-align: middle;
+							width: 4vh;
+			}
+
+/* SUCCESS PANEL */
+
+	#successPanel {	height: auto;
+					width: 50%;
+					margin: auto;
+					padding: 20px;
+					text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+					text-align: center;
+					font-size: 24px;
+	}
+
+	/* SUCCESS IMG */
+	
+		#successImg {	height: 180px;
+						width: 210px;
+						vertical-align: middle;
+		}

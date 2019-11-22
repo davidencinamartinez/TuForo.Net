@@ -14,11 +14,13 @@
 
 /* ERROR */
 
-	.error:nth-of-type(1) {	font-weight: bold;
-							font-size: 1.5vh;
-							color: #FF4040;
-							text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-							display: contents;
+	.error {	font-weight: bold;
+				font-size: 1.5vh;
+				color: #FF4040;
+				text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	}
+
+	.error:nth-of-type(1) {	display: contents;
 							padding: 1vh;
 							z-index: 2;
 							text-align: center;

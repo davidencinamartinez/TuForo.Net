@@ -66,7 +66,7 @@ function checkCaptcha() {
 function checkTerms() {
 	var terms = $('input[name="reg_terms"]');
 	if (terms.is(':checked') == false) {
-		errorDisplay(terms,'Debes aceptar las condiciones de TuForo.Net');
+		errorDisplay(PTerms,'<br>Debes aceptar las condiciones de TuForo.Net');
 		return false;
 	} else {
 		return true;

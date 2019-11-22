@@ -3,16 +3,11 @@
 @section('title', 'Registro - TuForo.Net')
 
 @push('styles')
+<link rel='stylesheet' type='text/css' href='{{ asset("css/mobile/register.css") }}'>
 @endpush
 @push('scripts')
-	<script src="https://www.google.com/recaptcha/api.js?render=6Lc1fZ4UAAAAAHd6ygOOHFj5B0vykAjCAZcFkIBU"></script>
-	<script>
-	grecaptcha.ready(function() {
-	    grecaptcha.execute('6Lc1fZ4UAAAAAHd6ygOOHFj5B0vykAjCAZcFkIBU', {action: 'homepage'}).then(function(token) {
-	       console.log('probandooooooooooo');
-	    });
-	});
-	</script>
+	<script src="//www.google.com/recaptcha/api.js"></script>
+	<script src='{{ asset("js/register.js") }}'></script>
 @endpush
 @section('postSection')
 	<div id="registerPanel">
@@ -27,15 +22,18 @@
 	            &emsp;
 	            <img show='on' src="storage/src/other/show.png" onclick="showPassword(this)">
 	            <p>* (Todos los campos son obligatorios)</p>
-	            <div class="g-recaptcha" data-sitekey="6LffHMQUAAAAADWK3IBujLvXv3rUNohLWUFUHEdv" data-theme="dark" style="margin: 20px 0px 20px 0px;"></div>
-	            <p>
-	                <input type="checkbox" name="reg_terms" style="vertical-align: bottom;">
-	                <label>He leído y acepto los términos y condiciones de </label>
-	                <b>TuForo.Net</b>
+	            <br>
+	            <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" data-theme="dark" style="margin: 1vh auto;"></div>
+	            <p id="PTerms" style="margin: 1vh auto;">
+	                <input type="checkbox" name="reg_terms" style="width: 40px; height: 40px;">
+	                <label style="vertical-align: text-bottom;">He leído y acepto los términos y condiciones de <b>TuForo.Net</b>*</label>
 	            </p>
-	            <input type="button" id="reg_done" value="Registrarse" onclick="return formValidation()">
+	            <br>
+	            <input type="button" class="userPanel" id="reg_done" value="Registrarse" onclick="return formValidation();">
 	        </form>
 	    </div>
-	    
 	</div>
+	<script type="text/javascript">
+		$('iframe').parent().css({ 'transform' : 'scale(0.77)', '-webkit-transform' : 'scale(0.77)' });
+	</script>
 @stop

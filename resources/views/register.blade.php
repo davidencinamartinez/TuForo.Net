@@ -26,7 +26,7 @@
                 <img show='on' src="storage/src/other/show.png" onclick="showPassword(this)">
                 <p>* (Todos los campos son obligatorios)</p>
                 <div class="g-recaptcha" data-sitekey="6LffHMQUAAAAADWK3IBujLvXv3rUNohLWUFUHEdv" style="margin: 20px 0px 20px 0px;"></div>
-                <p>
+                <p id="PTerms">
                     <input type="checkbox" name="reg_terms" style="vertical-align: bottom;">
                     <label>He leído y acepto los términos y condiciones de </label>
                     <b>TuForo.Net</b>
