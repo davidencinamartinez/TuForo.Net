@@ -23,7 +23,7 @@
 	            <img show='on' src="storage/src/other/show.png" onclick="showPassword(this)">
 	            <p>* (Todos los campos son obligatorios)</p>
 	            <br>
-	            <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" data-theme="dark" style="margin: 1vh auto;"></div>
+	            <div class="g-recaptcha" data-sitekey="6LffHMQUAAAAADWK3IBujLvXv3rUNohLWUFUHEdv" data-theme="dark" style="margin: 1vh auto;"></div>
 	            <object data='storage/src/other/AvisoLegal.pdf'>
 				    <p>Aviso legal y términos de uso:</p>
 				    <p><a href="storage/src/other/AvisoLegal.pdf" style="text-decoration: none;color: #FF8C00; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">Descargar aquí</a>
