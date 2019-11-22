@@ -25,8 +25,7 @@
                 &emsp;
                 <img show='on' src="storage/src/other/show.png" onclick="showPassword(this)">
                 <p>* (Todos los campos son obligatorios)</p>
-                <div class="g-recaptcha" data-sitekey="6Lc1fZ4UAAAAAHd6ygOOHFj5B0vykAjCAZcFkIBU
-" style="margin: 20px 0px 20px 0px;"></div>
+                <div class="g-recaptcha" data-sitekey="6LffHMQUAAAAADWK3IBujLvXv3rUNohLWUFUHEdv" style="margin: 20px 0px 20px 0px;"></div>
                 <p>
                     <input type="checkbox" name="reg_terms" style="vertical-align: bottom;">
                     <label>He leído y acepto los términos y condiciones de </label>

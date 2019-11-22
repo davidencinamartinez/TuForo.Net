@@ -5,6 +5,7 @@
 @push('styles')
 	<link rel='stylesheet' type='text/css' href='{{ asset("/css/mobile/thread.css") }}'>
 	<meta name="csrf-token" content="{{ csrf_token() }}">
+	<meta name="description" content="{{ $threadData[0]->content }}">
 @endpush
 @push('scripts')
 	<script src='{{ asset("/js/mobile/reply.js") }}'></script>

@@ -3,14 +3,15 @@
 @section('title', $threadTitle.' - TuForo.Net')
 
 @push('styles')
+<meta name="description" content="{{ $threadData[0]->content }}">
 	<link rel='stylesheet' type='text/css' href='{{ asset("/css/thread.css") }}'>
  	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
  	<meta name="csrf-token" content="{{ csrf_token() }}">
 @endpush
 @push('scripts')
-  <script type='text/javascript' src='{{ asset("/js/moment_js/moment.js") }}'></script>
-  <script type='text/javascript' src='{{ asset("/js/moment_js/es.js") }}'></script>
-  <script type='text/javascript' src='{{ asset("/js/reply.js") }}'></script>
+<script type='text/javascript' src='{{ asset("/js/moment_js/moment.js") }}'></script>
+    <script type='text/javascript' src='{{ asset("/js/moment_js/es.js") }}'></script>
+    <script type='text/javascript' src='{{ asset("/js/reply.js") }}'></script>
 @endpush
 @section('postSection')
   <script type="text/javascript">
