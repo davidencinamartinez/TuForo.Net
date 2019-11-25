@@ -25,8 +25,9 @@
 
 		/* THREAD NAME */		
 
-			.threadName {	font-size: 1.5vh;
+			.threadName {	font-size: 16px;
 							width: 100%;
+							text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 			}
 
 			.threadName > b > a:link {	color: white;
@@ -38,7 +39,7 @@
 
 		/* THREAD STATISTICS */
 
-			.threadStats {	font-size: 1.25vh;
+			.threadStats {	font-size: 10px;
 			}
 
 /* STATS */
@@ -75,17 +76,17 @@
 
 @media screen and (orientation:landscape) {
 
-	.threadName {	font-size: 2vw;
+	.threadName {	font-size: 18px;
 					width: 100%;
 	}
 
-	.contentTitle {	font-size: 2.5vw;
+	.contentTitle {	font-size: 24px;
 	}
 
-	.threadStats {	font-size: 1.5vw;
+	.threadStats {	font-size: 12px;
 	}
 
-	#forumStats {	font-size: 1.5vw;
+	#forumStats {	font-size: 12px;
 	}
 
 	#forumStats li {	padding: 0.75vw;

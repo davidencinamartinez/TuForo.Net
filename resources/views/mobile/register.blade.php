@@ -29,7 +29,7 @@
 				    <p><a href="storage/src/other/AvisoLegal.pdf" style="text-decoration: none;color: #FF8C00; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">Descargar aquí</a>
 	            </object>
 	            <p id="PTerms" style="margin: 1vh auto;">
-	                <input type="checkbox" name="reg_terms" style="width: 40px; height: 40px;">
+	                <input type="checkbox" name="reg_terms" style="width: 20px; height: 20px; vertical-align: text-bottom;">
 	                <label style="vertical-align: text-bottom;">He leído y acepto los términos y condiciones de <b>TuForo.Net</b>*</label>
 	            </p>
 	            <br>

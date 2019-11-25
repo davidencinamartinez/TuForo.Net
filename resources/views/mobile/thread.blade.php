@@ -39,8 +39,8 @@
 		  </div>
 		</div>
 	@endif
-	<button id="replyPanel" class="userPanel">Responder</button>
 	@if (Auth::check())
+	<button id="replyPanel" class="userPanel">Responder</button>
 		<div id="replyPost" style="visibility: hidden; display: none;">
 		    <div id="replyButtons">
 		    <button class="wysiwyg" type="button"><i class="fas fa-bold"></i></button>

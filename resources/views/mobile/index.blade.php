@@ -10,7 +10,7 @@
 @push('scripts')
 @endpush
 @section('postSection')
-	<img src="/storage/src/logos/banner100.png" style="display: flex; margin: 1vh auto;">
+	<img src="/storage/src/logos/banner100.png" style="display: flex; margin: 1vh auto; width: inherit;">
 	<div id="mobileAdsContainerTop">
 		<div style="float: left;">
 			<!-- TOP LEFT AD CONTAINER (MOBILE INDEX) 300x250 -->
@@ -56,13 +56,11 @@
 			</tr>
 		</table>
 		@endforeach
-		@if($threadData->count() >= 25)
-			<div style="text-align: center;">
-			  <div class="pageSelector">
-			    {{$threadData->links()}}
-			  </div>
-			</div>
-		@endif
+		<div style="text-align: center;">
+		  <div class="pageSelector">
+		    {{$threadData->links()}}
+		  </div>
+		</div>
 	</div>
 	<h1 class="contentTitle">Estadísticas</h1>
 	<ul id="forumStats">

@@ -2,6 +2,7 @@
 <html>
 <head>
 	<meta charset='utf-8'>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
 	<title>@yield('title')</title>
 	<link rel='shortcut icon' type='image/png' href='/storage/src/logos/favicon.png'>
 	@stack('styles')
@@ -14,6 +15,11 @@
 	<script src='{{ asset("/js/main.js") }}'></script>
 	<script type='text/javascript' src='{{ asset("js/moment_js/moment.js") }}'></script>
 	<script type='text/javascript' src='{{ asset("js/moment_js/es.js") }}'></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+		 	dateConvert();
+		});
+	</script>
 </head>
 <body>
 	<div class='header'>

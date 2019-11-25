@@ -13,7 +13,7 @@
 			    border: solid 1px black;
 			    -webkit-border-radius: 8px;
 			    margin: 1vh auto;
-			    font-size: 1.5vh;
+			    font-size: 16px;
 	}
 	
 	.msgPost li {	list-style-type: none;
@@ -27,10 +27,10 @@
 	/* MESSAGE CREATOR */
 
 
-		.userInfo img {	height: 60px;
-						width: 60px;
+		.userInfo img {	height: 40px;
+						width: 40px;
 						float: right;
-						border-radius: 10px;
+						border-radius: 6px;
 		}
 
 		.userInfo .userName {	font-weight: bold;
@@ -107,12 +107,12 @@
 	#threadTitle {	font-size: 3.5vw;
 	}
 
-	.msgPost li {	font-size: 2vw;
+	.msgPost li {	font-size: 18px;
 					padding: 0.75vw;
 	}
 
-	.userInfo img {	width: 50px;
-					height: 50px;
+	.userInfo img {	width: 40px;
+					height: 40px;
 	}
 
 	#replyButtons button {	width: 10vh;

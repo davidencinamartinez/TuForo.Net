@@ -36,15 +36,15 @@
 
 	/* USER TOP BUTTONS */
 
-		.userPanel {	font-size: 3.5vw;
-						padding: 20px;
+		.userPanel {	font-size: 1em;
+						padding: 10px;
 						border: solid 2px black;
 						text-align: center;
 						outline: none;
 						font-weight: bold;
 						transition: 0.4s;
 						margin: 0 0 1vh 0;
-						border-radius: 10px;
+						border-radius: 6px;
 		}
 
 		.userPanel:active {	background-color: #FF8C00;
@@ -155,7 +155,7 @@
 		#goUpButton {	padding: 0.5vh; 
 						float: right; 
 						margin: 0 1vh 0 0;
-						width: 20vw;
+						width: 25vw;
 		}
 
 		#goUpButton > a {	text-decoration: none;
@@ -171,5 +171,9 @@
 	}
 
 	.contentTitle {	font-size: 3vw;
+	}
+
+	#goUpButton {	width: 20vw;
+					padding: 2.5vh;
 	}
 }
