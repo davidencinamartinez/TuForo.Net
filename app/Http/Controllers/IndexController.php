@@ -92,7 +92,8 @@ class IndexController extends Controller {
         if ($catAvailable->count() > 0) {
          $threads_cat = DB::table('categories')->where('url', '=', $category)->value('id');
          $threads =   DB::table('threads')->where('category', '=', $threads_cat)->get();
-      	return view('threadByCategory', [	'catData' => $threads
+      	return view('threadByCategory', [	'catData' => $threads,
+                                             'category' => $category
       	]);
       } else {
          return view('errors.404');
