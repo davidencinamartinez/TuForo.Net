@@ -3,6 +3,8 @@
 @section('title', ucfirst($category).' - TuForo.Net')
 
 @push('styles')
+<meta name="keywords" content="{{ $category }},tuforo,foro,español">
+    <meta name="description" content="{{  $category }}">
 	<link rel='stylesheet' type='text/css' href='{{ asset("css/index.css") }}'>
 @endpush
 @push('scripts')

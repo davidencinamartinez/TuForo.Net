@@ -69,7 +69,7 @@
 	@show
 	<div id='footer'>
 		<div class='socialDiv'>
-			<a href='https://twitter.com/?lang=es' target='_blank'><img src='/storage/src/logos/social/tw_logo.png' class='socialNetwork' alt='twitter_logo'></a>
+			<a href='https://twitter.com/tuforonet' target='_blank'><img src='/storage/src/logos/social/tw_logo.png' class='socialNetwork' alt='twitter_logo'></a>
 			<a href='https://www.facebook.com/tuforonetofficial/' target='_blank'><img src='/storage/src/logos/social/fb_logo.png' class='socialNetwork' alt='facebook_logo'></a>
 			<a href='https://www.instagram.com/_u/viboxx/' target='_blank'><img src='/storage/src/logos/social/ig_logo.png' class='socialNetwork' alt='instagram_logo'></a>
 		</div>
