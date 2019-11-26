@@ -89,16 +89,17 @@ class IndexController extends Controller {
    public function catThreads($category) {
       try {
          $catAvailable = DB::table('categories')->where('url', '=', $category);
-        if ($catAvailable->count() > 0) {
-         $threads_cat = DB::table('categories')->where('url', '=', $category)->value('id');
-         $threads =   DB::table('threads')->where('category', '=', $threads_cat)->get();
-      	return view('threadByCategory', [	'catData' => $threads,
-                                             'category' => $category
-      	]);
-      } else {
-         return view('errors.404');
-      }}catch( \Illuminate\Database\QueryException $e){
-         return view('errors.500');
+         if ($catAvailable->count() > 0) {
+            $threads_cat = DB::table('categories')->where('url', '=', $category)->value('id');
+            $threads =   DB::table('threads')->where('category', '=', $threads_cat)->get();
+            $cat = DB::table('categories')->where('url', '=', $category)->value('name');
+               return view('threadByCategory', [	'catData' => $threads,
+                                                   'category' => $cat,
+               ]);
+         } else {
+            return view('errors.404');
+         }} catch ( \Illuminate\Database\QueryException $e) {
+            return view('errors.500');
+         }
       }
    }
-}

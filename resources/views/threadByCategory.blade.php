@@ -1,6 +1,6 @@
 @extends('main')
 
-@section('title', ucfirst($category).' - TuForo.Net')
+@section('title', $category.' - TuForo.Net')
 
 @push('styles')
 <meta name="keywords" content="{{ $category }},tuforo,foro,español">

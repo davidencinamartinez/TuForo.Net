@@ -25,6 +25,14 @@ Route::get('/', 'IndexController@index');
 Route::get('/registro', 'RegisterController@create'); // FORM
 Route::post('/registro', 'IndexController@store'); // STORE NEW USER
 
+	// AJAX CHECK USER EXISTS
+	
+	Route::post('/ajax/checkUser', 'RegisterController@checkUser');
+
+	// AJAX CHECK EMAIL EXISTS
+
+	Route::post('/ajax/checkMail', 'RegisterController@checkMail');
+
 // FORUM
 
 Route::get('/foro', 'IndexController@catIndex'); // FORUM CATEGORIES
@@ -44,3 +52,4 @@ Route::post('/createThread', 'NewThreadController@newThreadStore');
 
 Route::get('/profile/{name}', 'UserController@getProfile');
 Route::post('/updateProfile', 'UserController@updateProfile');
+

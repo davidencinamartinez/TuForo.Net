@@ -1,3 +1,4 @@
+
 function showPassword(element) {
 	if ($(element).attr('show') == 'on') {
 		$(element).attr({
@@ -14,6 +15,52 @@ function showPassword(element) {
 	}
 }
 
+function UAStatusTrue() {
+	return true;
+}
+
+function UAStatusFalse() {
+	return false;
+}
+
+function userAvailable() {
+	var user = $('input[name="reg_username"]').val();
+	var _token = $('input[name="_token"]').val();
+	$.ajax({
+	    url: '/ajax/checkUser',
+	    type: 'POST',
+	    data: { user: user, _token: _token },
+	    success: function (result) {
+			if (result == 'true') {
+			    UAStatusFalse();
+			} else {
+				UAStatusTrue();
+			}
+	        
+	    }
+
+	});
+};
+
+function mailAvailable() {
+	var mail = $('input[name="reg_email"]').val();
+	var _token = $('input[name="_token"]').val();
+	$.ajax({
+	    url: '/ajax/checkMail',
+	    type: 'POST',
+	    datatype: 'json',
+	    data: { mail: mail, _token: _token },
+	    success: function (result) {
+	        if (result == 'true') {
+	            $('input[name="reg_email"]').before().remove('.error');
+	            errorDisplay($('input[name="reg_email"]'),'El correo introducido ya está en uso');
+	        } else {
+	            $('input[name="reg_email"]').before().remove('.error');
+	        }
+	    }
+	});
+}
+
 function checkName() {
 	var user = $('input[name="reg_username"]');
 	if (user.val().length < 6) {
@@ -21,6 +68,9 @@ function checkName() {
 		return false;
 	} else if (user.val().length > 20) {
 		errorDisplay(user,'El nombre de usuario debe contener máximo 20 carácteres');
+		return false;
+	} else if (userAvailable()) {
+		errorDisplay(user,'El nombre de usuario ya está en uso');
 		return false;
 	} else {
 		return true;

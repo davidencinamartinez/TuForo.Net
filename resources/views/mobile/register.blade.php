@@ -37,4 +37,18 @@
 	        </form>
 	    </div>
 	</div>
+	<script type="text/javascript">
+	    $('input[name="reg_username"]').on('input', function(event) {
+	        $('input[name="reg_username"]').prevAll('.error').remove();
+	        if ($(this).val().length >= 6) {
+	            userAvailable();
+	        }    
+	    });
+	    $('input[name="reg_username"]').on('input', function(event) {
+	        $('input[name="reg_username"]').prevAll('.error').remove();
+	        if ($(this).val().length >= 6) {
+	            userAvailable();
+	        }    
+	    });
+	</script>
 @stop

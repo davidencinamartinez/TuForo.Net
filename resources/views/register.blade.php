@@ -25,7 +25,7 @@
                 &emsp;
                 <img show='on' src="storage/src/other/show.png" onclick="showPassword(this)">
                 <p>* (Todos los campos son obligatorios)</p>
-                <div class="g-recaptcha" data-sitekey="6LffHMQUAAAAADWK3IBujLvXv3rUNohLWUFUHEdv" style="margin: 20px 0px 20px 0px;"></div>
+                <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" style="margin: 20px 0px 20px 0px;"></div>
                 <p id="PTerms">
                     <input type="checkbox" name="reg_terms" style="vertical-align: bottom;">
                     <label>He leído y acepto los términos y condiciones de </label>
@@ -38,4 +38,24 @@
             <iframe src="storage/src/other/AvisoLegal.pdf" type="application/pdf" width="100%" height="100%"></iframe>
         </div>
     </div>
+    <!--
+    <script type="text/javascript">
+        $('input[name="reg_username"]').on('blur', function(event) {
+            $('input[name="reg_username"]').prev().remove('.error');
+            userAvailable();
+
+        });
+        $('input[name="reg_username"]').on('keyup', function(event) {
+            $('input[name="reg_username"]').prev().remove('.error');
+        });
+        $('input[name="reg_email"]').on('blur', function(event) {
+            $('input[name="reg_email"]').prev().remove('.error');
+            mailAvailable();
+            
+        });
+        $('input[name="reg_email"]').on('keyup', function(event) {
+            $('input[name="reg_email"]').prev().remove('.error');
+        });
+           
+    </script>-->
 @stop
