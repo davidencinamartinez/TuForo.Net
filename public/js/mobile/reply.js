@@ -4,6 +4,11 @@ function replyFormat() {
 		document.getElementById('replyPost').style.display = 'inline-table';
 		document.getElementsByName('replyMsg')[0].setAttribute('contenteditable', 'true');
 	});
+	$('div[name="replyMsg"]').on('paste', function(event) { // PASTE CONTENT
+		event.preventDefault();
+		var data = event.originalEvent.clipboardData.getData('text/plain');
+		document.execCommand('insertText', false, data);
+	});
 	$('.wysiwyg').eq(0).on('click' , function(event) { // BOLD BUTTON
 		$('div[name="replyMsg"]').focus();
 		document.execCommand('bold');		
