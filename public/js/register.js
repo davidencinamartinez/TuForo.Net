@@ -15,12 +15,9 @@ function showPassword(element) {
 	}
 }
 
-function UAStatusTrue() {
-	return true;
-}
-
-function UAStatusFalse() {
-	return false;
+function UAStatus(status) {
+	var response = status;
+	return response;
 }
 
 function userAvailable() {
@@ -32,9 +29,9 @@ function userAvailable() {
 	    data: { user: user, _token: _token },
 	    success: function (result) {
 			if (result == 'true') {
-			    UAStatusFalse();
+			    UAStatus(true);
 			} else {
-				UAStatusTrue();
+				UAStatus(false);
 			}
 	        
 	    }
@@ -69,7 +66,7 @@ function checkName() {
 	} else if (user.val().length > 20) {
 		errorDisplay(user,'El nombre de usuario debe contener máximo 20 carácteres');
 		return false;
-	} else if (userAvailable()) {
+	} else if (UAStatus()) {
 		errorDisplay(user,'El nombre de usuario ya está en uso');
 		return false;
 	} else {
