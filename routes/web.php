@@ -22,16 +22,17 @@ Route::get('/', 'IndexController@index');
 
 // USER REGISTRATION
 
-Route::get('/registro', 'RegisterController@create'); // FORM
-Route::post('/registro', 'IndexController@store'); // STORE NEW USER
+Route::get('/registro', 'RegisterController@form'); // FORM
+Route::post('/registro', 'RegisterController@store'); // STORE NEW USER
 
 	// AJAX CHECK USER EXISTS
 	
 	Route::post('/ajax/checkUser', 'RegisterController@checkUser');
+	Route::get('/ajax/checkUser', 'RegisterController@checkUser');
 
 	// AJAX CHECK EMAIL EXISTS
 
-	Route::post('/ajax/checkMail', 'RegisterController@checkMail');
+	// Route::post('/ajax/checkMail', 'RegisterController@checkMail');
 
 // FORUM
 
@@ -53,3 +54,7 @@ Route::post('/createThread', 'NewThreadController@newThreadStore');
 Route::get('/profile/{name}', 'UserController@getProfile');
 Route::post('/updateProfile', 'UserController@updateProfile');
 
+// TEST
+
+Route::get('/test','TestController@myform');
+Route::post('/test','TestController@myformPost');

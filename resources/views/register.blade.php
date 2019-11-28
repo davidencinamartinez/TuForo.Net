@@ -15,7 +15,11 @@
 @section('postSection')
     <div id="registerPanel">
         <div id="inputForm">
-            <form>
+            <div class="alert alert-danger print-error-msg" style="display:none; background-color: red;">
+                <ul></ul>
+            </div>
+            <form method="POST" action="/registro">
+                @csrf
                 <p><b>Nombre de Usuario</b>*</p><input type="text" name="reg_username" maxlength="20" autofocus>
                 <p><b>Correo electrónico</b>*</p><input type="text" name="reg_email" maxlength="64">
                 <p><b>Contraseña</b>*</p><input type="password" name="reg_password" maxlength="64">
@@ -38,24 +42,4 @@
             <iframe src="storage/src/other/AvisoLegal.pdf" type="application/pdf" width="100%" height="100%"></iframe>
         </div>
     </div>
-    <!--
-    <script type="text/javascript">
-        $('input[name="reg_username"]').on('blur', function(event) {
-            $('input[name="reg_username"]').prev().remove('.error');
-            userAvailable();
-
-        });
-        $('input[name="reg_username"]').on('keyup', function(event) {
-            $('input[name="reg_username"]').prev().remove('.error');
-        });
-        $('input[name="reg_email"]').on('blur', function(event) {
-            $('input[name="reg_email"]').prev().remove('.error');
-            mailAvailable();
-            
-        });
-        $('input[name="reg_email"]').on('keyup', function(event) {
-            $('input[name="reg_email"]').prev().remove('.error');
-        });
-           
-    </script>-->
 @stop

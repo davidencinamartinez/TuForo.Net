@@ -30,7 +30,7 @@
             <table id='threadsPanel'>
                 <tr class="threadInfo">
                     <td class='threadCategory' style="background-color: #4F4F4F; padding: 5px; text-align: center">
-                        <b>Categoría</b>
+                        <b style="float: left;">Categoría</b>
                     </td>
                     <td class='threadName' style="background-color: #4F4F4F; padding: 5px">
                         <b>Tema</b>

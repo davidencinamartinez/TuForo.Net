@@ -28,7 +28,7 @@
 			<label>{!! $data->msg_count !!}</label>
 		</h3>   
 		<h3>Fecha de registro:
-			<label>{{ strftime('%b %Y', strtotime($data->created_at)) }}</label>
+			<label>{{ ucfirst(strftime('%B %Y', strtotime($data->created_at))) }}</label>
 		</h3> 
 		<h3>Última actividad:
 			<label class="msgTime">{{ date('d/m/Y', strtotime($data->last_activity)) }}</label>
@@ -64,7 +64,7 @@
 			<label>{!! $data->msg_count !!}</label>
 		</h3>   
 		<h3>Fecha de registro:
-			<label>{{ strftime('%b %Y', strtotime($data->created_at)) }}</label>
+			<label>{{ ucfirst(strftime('%B %Y', strtotime($data->created_at))) }}</label>
 		</h3> 
 		<h3>Última actividad:
 			<label class="msgTime">{{ date('d/m/Y', strtotime($data->last_activity)) }}</label>

@@ -12,6 +12,7 @@ class ThreadController extends Controller {
     
 	public function getThreadsIndex($id) {
 
+		setlocale(LC_TIME, 'Spanish');
 		$agent = new Agent(); // DEVICE INFO
 
 		try {

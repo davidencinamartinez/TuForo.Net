@@ -15,29 +15,25 @@ function showPassword(element) {
 	}
 }
 
-function UAStatus(status) {
-	var response = status;
-	return response;
-}
-
-function userAvailable() {
+/*function userAvailable() {
 	var user = $('input[name="reg_username"]').val();
-	var _token = $('input[name="_token"]').val();
+	var _token = $('meta[name="csrf-token"]').attr('content');
 	$.ajax({
 	    url: '/ajax/checkUser',
 	    type: 'POST',
 	    data: { user: user, _token: _token },
 	    success: function (result) {
-			if (result == 'true') {
-			    UAStatus(true);
-			} else {
-				UAStatus(false);
-			}
+			getIt(result);
 	        
+	    },
+	    complete: function(x) {
+	    	console.log(this.url);
+	    	console.log(x);
 	    }
 
 	});
 };
+
 
 function mailAvailable() {
 	var mail = $('input[name="reg_email"]').val();
@@ -65,9 +61,6 @@ function checkName() {
 		return false;
 	} else if (user.val().length > 20) {
 		errorDisplay(user,'El nombre de usuario debe contener máximo 20 carácteres');
-		return false;
-	} else if (UAStatus()) {
-		errorDisplay(user,'El nombre de usuario ya está en uso');
 		return false;
 	} else {
 		return true;
@@ -98,7 +91,6 @@ function checkPassword() {
 		return true;
 	}
 }
-
 function checkCaptcha() {
 	var captcha = $('.g-recaptcha');
 	var captchaResponse = grecaptcha.getResponse();
@@ -119,23 +111,27 @@ function checkTerms() {
 		return true;
 	}
 }
+*/
+function printErrorMsg (msg) {
+            $(".print-error-msg").find("ul").html('');
+            $(".print-error-msg").css('display','block');
+            $.each( msg, function( key, value ) {
+                $(".print-error-msg").find("ul").append('<li>'+value+'</li>');
+            });
+        }
 
 function formValidation() {
 	$('.error').remove();
+    /*
     var checkForm = [checkName(),checkMail(),checkPassword(),checkCaptcha(),checkTerms()];
     var result = 0;
     var verifyMail = $('input[name="reg_email"]').val();
+    */
 	$.ajaxSetup({
 		headers: {
 			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
 		}
 	});    
-    $.each(checkForm, function(index, val) {
-        if (val == true) {
-            result++;
-        }
-    });
-    if (result > 4) {
         event.preventDefault();
         $.ajax({
             url: 'registro',
@@ -143,21 +139,47 @@ function formValidation() {
             data: { _token: $('input[name="_token"]').val(),
                     reg_username: $('input[name="reg_username"]').val(),
                     reg_email: $('input[name="reg_email"]').val(),
-                    reg_password: $('input[name="reg_password"]').val()
+                    reg_password: $('input[name="reg_password"]').val(),
+                    reg_passwordVerified: $('input[name="reg_passwordVerified"]').val(),
+                    reg_captcha: grecaptcha.getResponse(),
+                    reg_terms: $('input[name="reg_terms"]').is(':checked')
+
         },
         })
-        .done(function() {
-            $('#registerPanel').empty();
-            var successPanel = $('<div></div>').attr('id', 'successPanel').css('background-color', 'value');
-            var successImg = $('<img>').attr({
-            	id: 'successImg',
-            	src: 'storage/src/other/reg_done.png'
-            });
-            var successText = 	'<b>Bienvenido a TuForo.Net</b>!'+
-            					'<br />Disfruta de tu estancia!'+
-            					'<a href="/"><h3>Haz click aquí para volver al inicio</h3></a>';
-			successPanel.html('<img id="successImg" src="storage/src/other/reg_done.png"><br><br>'+successText);
-			$('#registerPanel').append(successPanel);
+        .done(function(data) {
+        	if($.isEmptyObject(data.error)){
+	        	var successPanel = $('<div></div>').attr('id', 'successPanel').css('background-color', 'value');
+	            var successImg = $('<img>').attr({
+	            	id: 'successImg',
+	            	src: 'storage/src/other/reg_done.png'
+	            });
+	            var successText = 	'<b>Bienvenido a TuForo.Net</b>!'+
+	            					'<br />Disfruta de tu estancia!'+
+	            					'<a href="/"><h3>Haz click aquí para volver al inicio</h3></a>';
+				successPanel.html('<img id="successImg" src="storage/src/other/reg_done.png"><br><br>'+successText);
+				$('#registerPanel').append(successPanel);
+        	}else{
+        	    $.each( data.error, function( key, value ) {
+        	    	if (key == 'reg_username') {
+        	    		errorDisplay($('input[name="reg_username"]'), value[0]);
+        	    	}
+        	    	if (key == 'reg_email') {
+						errorDisplay($('input[name="reg_email"]'), value[0]);
+        	    	}
+        	    	if (key == 'reg_password') {
+        	    		errorDisplay($('input[name="reg_password"]'), value[0]);
+        	    	}
+        	    	if (key == 'reg_passwordVerified') {
+        	    		errorDisplay($('input[name="reg_passwordVerified"]'), value[0]);
+        	    	}
+        	    	if (key == 'reg_captcha') {
+        	    		errorDisplay($('.g-recaptcha'), value[0]);
+        	    	}
+        	    	if (key == 'reg_terms') {
+        	    			errorDisplay($('#PTerms'), value[0]);
+        	    	}
+            	});
+        	}
         })
         .fail(function(e) {
         	errorDisplay($('input[name="reg_username"]'),'El nombre de usuario ya está en uso');
@@ -165,9 +187,6 @@ function formValidation() {
 
         })
         .always(function() {
-            console.log("complete");
-        });
-    } else {
-        return false;
-    }            
+            
+        });       
 }

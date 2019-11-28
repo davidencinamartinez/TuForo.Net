@@ -64,9 +64,13 @@
 			this.classList.toggle("active");
 			document.getElementsByClassName("userForm")[0].focus();
 			if (panel.style.maxHeight) {
-			  panel.style.maxHeight = null;
+				panel.style.maxHeight = null;
+			  	setTimeout( function() {
+			  		panel.style.border = "none";
+			   	}, 200);
 			} else {
-			  panel.style.maxHeight = panel.scrollHeight + "px";
+				panel.style.maxHeight = panel.scrollHeight + "px";
+				panel.style.border = "solid 1px black";
 			} 
 		});
 	</script>

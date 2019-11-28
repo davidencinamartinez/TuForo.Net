@@ -19,10 +19,10 @@ class UserController extends Controller {
 
     protected function login(Request $request) {
         
-    	$user = User::where('name', '=', Input::get('user'))->first();
-    	if ($user != null && Hash::check(Input::get('password'), $user->password)) {
+    	$user = User::where('name', '=', $request->input('user'))->first();
+    	if ($user != null && Hash::check($request->input('password'), $user->password)) {
     		Auth::login($user);
-            DB::table('users')->where('name', '=', Input::get('user'))->update(['last_activity' => Carbon::now()]);
+            DB::table('users')->where('name', '=', $request->input('user'))->update(['last_activity' => Carbon::now()]);
     		return back();
     	} else {
             return redirect()->back()->with('err', new HtmlString('Usuario o contraseña incorrectos.<br>Intentos: 1 de 5.'));
@@ -35,7 +35,7 @@ class UserController extends Controller {
     }
 
     public function getProfile($name) {
-
+            setlocale(LC_TIME, 'Spanish');
             $agent = new Agent(); // DEVICE INFO
 
             $user = DB::table('users')->where('name', '=', $name)->get();

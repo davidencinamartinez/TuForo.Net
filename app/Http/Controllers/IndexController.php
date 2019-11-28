@@ -38,7 +38,7 @@ class IndexController extends Controller {
 		// RESPONSE
 
       if ($agent->isMobile()) {
-         return view('mobile.index', [  'threadData' => $threads->paginate(25),
+         return view('mobile.index', [  'threadData' => $threads->paginate(10),
                            'countMembers' => $countMembers,
                            'countThreads' => $countThreads,
                            'countMessages' => $countMessages,
@@ -46,7 +46,7 @@ class IndexController extends Controller {
                            'countOnline' => $countOnline
          ]);
       } else {
-         return view('index', [  'threadData' => $threads->paginate(40),
+         return view('index', [  'threadData' => $threads->paginate(20),
                            'countMembers' => $countMembers,
                            'countThreads' => $countThreads,
                            'countMessages' => $countMessages,
@@ -65,33 +65,12 @@ class IndexController extends Controller {
    		]);
    }
 
-   public function store(Request $request) {
-      try {
-         $user = DB::table('users')->where('name', '=', $request->input('reg_username'));
-         
-      		DB::table('users')->insert([
-      			[	'name' => $request->input("reg_username"),
-                  'email' => $request->input("reg_email"),
-      				'password' => Hash::make($request->input('reg_password')),
-      				'remember_token' => $request->input("_token"),
-      				'created_at' => Carbon::now(),
-      				'updated_at' => Carbon::now(),
-      				'user_pic' => '/storage/src/logos/logo128.png',
-      				'user_title' => 'Miembro de TuForo.Net'
-      			]
-      		]);
-      } catch ( \Illuminate\Database\QueryException $e){
-         return view('errors.500');
-      }
- 
-   }
-
    public function catThreads($category) {
       try {
          $catAvailable = DB::table('categories')->where('url', '=', $category);
          if ($catAvailable->count() > 0) {
             $threads_cat = DB::table('categories')->where('url', '=', $category)->value('id');
-            $threads =   DB::table('threads')->where('category', '=', $threads_cat)->get();
+            $threads =   DB::table('threads')->where('category', '=', $threads_cat)->orderBy('last_reply_time', 'DESC')->get();
             $cat = DB::table('categories')->where('url', '=', $category)->value('name');
                return view('threadByCategory', [	'catData' => $threads,
                                                    'category' => $cat,

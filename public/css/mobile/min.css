@@ -30,7 +30,7 @@
 
 	.header {	padding: 2.5vw;
 				background-color: #4F4F4F;
-				border: solid 2px black;
+				border-bottom: solid 2px black;
 				right: 0;
 	}
 

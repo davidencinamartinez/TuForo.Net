@@ -34,7 +34,7 @@
 					</li>
 					<li>
 						<label><b>Fecha de registro:</b>
-							<label>{{ strftime('%b %Y', strtotime($data->created_at)) }}</label>
+							<label>{{ ucfirst(strftime('%B %Y', strtotime($data->created_at))) }}</label>
 						</label> 
 					</li>
 					<li>
@@ -82,7 +82,7 @@
 				</li>
 				<li>
 					<label><b>Fecha de registro:</b>
-						<label>{{ strftime('%b %Y', strtotime($data->created_at)) }}</label>
+						<label>{{ ucfirst(strftime('%B %Y', strtotime($data->created_at))) }}</label>
 					</label> 
 				</li>
 				<li>

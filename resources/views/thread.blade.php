@@ -38,7 +38,7 @@
             <br>
             <img class="userPic" src="{{ $thread->user_pic }}">
             <br>
-            <b>Registro: </b><label class="userRegDate">{{ strftime('%b %Y', strtotime($thread->reg_date)) }}</label>
+            <b>Registro: </b><label class="userRegDate">{{ ucfirst(strftime('%B %Y', strtotime($thread->reg_date))) }}</label>
             <br>
             <b>Mensajes: </b><label class="userMsgCount">{{ $thread->msg_count }}</label>
           </td>
