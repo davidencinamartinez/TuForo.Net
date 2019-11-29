@@ -10,7 +10,7 @@
 	<meta name="description" content="{{ html_entity_decode($threadData[0]->content) }}">
 @endpush
 @push('scripts')
-	<script src='{{ asset("/js/mobile/reply.js") }}'></script>
+	<script src='{{ asset("/js/reply.js") }}'></script>
 @endpush
 @section('postSection')
 	<script type="text/javascript">
@@ -44,10 +44,13 @@
 		<div id="replyPost" style="visibility: hidden; display: none;">
 		    <div id="replyButtons">
 		    <button class="wysiwyg" type="button"><i class="fas fa-bold"></i></button>
-		    <button class="wysiwyg" type="button"><i class="fas fa-italic"></i></button>
-		    <button class="wysiwyg" type="button"><i class="fas fa-underline"></i></button>
-		    <button class="wysiwyg" type="button"><i class="fas fa-image"></i></button>
-		    <button class="wysiwyg" type="button"><i class="fas fa-link"></i></button>
+            <button class="wysiwyg" type="button"><i class="fas fa-italic"></i></button>
+            <button class="wysiwyg" type="button"><i class="fas fa-underline"></i></button>
+            <button class="wysiwyg" type="button" style="display: none"><i class="fas fa-list-ul"></i></button>
+            <button class="wysiwyg" type="button" style="display: none"><i class="fas fa-list-ol"></i></button>
+            <button class="wysiwyg" type="button"><i class="fas fa-image"></i></button>
+            <button class="wysiwyg" type="button"><i class="fas fa-video"></i></button>
+            <button class="wysiwyg" type="button"><i class="fas fa-link"></i></button>
 		    </div>
 		<div id="userMsg" name="replyMsg" contenteditable="false" data-placeholder="Introduce tu respuesta ..."></div>
 		<form action='/sendReply' method="POST" onsubmit="return replyCorrect()">

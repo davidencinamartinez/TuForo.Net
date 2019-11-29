@@ -62,15 +62,8 @@
             <button class="wysiwyg" type="button"><i class="fas fa-bold"></i></button>
             <button class="wysiwyg" type="button"><i class="fas fa-italic"></i></button>
             <button class="wysiwyg" type="button"><i class="fas fa-underline"></i></button>
-            |
-            <button class="wysiwyg" type="button"><i class="fas fa-align-left"></i></button>
-            <button class="wysiwyg" type="button"><i class="fas fa-align-center"></i></button>
-            <button class="wysiwyg" type="button"><i class="fas fa-align-right"></i></button>
-            <button class="wysiwyg" type="button"><i class="fas fa-align-justify"></i></button>
-            |
             <button class="wysiwyg" type="button"><i class="fas fa-list-ul"></i></button>
             <button class="wysiwyg" type="button"><i class="fas fa-list-ol"></i></button>
-            |
             <button class="wysiwyg" type="button"><i class="fas fa-image"></i></button>
             <button class="wysiwyg" type="button"><i class="fas fa-video"></i></button>
             <button class="wysiwyg" type="button"><i class="fas fa-link"></i></button>

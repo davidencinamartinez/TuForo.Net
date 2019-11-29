@@ -67,34 +67,6 @@
 				    word-break: break-all;
 	}
 
-	#replyButtons {	text-align: center;
-					padding: 2.5vh;
-	}
-
-	#replyButtons button {	min-width: 5vh;
-							min-height: 5vh;
-							font-size: 2.5vh;
-							border-radius: 10px;
-							box-shadow: none;
-							outline: none;
-	}
-
-	#replyButtons button:active {	background-color: #FF8C00;
-									transition: 0.5s;
-	}
-
-	#userMsg {	min-height: 15vh;
-				height: auto;
-				width: 90%;
-				font-size: 3vh;
-				background-color: #8E8E8E;
-				margin: auto;
-				padding: 1vh;
-				border-radius: 10px;
-				outline: none;
-				text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-	}
-
 	iframe {	border: solid 1px black;
 	}
 
@@ -113,11 +85,6 @@
 
 	.userInfo img {	width: 40px;
 					height: 40px;
-	}
-
-	#replyButtons button {	width: 10vh;
-							height: 10vh;
-							font-size: 6.5vh;
 	}
 
 	#userMsg {	min-height: 20vw;

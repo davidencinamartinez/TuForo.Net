@@ -50,14 +50,14 @@
                         <td class='threadName'>
                             <b><a href="/thread/{{ $catData->id }}">{{ $catData->thread }}</a></b>
                             <br>
-                            <label style="float: left;">{{ $catData->creator }}</label>
+                             <a href="/profile/{{ strtolower($catData->creator) }}" class="userProf">{{ $catData->creator }}</a>
                         </td>
                         <td class='threadLastMsg'>
                             <label class='threadDate'>{{ date('d/m/Y', strtotime($catData->last_reply_time)) }}</label>
                             -
                             <label>{{ date('H:i', strtotime($catData->last_reply_time)) }}</label>
                             <br>
-                            <label>{{ $catData->last_reply_user }}</label>
+                            <a href="/profile/{{ strtolower($catData->last_reply_user) }}" class="userProf">{{ $catData->last_reply_user }}</a>
                         </td>
                 		<td class='threadStats'>
                 			<b>Visitas: </b>
