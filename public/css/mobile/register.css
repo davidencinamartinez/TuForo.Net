@@ -29,19 +29,23 @@
 /* SUCCESS PANEL */
 
 	#successPanel {	height: auto;
-					width: 50%;
 					margin: auto;
 					padding: 20px;
 					text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 					text-align: center;
-					font-size: 24px;
+					font-size: 22px;
 	}
 
 	/* SUCCESS IMG */
 	
-		#successImg {	height: 180px;
-						width: 210px;
+		#successImg {	height: 160px;
 						vertical-align: middle;
+		}
+
+	/* SUCCESS LINK */
+
+		#successLink {	color: #FF8C00;
+						text-decoration: none;
 		}
 
 @media screen and (orientation:landscape) {

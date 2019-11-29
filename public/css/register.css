@@ -58,6 +58,11 @@
 	/* SUCCESS IMG */
 	
 		#successImg {	height: 180px;
-						width: 210px;
 						vertical-align: middle;
+		}
+
+	/* SUCCESS LINK */
+
+		#successLink {	color: #FF8C00;
+						text-decoration: none;
 		}
