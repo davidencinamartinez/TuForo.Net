@@ -16,7 +16,6 @@ function showPassword(element) {
 }
 
 function formValidation() {
-	$('.error').remove();
 	$.ajaxSetup({
 		headers: {
 			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -37,7 +36,7 @@ function formValidation() {
         },
         })
         .done(function(data) {
-        	if($.isEmptyObject(data.error)){
+        	if ($.isEmptyObject(data.error)) {
         		$('#registerPanel').empty();
 	        	var successPanel = $('<div></div>').attr('id', 'successPanel').css('background-color', 'value');
 	            var successImg = $('<img>').attr({
@@ -49,7 +48,8 @@ function formValidation() {
 	            					'<a id="successLink" href="/"><h3>Haz click aquí para volver al inicio</h3></a>';
 				successPanel.html('<img id="successImg" src="storage/src/other/reg_done.png"><br><br>'+successText);
 				$('#registerPanel').append(successPanel);
-        	}else{
+        	} else {
+        		$('.error').remove();
         	    $.each( data.error, function( key, value ) {
         	    	if (key == 'reg_username') {
         	    		errorDisplay($('input[name="reg_username"]'), value[0]);
@@ -73,8 +73,6 @@ function formValidation() {
         	}
         })
         .fail(function(e) {
-        	errorDisplay($('input[name="reg_username"]'),'El nombre de usuario ya está en uso');
-        	console.log('error');
-
+        	alert('Estamos teniendo problemas con el servidor.\nInténtalo de nuevo más tarde ...');
         })
 }

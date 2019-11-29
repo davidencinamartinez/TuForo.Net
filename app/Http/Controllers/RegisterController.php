@@ -93,22 +93,4 @@ class RegisterController extends Controller {
         }
     	return response()->json(['error'=>$validator->getMessageBag()->toArray()]);
     }
-
-    public function checkUser(Request $request) {
-    	$check = DB::table('users')->where('name', '=', $request->get('user'))->count();
-    	if ($check > 0) {
-    		echo '1';
-    	} else {
-    		echo '0';
-    	}
-    }
-
-    public function checkMail(Request $request) {
-    	$check = DB::table('users')->where('email', '=', $request->get('mail'))->count();
-    	if ($check > 0) {
-    		echo 'true';
-    	} else {
-    		echo 'false';
-    	}
-    }
 }
