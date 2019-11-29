@@ -1,0 +1,2 @@
+[24-May-2019 10:54:29 CST6CDT] PHP Fatal error:  require(): Failed opening required '/home/tuforo51/TuForo.Net/public/../vendor/autoload.php' (include_path='.:/usr/local/php72/pear') in /home/tuforo51/TuForo.Net/public/index.php on line 24
+[24-May-2019 10:55:12 CST6CDT] PHP Fatal error:  require(): Failed opening required '/home/tuforo51/TuForo.Net/public/../vendor/autoload.php' (include_path='.:/usr/local/php72/pear') in /home/tuforo51/TuForo.Net/public/index.php on line 24
