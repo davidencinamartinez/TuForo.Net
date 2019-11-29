@@ -21,7 +21,7 @@
             <form method="POST" action="/registro">
                 @csrf
                 <p><b>Nombre de Usuario</b>*</p><input type="text" name="reg_username" maxlength="20" autofocus>
-                <p><b>Correo electrónico</b>*</p><input type="text" name="reg_email" maxlength="64">
+                <p><b>Correo electrónico</b>*</p><input type="email" name="reg_email" maxlength="64">
                 <p><b>Contraseña</b>*</p><input type="password" name="reg_password" maxlength="64">
                 &emsp;
                 <img show='on' src="storage/src/other/show.png" onclick="showPassword(this)">
