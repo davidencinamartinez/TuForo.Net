@@ -25,16 +25,16 @@ class DatabaseSeeder extends Seeder
 	  				'url' => 'general'
 	  			],
 	  			[	'name' => 'Motor',
-	  				'description' => 'Todo sobre el motor: Coches, noticias, curiosidades ...',
+	  				'description' => 'Todo sobre motor: Coches, noticias, curiosidades ...',
 	  				'url' => 'motor'
 	  			],
 	  			[	'name' => 'Noticias',
 	  				'description' => 'Temas de actualidad y noticias de prensa.',
 	  				'url' => 'noticias'
 	  			],
-	  			[	'name' => 'Informática',
+	  			[	'name' => 'Electrónica',
 	  				'description' => 'Temas relacionados con la tecnología, informática, telefonía ...',
-	  				'url' => 'informatica'
+	  				'url' => 'electronica'
 	  			],
 	  			[	'name' => 'Juegos',
 	  				'description' => 'Temas sobre Videojuegos, independientemente de su plataforma.',

@@ -19,6 +19,7 @@
 	.msgPost li {	list-style-type: none;
 				    border-top: solid 1px black;
 				    padding: 0.75vh;
+				    word-break: break-word;
 	}
 	
 	.msgPost li:first-child {	border-top: none;

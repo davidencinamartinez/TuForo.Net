@@ -30,7 +30,7 @@
                 @foreach($threadData as $thread)
                     <tr class="threadInfo">
                         <td class="threadCategory">
-                            <img class='categoryPic' src='storage/src/categories/{{ $thread->category }}.png'>
+                            <img class='categoryPic' src='storage/src/categories/{{ $thread->category }}.webp'>
                         </td>
                         <td class='threadName'>
                             <b>
@@ -102,4 +102,11 @@
             </div>
         </div>
     </div>
+    <div id='footer'>
+        <div class='socialDiv'>
+            <a href='https://twitter.com/tuforonet' target='_blank'><img src='/storage/src/logos/social/tw_logo.webp' class='socialNetwork' alt='twitter_logo'></a>
+            <a href='https://www.facebook.com/tuforonetofficial/' target='_blank'><img src='/storage/src/logos/social/fb_logo.webp' class='socialNetwork' alt='facebook_logo'></a>
+            <a href='https://www.instagram.com/_u/viboxx/' target='_blank'><img src='/storage/src/logos/social/ig_logo.webp' class='socialNetwork' alt='instagram_logo'></a>
+        </div>
+    </div>  
 @stop
