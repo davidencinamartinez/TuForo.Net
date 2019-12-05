@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang='es'>
 <head>
 	<meta charset='utf-8'>
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
@@ -11,10 +11,10 @@
 	@stack('scripts')
 	<script data-ad-client="ca-pub-2178837299566296" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
-	<script src='{{ asset("/js/jquery-3.3.1.js") }}'></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.js" integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/es.js"></script>
 	<script src='{{ asset("/js/main.js") }}'></script>
-	<script type='text/javascript' src='{{ asset("js/moment_js/moment.js") }}'></script>
-	<script type='text/javascript' src='{{ asset("js/moment_js/es.js") }}'></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
 		 	dateConvert();

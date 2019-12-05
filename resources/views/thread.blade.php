@@ -10,9 +10,8 @@
  	<meta name="csrf-token" content="{{ csrf_token() }}">
 @endpush
 @push('scripts')
-<script type='text/javascript' src='{{ asset("/js/moment_js/moment.js") }}'></script>
-    <script type='text/javascript' src='{{ asset("/js/moment_js/es.js") }}'></script>
-    <script type='text/javascript' src='{{ asset("/js/reply.js") }}'></script>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/es.js'></script>
+<script src='{{ asset("/js/reply.js") }}'></script>
 @endpush
 @section('postSection')
   <script type="text/javascript">

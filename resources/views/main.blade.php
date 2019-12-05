@@ -10,13 +10,12 @@
 	<link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700&display=swap&subset=latin-ext" rel="stylesheet">
 	@stack('scripts')
 	<script data-ad-client="ca-pub-2178837299566296" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-	<script src='{{ asset("/js/main.js") }}'></script>
-	<script src='{{ asset("/js/jquery-3.3.1.js") }}'></script>
-	<script type='text/javascript' src='{{ asset("js/moment_js/moment.js") }}'></script>
-	<script type='text/javascript' src='{{ asset("js/moment_js/es.js") }}'></script>
-	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.js" integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI=" crossorigin="anonymous"></script>
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-140861516-1"></script>
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/es.js"></script>
+	<script src='{{ asset("/js/main.js") }}'></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
 			navBarActive();
