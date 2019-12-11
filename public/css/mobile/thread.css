@@ -18,7 +18,7 @@
 	
 	.msgPost li {	list-style-type: none;
 				    border-top: solid 1px black;
-				    padding: 0.75vh;
+				    padding: 7.5px;
 				    word-break: break-word;
 	}
 	
@@ -69,6 +69,8 @@
 	}
 
 	iframe {	border: solid 1px black;
+				height: 50%;
+				max-width: 100%;
 	}
 
 	#replyButton {	margin: 1vh;

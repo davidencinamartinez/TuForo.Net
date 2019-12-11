@@ -29,15 +29,7 @@ function replyFormat() {
 		$('div[name="replyMsg"]').focus();
 		document.execCommand('underline');		
 	});
-	$('.wysiwyg').eq(3).on('click' , function(event) { // UNORDERED LIST BUTTON
-		$('div[name="replyMsg"]').focus();
-		document.execCommand('insertUnorderedList');		
-	});
-	$('.wysiwyg').eq(4).on('click' , function(event) { // ORDERED LIST BUTTON
-		$('div[name="replyMsg"]').focus();
-		document.execCommand('insertOrderedList');		
-	});
-	$('.wysiwyg').eq(5).on('click' , function(event) { // ADD IMAGE BUTTON
+	$('.wysiwyg').eq(3).on('click' , function(event) { // ADD IMAGE BUTTON
 		var replyImg = prompt("Introduce la URL de la imagen:");
 		if (replyImg != null) {
 			$('div[name="replyMsg"]').focus();
@@ -46,16 +38,29 @@ function replyFormat() {
 			return false;
 		}		
 	});
-	$('.wysiwyg').eq(6).on('click' , function(event) { // YOUTUBE EMBED BUTTON
+	$('.wysiwyg').eq(4).on('click' , function(event) { // YOUTUBE EMBED BUTTON
 		var urlPrompt = prompt('Introduce el enlace del vídeo:\nPor ejemplo:\nhttps://www.youtube.com/watch?v=dc3KETiybOI');
-		$('div[name="replyMsg"]').focus();
-		var videoEmbed = '<iframe src="https://www.youtube.com/embed/'+urlPrompt.split("?v=")[1]+'">';
-		if(urlPrompt != null){
+		if(urlPrompt != null && urlPrompt.split("?v=")[1].length == 11){
+			$('div[name="replyMsg"]').focus();
+			var videoEmbed = '<iframe src="https://www.youtube.com/embed/'+urlPrompt.split("?v=")[1]+'">';
 	    	document.execCommand("insertHtml", false, videoEmbed);
+		} else {
+			event.preventDefault();
+			return false;
 		}
 	});
-	$('.wysiwyg').eq(7).on('click' , function(event) { // ADD LINK BUTTON
-		var urlPrompt = prompt('Introduce el enlace de la página:');
+	$('.wysiwyg').eq(5).on('click' , function(event) { // YOUTUBE EMBED BUTTON
+		var embedPrompt = prompt('Introduce el iFrame del vídeo:\n¡ATENCIÓN!\nEl contenido de carácter pedófilo o gore queda estrictamente prohibido.');
+		if(embedPrompt != null){
+			$('div[name="replyMsg"]').focus();
+	    	document.execCommand("insertHtml", false, embedPrompt);
+		} else {
+			event.preventDefault();
+			return false;
+		}
+	});
+	$('.wysiwyg').eq(6).on('click' , function(event) { // ADD LINK BUTTON
+		var urlPrompt = prompt('Introduce el enlace de la página:\n¡ATENCIÓN!\nEl contenido de carácter pedófilo o gore queda estrictamente prohibido.');
 		if (urlPrompt != null) {
 			$('div[name="replyMsg"]').focus();
 			document.execCommand('createLink', true, urlPrompt);

@@ -9,9 +9,9 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700&display=swap&subset=latin-ext" rel="stylesheet">
 	@stack('scripts')
-	<script data-ad-client="ca-pub-2178837299566296" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<!-- <script data-ad-client="ca-pub-2178837299566296" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> 
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-140861516-1"></script>
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/es.js"></script>
@@ -20,9 +20,9 @@
 		$(document).ready(function() {
 			navBarActive();
 			dateConvert();
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());	
-			gtag('config', 'UA-140861516-1');
+			//function gtag(){dataLayer.push(arguments);}
+			//gtag('js', new Date());	
+			//gtag('config', 'UA-140861516-1');
 		});
 	</script>
 </head>
@@ -67,11 +67,12 @@
 		@endif
 	</div>
 	<div class='headerAdsContainer'>
-		<!-- HEADER AD CONTAINER (MAIN) 728x90 -->
+		<!-- HEADER AD CONTAINER (MAIN) 728x90 
 		<ins class="adsbygoogle"
 		     style="display:inline-block;width:728px;height:90px"
 		     data-ad-client="ca-pub-2178837299566296"
 		     data-ad-slot="7738881260"></ins>
+		-->
 	</div>
 	@section('postSection')
     @show

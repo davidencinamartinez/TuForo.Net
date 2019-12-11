@@ -43,14 +43,13 @@
 	<button id="replyPanel" class="userPanel">Responder</button>
 		<div id="replyPost" style="visibility: hidden; display: none;">
 		    <div id="replyButtons">
-		    <button class="wysiwyg" type="button"><i class="fas fa-bold"></i></button>
-            <button class="wysiwyg" type="button"><i class="fas fa-italic"></i></button>
-            <button class="wysiwyg" type="button"><i class="fas fa-underline"></i></button>
-            <button class="wysiwyg" type="button" style="display: none"><i class="fas fa-list-ul"></i></button>
-            <button class="wysiwyg" type="button" style="display: none"><i class="fas fa-list-ol"></i></button>
-            <button class="wysiwyg" type="button"><i class="fas fa-image"></i></button>
-            <button class="wysiwyg" type="button"><i class="fas fa-video"></i></button>
-            <button class="wysiwyg" type="button"><i class="fas fa-link"></i></button>
+			    <button class="wysiwyg" type="button"><i class="fas fa-bold"></i></button>
+			    <button class="wysiwyg" type="button"><i class="fas fa-italic"></i></button>
+			    <button class="wysiwyg" type="button"><i class="fas fa-underline"></i></button>
+			    <button class="wysiwyg" type="button"><i class="fas fa-image"></i></button>
+			    <button class="wysiwyg" type="button"><i class="fab fa-youtube"></i></button>
+			    <button class="wysiwyg" type="button"><i class="fas fa-video"></i></button>
+			    <button class="wysiwyg" type="button"><i class="fas fa-link"></i></button>
 		    </div>
 		<div id="userMsg" name="replyMsg" contenteditable="false" data-placeholder="Introduce tu respuesta ..."></div>
 		<form action='/sendReply' method="POST" onsubmit="return replyCorrect()">

@@ -10,7 +10,6 @@
  	<meta name="csrf-token" content="{{ csrf_token() }}">
 @endpush
 @push('scripts')
-<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/es.js'></script>
 <script src='{{ asset("/js/reply.js") }}'></script>
 @endpush
 @section('postSection')
@@ -61,9 +60,8 @@
             <button class="wysiwyg" type="button"><i class="fas fa-bold"></i></button>
             <button class="wysiwyg" type="button"><i class="fas fa-italic"></i></button>
             <button class="wysiwyg" type="button"><i class="fas fa-underline"></i></button>
-            <button class="wysiwyg" type="button"><i class="fas fa-list-ul"></i></button>
-            <button class="wysiwyg" type="button"><i class="fas fa-list-ol"></i></button>
             <button class="wysiwyg" type="button"><i class="fas fa-image"></i></button>
+            <button class="wysiwyg" type="button"><i class="fab fa-youtube"></i></button>
             <button class="wysiwyg" type="button"><i class="fas fa-video"></i></button>
             <button class="wysiwyg" type="button"><i class="fas fa-link"></i></button>
   	    </div>
